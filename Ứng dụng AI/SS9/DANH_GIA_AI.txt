@@ -1,0 +1,193 @@
+========================================
+    DANH GIA: SU DUNG AI DE VIET CHUONG TRINH QUIZ GAME
+========================================
+
+I. UU DIEM KHI DUNG AI:
+------------------------
+
+1. TOC DO PHAT TRIEN:
+   - AI co the sinh code nhanh chong, giam thoi gian phat trien
+   - Khong can tim kiem tai lieu nhieu, AI co the cung cap code mau ngay
+   - Phat trien tu y tuong den code chay duoc trong thoi gian ngan
+
+2. HOC TAP VA THAM KHAO:
+   - Code duoc sinh ra co comment chi tiet, giup hieu ro cach hoat dong
+   - Co the yeu cau AI giai thich cac khai niem (struct, fopen, rand, ...)
+   - Hoc duoc nhieu ky thuat lap trinh tu code mau
+
+3. REFACTORING VA TOI UU:
+   - AI co the refactor code de de bao tri hon
+   - Co the yeu cau AI tach thanh nhieu ham nho
+   - AI co the cai tien code theo yeu cau cu the
+
+4. XU LY LOI:
+   - AI co the nhan dien va sua loi nhanh chong
+   - Co the giai thich nguyen nhan loi va cach sua
+   - Tiet kiem thoi gian debug
+
+5. THEM TINH NANG:
+   - De dang them cac tinh nang moi (phan trang, validation, menu, ...)
+   - AI co the tu dong cap nhat code khi co yeu cau moi
+   - Khong can viet lai tu dau
+
+6. DOCUMENTATION:
+   - AI co the tao comment chi tiet cho code
+   - Co the tao file huong dan su dung
+   - Code co the de doc va hieu hon
+
+
+II. NHUOC DIEM KHI DUNG AI:
+----------------------------
+
+1. THIEU KINH NGHIEM THUC TE:
+   - Nguoi dung co the khong hieu sau ve code
+   - Khong hoc duoc cach debug va xu ly loi thu cong
+   - Thieu ky nang giai quyet van de doc lap
+
+2. PHU THUOC VAO AI:
+   - Neu khong co AI, kho co the sua code hoac them tinh nang
+   - Khong the tu minh phat trien duoc
+   - Gap kho khan khi can chinh sua code phuc tap
+
+3. CHAT LUONG CODE:
+   - Code co the khong toi uu nhat (AI khong luon tao code tot nhat)
+   - Co the co bug hoac loi logic ma AI khong phat hien
+   - Can kiem tra ky luong truoc khi su dung
+
+4. THIEU SU SANG TAO:
+   - Code co the mang tinh "template", it sang tao
+   - Kho phat trien theo huong rieng
+   - Co the giong nhau giua cac du an
+
+5. KHONG HOC DUOC QUY TRINH:
+   - Bo qua cac buoc quan trong trong phat trien phan mem
+   - Khong hieu quy trinh test, debug, optimize
+   - Thieu kinh nghiem ve best practices
+
+6. VAN DE BAO MAT:
+   - AI co the tao code co loi hong bao mat neu khong duoc kiem tra
+   - Nguoi dung co the khong nhan ra cac van de bao mat
+   - Can review code ky luong ve mat bao mat
+
+
+III. LUU Y VE BAO MAT:
+----------------------
+
+1. INPUT VALIDATION:
+   - DA XU LY: Ten nguoi choi duoc validate (khong rong, khong co ky tu dac biet)
+   - DA XU LY: Dap an duoc validate (chi A/B/C/D, khong chap nhan Enter/khoang trang)
+   - CAN CAI THIEN: Co the them validation cho do dai input de tranh buffer overflow
+
+2. FILE OPERATIONS:
+   - DA XU LY: Kiem tra file NULL truoc khi doc/ghi
+   - CAN CAI THIEN: Co the them quyen truy cap file (read-only cho leaderboard)
+   - CAN CAI THIEN: Gioi han so luong nguoi choi trong file (tranh file qua lon)
+
+3. BUFFER OVERFLOW:
+   - DA XU LY: Su dung fgets() voi MAX_LENGTH de tranh overflow
+   - DA XU LY: Kiem tra do dai chuoi truoc khi xu ly
+   - CAN CAI THIEN: Co the them validation cho tat ca input
+
+4. INJECTION ATTACKS:
+   - DA XU LY: Ten nguoi choi khong duoc chua ky tu dac biet (/ \ : * ? " < > |)
+   - CAN CAI THIEN: Neu mo rong, can validate ky hon de tranh command injection
+
+5. DATA INTEGRITY:
+   - DA XU LY: Sap xep lai bang xep hang sau moi lan luu
+   - CAN CAI THIEN: Co the them checksum hoac hash de kiem tra tinh toan ven
+
+6. ERROR HANDLING:
+   - DA XU LY: Co kiem tra loi khi mo file
+   - CAN CAI THIEN: Co the them logging de theo doi loi
+
+
+IV. LUU Y VE HIEU NANG:
+------------------------
+
+1. MEMORY MANAGEMENT:
+   - TOT: Su dung mang co dinh (khong co memory leak)
+   - TOT: Khong su dung con tro dong (tranh memory leak)
+   - CAN CAI THIEN: Neu mo rong, co the su dung linked list cho leaderboard
+
+2. FILE I/O:
+   - TOT: Doc/ghi file don gian, khong phuc tap
+   - CAN CAI THIEN: Neu file lon, nen doc theo chunk thay vi doc het
+   - CAN CAI THIEN: Co the them cache de tranh doc file nhieu lan
+
+3. ALGORITHM:
+   - TOT: Su dung Fisher-Yates shuffle (O(n)) - hieu qua
+   - TOT: Su dung qsort() - hieu qua cho sap xep
+   - TOT: Khong co vong lap vo han hoac de quy sau
+
+4. DATA STRUCTURE:
+   - TOT: Su dung struct de quan ly du lieu ro rang
+   - TOT: Mang co dinh de tranh phuc tap
+   - CAN CAI THIEN: Neu mo rong, co the su dung hash table de tim kiem nhanh
+
+5. USER INPUT:
+   - TOT: Validation chat che, tranh nhap sai nhieu lan
+   - CAN CAI THIEN: Co the them timeout cho input (neu can)
+
+6. DISPLAY:
+   - TOT: Hien thi don gian, khong co animation phuc tap
+   - CAN CAI THIEN: Neu mo rong, co the them pagination cache
+
+
+V. KHUYEN NGHI:
+----------------
+
+1. CHO NGUOI MOI BAT DAU:
+   - Su dung AI de hoc tap va tham khao la tot
+   - Nen doc va hieu code ma AI tao ra
+   - Khong nen chi copy-paste ma khong hieu
+
+2. CHO DU AN THUC TE:
+   - Can review code ky luong truoc khi deploy
+   - Test ky luong tat ca cac truong hop
+   - Can co nguoi co kinh nghiem review code
+
+3. HOC TAP:
+   - Dung AI nhu mot cong cu ho tro, khong phai thay the
+   - Van can hoc kien thuc co ban ve lap trinh
+   - Thuc hanh nhieu de nang cao ky nang
+
+4. BAO MAT:
+   - Luon validate input chat che
+   - Kiem tra loi hong bao mat truoc khi deploy
+   - Cap nhat va patch loi thuong xuyen
+
+5. HIEU NANG:
+   - Do hieu nang code trong truong hop thuc te
+   - Toi uu cac phan co the cai thien
+   - Su dung profiling tools de tim bottleneck
+
+
+VI. KET LUAN:
+--------------
+
+Uu diem:
+- Tiet kiem thoi gian phat trien
+- Hoc tap nhanh chong
+- De dang them tinh nang
+- Code co comment chi tiet
+
+Nhuoc diem:
+- Phu thuoc vao AI
+- Thieu kinh nghiem thuc te
+- Chat luong code can kiem tra
+- Thieu su sang tao
+
+Luu y:
+- Can review code ve mat bao mat
+- Can test ky luong
+- Can hieu code truoc khi su dung
+- Khong nen phu thuoc hoan toan vao AI
+
+========================================
+KHUYEN NGHI CUOI CUNG:
+- Su dung AI nhu mot cong cu ho tro
+- Van can hoc va thuc hanh nhieu
+- Review code ky luong truoc khi su dung
+- Khong ngung hoc hoi va cap nhat kien thuc
+========================================
+

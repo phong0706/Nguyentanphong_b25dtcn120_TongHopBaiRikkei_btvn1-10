@@ -1,0 +1,16 @@
+Nguyen Van A 10
+Tran Thi B 9
+Le Van C 8
+Pham Thi D 7
+Hoang Van E 6
+Vu Thi F 5
+phong 5
+Phong 4
+Dao Van G 4
+phong 3
+Bui Thi H 3
+0 2
+psa 2
+Dang Van I 2
+Phong 2
+Ngo Thi K 1

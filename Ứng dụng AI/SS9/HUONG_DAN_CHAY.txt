@@ -1,0 +1,140 @@
+========================================
+    HƯỚNG DẪN CHẠY CHƯƠNG TRÌNH QUIZ GAME
+========================================
+
+I. YÊU CẦU HỆ THỐNG:
+--------------------
+- Hệ điều hành: Windows/Linux/macOS
+- Trình biên dịch C: GCC (GNU Compiler Collection)
+- Cách kiểm tra GCC đã cài đặt chưa:
+  Mở Command Prompt/Terminal và gõ: gcc --version
+
+II. CÁCH BIÊN DỊCH VÀ CHẠY:
+----------------------------
+
+1. TRÊN WINDOWS:
+---------------
+   a) Mở Command Prompt hoặc PowerShell
+   
+   b) Di chuyển đến thư mục chứa file quiz_game.c:
+      cd "P:\RIKKEI\Ứng dụng AI\SS9"
+   
+   c) Biên dịch chương trình:
+      gcc -o quiz_game.exe quiz_game.c
+   
+   d) Chạy chương trình:
+      quiz_game.exe
+   
+   Hoặc có thể chạy trực tiếp:
+      gcc quiz_game.c -o quiz_game.exe && quiz_game.exe
+
+
+2. TRÊN LINUX/macOS:
+-------------------
+   a) Mở Terminal
+   
+   b) Di chuyển đến thư mục chứa file quiz_game.c:
+      cd /đường/dẫn/đến/thư/mục
+   
+   c) Biên dịch chương trình:
+      gcc -o quiz_game quiz_game.c
+   
+   d) Chạy chương trình:
+      ./quiz_game
+
+
+III. CÁCH SỬ DỤNG CHƯƠNG TRÌNH:
+-------------------------------
+
+1. Khi chương trình khởi động:
+   - Bạn sẽ thấy thông báo "Chào mừng bạn đến với Quiz Game!"
+   - Nhập tên của bạn khi được yêu cầu
+
+2. Trong quá trình chơi:
+   - Chương trình sẽ hiển thị 5 câu hỏi được chọn ngẫu nhiên
+   - Mỗi câu hỏi có 4 lựa chọn: A, B, C, D
+   - Nhập đáp án của bạn (A, B, C, hoặc D) và nhấn Enter
+   - Bạn có thể nhập chữ thường hoặc chữ hoa (a, b, c, d hoặc A, B, C, D)
+
+3. Sau khi hoàn thành:
+   - Chương trình sẽ hiển thị tổng điểm của bạn
+   - Điểm số sẽ được lưu vào file "leaderboard.txt"
+   - Bảng xếp hạng sẽ được hiển thị với tất cả người chơi đã chơi
+
+IV. CẤU TRÚC FILE:
+-----------------
+- quiz_game.c          : File mã nguồn chính
+- leaderboard.txt      : File lưu bảng xếp hạng (tự động tạo khi chạy)
+- HUONG_DAN_CHAY.txt   : File hướng dẫn này
+
+
+V. XỬ LÝ LỖI THƯỜNG GẶP:
+------------------------
+
+1. Lỗi "gcc: command not found":
+   → Cài đặt GCC:
+     - Windows: Tải MinGW hoặc sử dụng Dev-C++, Code::Blocks
+     - Linux: sudo apt-get install gcc (Ubuntu/Debian)
+     - macOS: Xcode Command Line Tools
+
+2. Lỗi khi biên dịch:
+   → Kiểm tra lại file quiz_game.c có đầy đủ không
+   → Đảm bảo đã lưu file với encoding UTF-8
+
+3. Lỗi khi chạy:
+   → Đảm bảo đã biên dịch thành công trước khi chạy
+   → Kiểm tra quyền thực thi file (trên Linux/macOS: chmod +x quiz_game)
+
+
+VI. LƯU Ý:
+----------
+- Mỗi lần chạy, chương trình sẽ chọn ngẫu nhiên 5 câu hỏi khác nhau
+- File leaderboard.txt sẽ được tạo tự động và lưu trong cùng thư mục
+- Bảng xếp hạng hiển thị tất cả người chơi đã chơi và điểm số của họ
+- Bạn có thể chơi nhiều lần để cải thiện điểm số
+
+
+VII. VÍ DỤ CHẠY CHƯƠNG TRÌNH:
+-----------------------------
+
+C:\Users\YourName> cd "P:\RIKKEI\Ứng dụng AI\SS9"
+C:\...\SS9> gcc -o quiz_game.exe quiz_game.c
+C:\...\SS9> quiz_game.exe
+
+========== QUIZ GAME ==========
+Chào mừng bạn đến với Quiz Game!
+Nhập tên của bạn: Nguyễn Văn A
+
+========== BẮT ĐẦU CHƠI ==========
+
+=== Câu hỏi 1 ===
+Thủ đô của Việt Nam là gì?
+A. Hồ Chí Minh
+B. Hà Nội
+C. Đà Nẵng
+D. Huế
+Nhập đáp án của bạn (A/B/C/D): B
+✓ Đúng! +1 điểm
+
+... (tiếp tục với 4 câu hỏi còn lại)
+
+========== KẾT QUẢ ==========
+Tên người chơi: Nguyễn Văn A
+Tổng điểm: 4/5
+
+Đã lưu điểm vào file leaderboard.txt
+
+========== BẢNG XẾP HẠNG ==========
+Tên người chơi                  Điểm
+--------------------------------------------
+Nguyễn Văn A                    4
+...
+
+Cảm ơn bạn đã chơi!
+
+
+========================================
+Chúc bạn chơi vui vẻ!
+========================================
+
+

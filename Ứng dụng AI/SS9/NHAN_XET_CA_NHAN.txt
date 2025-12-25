@@ -1,0 +1,167 @@
+========================================
+        NHẬN XÉT CÁ NHÂN
+    Về việc sử dụng AI để viết chương trình Quiz Game
+========================================
+
+I. TRẢI NGHIỆM CÁ NHÂN:
+------------------------
+
+1. LẦN ĐẦU TIÊN SỬ DỤNG AI:
+   - Đây là lần đầu tiên em sử dụng AI (Cursor AI/ChatGPT) để hỗ trợ viết chương trình
+   - Em cảm thấy rất mới mẻ và thú vị khi thấy AI có thể sinh code nhanh chóng
+   - Ban đầu em chỉ nghĩ AI sẽ thay thế hoàn toàn việc lập trình, nhưng sau đó em nhận ra cần phải hiểu code
+
+2. QUÁ TRÌNH HỌC TẬP:
+   - Em đã học được nhiều khái niệm mới: struct, fopen, rand(), qsort()
+   - AI đã giải thích chi tiết cách hoạt động của các hàm và thư viện
+   - Em đã đọc code và hiểu được logic của chương trình, không chỉ copy-paste
+
+3. NHỮNG KHÓ KHĂN GẶP PHẢI:
+   - Ban đầu em gặp lỗi encoding (ký tự bị garble) - AI đã giúp em fix
+   - Em gặp lỗi "Permission denied" khi biên dịch - AI giải thích và hướng dẫn cách sửa
+   - Có những phần code em không hiểu, phải hỏi AI nhiều lần để hiểu rõ
+
+4. NHỮNG ĐIỀU HỌC ĐƯỢC:
+   - Học được cách sử dụng struct để lưu trữ dữ liệu
+   - Học được cách đọc/ghi file trong C
+   - Học được cách random và sắp xếp dữ liệu
+   - Học được cách validate input chặt chẽ
+   - Học được cách refactor code để dễ bảo trì
+
+
+II. ƯU ĐIỂM EM NHẬN THẤY:
+--------------------------
+
+1. TIẾT KIỆM THỜI GIAN:
+   - Nếu tự viết, em sẽ mất rất nhiều thời gian để tìm hiểu và viết code
+   - AI giúp em hoàn thành bài tập trong thời gian ngắn hơn
+   - Em có thể tập trung vào hiểu code thay vì viết code từ đầu
+
+2. HỌC TẬP HIỆU QUẢ:
+   - AI giải thích chi tiết từng phần code
+   - Em có thể hỏi AI bất kỳ câu hỏi nào về code
+   - Code có comment đầy đủ, dễ hiểu hơn
+
+3. THÊM TÍNH NĂNG DỄ DÀNG:
+   - Khi thầy cô yêu cầu thêm tính năng, em chỉ cần hỏi AI
+   - AI có thể thêm phân trang, menu, validation... rất nhanh
+   - Em không cần viết lại từ đầu
+
+4. XỬ LÝ LỖI NHANH:
+   - Khi gặp lỗi, em chỉ cần copy lỗi và hỏi AI
+   - AI giải thích nguyên nhân và cách sửa
+   - Tiết kiệm thời gian debug
+
+
+III. NHƯỢC ĐIỂM EM NHẬN THẤY:
+------------------------------
+
+1. PHỤ THUỘC VÀO AI:
+   - Em cảm thấy mình phụ thuộc nhiều vào AI
+   - Nếu không có AI, em khó có thể sửa code hoặc thêm tính năng
+   - Em chưa tự mình viết được một chương trình hoàn chỉnh
+
+2. THIẾU KINH NGHIỆM:
+   - Em không học được cách debug thủ công
+   - Em không hiểu sâu về cách xử lý lỗi
+   - Em thiếu kỹ năng giải quyết vấn đề độc lập
+
+3. KHÔNG HỌC ĐƯỢC QUY TRÌNH:
+   - Em bỏ qua nhiều bước trong phát triển phần mềm
+   - Em không hiểu quy trình test, debug, optimize
+   - Em thiếu kinh nghiệm về best practices
+
+4. CHẤT LƯỢNG CODE:
+   - Có những phần code em không hiểu rõ
+   - Em không chắc code có tối ưu hay không
+   - Em cần kiểm tra kỹ lưỡng trước khi sử dụng
+
+
+IV. BÀI HỌC RÚT RA:
+-------------------
+
+1. AI LÀ CÔNG CỤ HỖ TRỢ:
+   - AI không thay thế được việc học tập
+   - Em vẫn cần hiểu code trước khi sử dụng
+   - Em không nên chỉ copy-paste mà không hiểu
+
+2. CẦN THỰC HÀNH NHIỀU:
+   - Em nhận ra mình cần thực hành nhiều hơn
+   - Em cần tự mình viết code để nâng cao kỹ năng
+   - Em cần đọc nhiều tài liệu để hiểu sâu hơn
+
+3. KHÔNG NÊN PHỤ THUỘC:
+   - Em sẽ cố gắng tự mình giải quyết vấn đề trước
+   - Em sẽ chỉ hỏi AI khi thực sự cần thiết
+   - Em sẽ cố gắng hiểu code thay vì chỉ sử dụng
+
+4. CẦN REVIEW CODE:
+   - Em sẽ kiểm tra code kỹ lưỡng trước khi sử dụng
+   - Em sẽ test chương trình nhiều lần
+   - Em sẽ hỏi thầy cô nếu có điều không rõ
+
+
+V. ĐÁNH GIÁ TỔNG QUAN:
+----------------------
+
+1. VỀ MẶT TÍCH CỰC:
+   - AI giúp em hoàn thành bài tập nhanh chóng
+   - AI giúp em học được nhiều khái niệm mới
+   - AI giúp em hiểu rõ hơn về lập trình C
+
+2. VỀ MẶT TIÊU CỰC:
+   - Em phụ thuộc nhiều vào AI
+   - Em thiếu kinh nghiệm thực tế
+   - Em chưa tự mình giải quyết được vấn đề
+
+3. KẾT LUẬN:
+   - AI là một công cụ rất hữu ích cho người mới bắt đầu
+   - Nhưng em không nên phụ thuộc hoàn toàn vào AI
+   - Em sẽ cố gắng học tập và thực hành nhiều hơn để nâng cao kỹ năng
+
+
+VI. KHUYẾN NGHỊ CHO BẢN THÂN:
+------------------------------
+
+1. TIẾP TỤC SỬ DỤNG AI:
+   - Sử dụng AI như một công cụ hỗ trợ học tập
+   - Hỏi AI khi gặp khó khăn hoặc không hiểu
+   - Nhưng vẫn cần tự mình nghĩ và giải quyết trước
+
+2. THỰC HÀNH NHIỀU HƠN:
+   - Tự mình viết code để nâng cao kỹ năng
+   - Đọc nhiều tài liệu về lập trình C
+   - Thực hành với nhiều bài tập khác nhau
+
+3. KHÔNG NGỪNG HỌC HỎI:
+   - Học thêm về best practices trong lập trình
+   - Học về bảo mật và hiệu năng
+   - Cập nhật kiến thức thường xuyên
+
+4. CHIA SẺ KINH NGHIỆM:
+   - Chia sẻ với bạn bè về cách sử dụng AI
+   - Học hỏi từ người có kinh nghiệm
+   - Tham gia các diễn đàn lập trình
+
+
+VII. LỜI CẢM ƠN:
+----------------
+
+Em xin cảm ơn thầy/cô đã cho em cơ hội trải nghiệm với AI trong phát triển phần mềm.
+Qua bài tập này, em đã học được nhiều điều bổ ích về lập trình C cũng như cách sử dụng
+AI để hỗ trợ học tập. Em sẽ cố gắng tiếp tục học hỏi và nâng cao kỹ năng lập trình
+của mình trong tương lai.
+
+Em cũng cảm ơn AI (Cursor AI/ChatGPT) đã giúp đỡ em trong quá trình hoàn thành bài tập.
+Tuy nhiên, em nhận ra rằng AI chỉ là công cụ hỗ trợ, và em vẫn cần tự mình học tập
+và thực hành để trở thành một lập trình viên giỏi.
+
+
+========================================
+Kết luận:
+- AI là công cụ rất hữu ích cho người mới bắt đầu
+- Nhưng không nên phụ thuộc hoàn toàn vào AI
+- Cần học tập và thực hành nhiều để nâng cao kỹ năng
+- Cần hiểu code trước khi sử dụng
+- Cần review và test code kỹ lưỡng
+========================================
