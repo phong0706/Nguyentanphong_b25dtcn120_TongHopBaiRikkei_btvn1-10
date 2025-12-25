@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <body>
+        <meta charset="UTF-8">
+        <title>Trang cá nhân</title>
+        <h1>NGUYỄN TẤN PHONG</h1>
+        <p>Sinh viên ngành công nghệ thông tin</p>
+        <h2>Giới Thiệu</h2>
+        <p>Xin chào mình là <b>Nguyễn Tấn Phong,</b> hiện đang là sinh viên năm nhất. Mình thích học lập trình và mong muốn thành lập trình viên giỏi</p>
+            <p>Hiện tại, mình đang học kiến thức cơ bản về <mark>HTML</mark>, <mark>CSS</mark>, <mark>Javascript</mark> để bắt đầu xây dựng trang web đầu tiên của mình. </p>
+            <h3>Sở thích</h3>
+            <ul><li>Chạy bộ</li>
+            <li>Đọc sách</li>
+            <li>Du lịch</li></ul>
+            <h3>Mục tiêu học tập</h3>
+            <ol><li>Hoàn thành các môn cơ bản</li>
+            <li>Tạo trang web đầu tiên</li>
+            <li>Hoàn thêm CSS và JavaScript</li></ol>
+            <h2>Ảnh đại diện</h2>
+            <img src="https://congnghethongtinaau.com/wp-content/uploads/2024/07/cntt-gom-nhung-nganh-nao.jpg" alt="" width ="300" height ="200">
+            <h2>Liên Kết Yêu Thích</h2>
+            <p><a href=" https://www.facebook.com/nguyen.tan.phong.546333/">Facebook của tôi</a></p>
+            <p><a href="https://portal.rikkei.edu.vn/">Trang học tập</a></p>
+            <p><a href="http://127.0.0.1:5500/html">Quay lại trang</a></p>
+            <h3>Ví dụ về các thẻ định dạng</h3>
+            <p>Xin chào mình là <b>Nguyễn Tấn Phong,</b> hiện đang là sinh viên năm nhất. Mình thích học lập trình và mong muốn thành <mark>lập trình viên giỏi</mark></p>
+            <h2>Phân biệt Block và Inline Element</h2>
+            <p>Đây là thẻ P thứ nhất (<abbr title="Block Element">Block Element</abbr>)</p>
+            <p>Đây là thẻ P thứ hai (<abbr title="Inline Element">Inline Element</abbr>)</p>
+            <P>&copy; 2025 - Trang web tạo bởi Nguyễn Tấn Phong</P>
+
+
+        </body>
+
+
+    </head>
