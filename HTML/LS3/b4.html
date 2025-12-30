@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form thông tin căn cước</title>
+  </head>
+  <body>
+    <table>
+    <tr>
+      <td><label for="name"></label>Họ và tên:</td>
+      <td><input type="text" id="name" name="name"></td>
+    </tr>
+    <tr>
+      <td><label for="birh">Ngày sinh:</label></td>
+      <td><input type="date" id="birth" name="birth"></td>
+    </tr>
+    <tr>
+      <td><label for="gender">Giới tính:</label></td>
+      <td>
+        <input type="radio" id="gender" name="gender" value="male">
+        <label>Nam</label>
+        <input type="radio" id="gender" name="gender" value="female">
+        <label for="female">Nữ</label>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="cccd">Số căn cước công dân:</label></td>
+      <td><input type="text" id="cccd" name="cccd"></td>
+    </tr>
+    <tr>
+      <td><label for="date_of">Ngày cấp:</label></td>
+      <td><input type="date" id="cccd" name="cccd"></td>
+    </tr>
+    <tr>
+      <td><label for="from">Nơi cấp:</label></td>
+      <td><input type="text" id="from" name="form"></td>
+    </tr>
+    <tr>
+      <td><label for="phone">Số điện thoại:</label></td>
+      <td>
+        <input type="text" id="phone" pattern="0[0-9]{9}"
+        title="Lỗi số điện thoại"
+        placeholder="Nhập số điện thoại"
+        onblur="this.reportValidity()">
+      </td>
+    </tr>
+    <tr>
+      <td><label for="email">Email:</label></td>
+      <td><input type="text" id="email" name="email"></td>
+    </tr>
+    <tr>
+      <td><label for="dctt">Địa chỉ thường trú:</label></td>
+      <td>
+        <textarea name="dctt" id="dctt"></textarea>
+      </td>
+      <tr>
+        <td><label for="dc_tt"></label>Địa chỉ tạm trú:</td>
+        <td>
+          <textarea name="dc_tt" id="dc_tt"></textarea>
+        </td>
+      </tr>
+    </tr>
+    <tr>
+      <td><label for="cccd">Loại căn cước công dân:</label></td>
+      <td>
+        <input type="radio" id="cccd" name="cccd" value="cccd1">
+        <label for="cccd1">Căn cước công dân mới</label>
+        <input type="radio" id="cccd" name="cccd" value="cccd2">
+        <label for="cccd2">Căn cước công dân cũ</label>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="dan_toc">Dân tộc:</label></td>
+      <td><input type="text" id="dan_toc" name="dan_toc">
+    </tr>
+    <tr>
+      <td><label for="ton_giao">Tôn giáo:</label></td>
+      <td><input type="text" name="ton_giao" id="ton_giao"></td>
+    </tr>
+    <tr>
+      <td><label for="quoc_tich">Quốc tịch:</label></td>
+      <td><input type="text" id="quoc_tich" name="quoc_tich" value="Việt Nam"></td>
+    </tr>
+    </tr>
+    <td><label for="name_family">Họ tên cha/mẹ:</label></td>
+    <td><input type="text" id="name_family" name="name_family"></td>
+    </tr>
+    <tr>
+      <td><label for="cmmnd_family">Số CMND/CCCD của cha/mẹ:</label></td>
+      <td><input type="text" name="cmmnd_family" id="cmmnd_family"></td>
+
+    </tr>
+    <tr>
+      <td><label for="tinhtp">Tỉnh/Thành phố:</label></td>
+      <td>
+        <select name="tinhtp" id="tinhtp">
+          <option value="tinh">Chọn Tỉnh/Thành phố</option>
+          <option value="city">Thái Bình</option>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input type="submit" value="Gửi thông tin">
+      </td>
+    </tr>
+  </table>
+
+  <br />
+  <hr />
+  <p>&copy; 2025. Bản Quyền Thuộc Về Tấn Phong</p>
+  </body>
+</html>

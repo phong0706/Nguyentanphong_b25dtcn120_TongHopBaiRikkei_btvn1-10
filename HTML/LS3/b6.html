@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1-0"/>
+    <title>CLB</title>
+</html>
+<body>
+    <form>
+    <table>
+        <tr>
+            <td><label for="name">Họ và tên:</label></td>
+            <td><input type="text" id="name" name="name"></td>
+        </tr>
+        <tr>
+            <td><label for="bir">Ngày sinh:</label></td>
+            <td><input type="date" name="bir" id="bir"></td>
+        </tr>
+        <tr>
+           <td><label>Giới tính:</label></td>
+            <td>
+                <input type="radio" id="male" name="gender" value="male">
+                <label for="male">Nam</label>
+                
+                <input type="radio" id="female" name="gender" value="female">
+                <label for="female">Nữ</label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="phone">Số điện thoại:</label></td>
+            <td>
+               <input type="text" id="phone" pattern="0[0-9]{9}"
+               type="tel"
+               id="phone"
+               pattern="0[0-9]{9}"
+               title="Erro phone"
+               placeholder="Nhập số..."
+               onblur="this.reportValidity()"
+            >
+            </td>
+        </tr>
+        <tr>
+            <td><label for="email">Email</label></td>
+            <td><input type="text" id="email" name="email"></td>
+        </tr>
+        <tr>
+            <td><label for="company">Tên công ty:</label></td>
+            <td><input type="text" id="company" id="company"></td>
+        </tr>
+        <tr>
+            <td><label for="vaitro">Vai trò trong công ty:</label></td>
+            <td>
+                <select name="vaitro" id="vaitro">
+                <option value="CEO">Giám đốc điều hành (CEO)</option>
+                <option value="staff">Nhân viên</option>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="quymo">Quy mô công ty:</label></td>
+            <td>
+                <select name="quymo" id="quymo">
+                <option value="dn1">Doanh nghiệp nhỏ</option>
+                <option value="dn2">Doanh nghiệp lớn</option>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="nganhcty">Ngành nghề công ty</label></td>
+            <td><input type="text" id="nganhcty" name="nganhcty"></td>
+        </tr>
+        <tr>
+            <td><label for="joinclub">Lý do tham gia CLB:</label></td>
+            <td>
+                <textarea name="joinclub" id="joinclub"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="experience">Kinh nghiệm lãnh đạo:</label></td>
+            <td>
+                <textarea name="experience" id="experience"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="target_club">Mục tiêu tham gia CLB:</label></td>
+            <td>
+                <textarea name="target_club" id="target_club"></textarea>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="envent">Chương trình sự kiện muốn tham gia:</label></td>
+            <td>
+                <input type="checkbox" id="envent" name="envent" value="nwk">
+                <label for="nwk">Networking</label>
+                <input type="checkbox" id="envent" name="envent" value="wrs">
+                <label for="wrs">Workshops</label>
+                <input type="checkbox" id="envent" name="envent" value="seminar">
+                <label for="seminar">Hội thảo</label>
+            </td>
+        </tr>
+        <tr>
+            <td><label for="newsletter">Đăng ký nhận bản tin:</label></td>
+            <td>
+                <input type="radio" id="newsletter" name="newsletter" value="yes">
+                <label for="yes">Có</label>
+                <input type="radio" id="newsletter" name="newsletter" value="no">
+                <label for="no">Không</label>
+            </td>
+        </tr>
+        <tr>
+           <td>
+            <input type="submit" value="Đăng ký hội viên">
+           </td>
+        </tr>
+    </table>
+    </form>
+
+    <br />
+    <hr />
+    <p>&copy; 2025 Bản Quyền Thuộc Về Nguyên Tấn Phong</p>
+    <p><b>Có bất kì thắc mắc nào hãy liên hệ gmail: 
+        <a href ="tanphong07062007@gmail.com">Tanphong07062007@gmail.com</a>
+    </u></b></p>
+</body>
