@@ -1,0 +1,25 @@
+header{
+    background-color: #1eff29;
+    width: fit-content;
+    text-align: center;
+    padding: 20px;
+    margin: auto;
+}
+h1{
+    margin: 0;
+    background-color: transparent;
+}
+.nha-khoa-footer{
+    background-color: #7fbaf5;
+    color: white;
+    font-family: "Courier New", Courier, monospace;
+    text-align: center;
+    padding: 30px;
+    line-height: 1.6;
+
+}
+.nha-khoa-footer a {
+    color: white;
+    text-decoration: underline;
+
+}

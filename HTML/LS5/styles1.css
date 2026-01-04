@@ -1,0 +1,34 @@
+/* 1. Tạo cái hộp lớn màu xám bao quanh */
+.hop-dich-vu {
+  background-color: #f4f4f9;
+  padding: 30px; /* Tạo khoảng trống bên trong hộp */
+  text-align: center; /* Lệnh cho Tiêu đề & Slogan ra GIỮA */
+  width: fit-content; /* Giúp hộp xám ôm vừa nội dung (tuỳ chọn) */
+  margin: auto; /* Căn cái hộp xám ra giữa màn hình */
+}
+
+.tieu-de-xanh {
+  color: #1e90ff; 
+  font-size: 28px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.slogan-nho {
+  margin-bottom: 20px; /* Cách danh sách ra một chút cho thoáng */
+}
+
+/* 3. BÍ KÍP QUAN TRỌNG NHẤT: Căn lề danh sách */
+.danh-sach-can-trai {
+  display: inline-block; /* Biến danh sách thành 1 khối để nằm giữa theo lệnh cha */
+  text-align: left; /* Ép các dòng chữ bên trong thẳng hàng bên TRÁI */
+}
+
+/* 4. Các dòng đặc biệt */
+.gach-dac-biet {
+  text-decoration: underline line-through; /* Vừa gạch chân vừa gạch ngang */
+}
+
+.chu-dam {
+  font-weight: bold; /* Chữ đậm */
+}
