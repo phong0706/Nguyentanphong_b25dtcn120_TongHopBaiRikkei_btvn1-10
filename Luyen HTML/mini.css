@@ -1,0 +1,23 @@
+<style>
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: antiquewhite;
+}
+body{
+    background-color: aliceblue;
+    color: black;
+}
+.intro{
+    background-color: rgb(59, 148, 166);
+    color: white;
+    text-align: center;
+
+}
+.slogan{
+    text-align: center;
+    background-color:aquamarine;
+}
+.img{
+    background-color: antiquewhite;
+    text-align: center;
+}

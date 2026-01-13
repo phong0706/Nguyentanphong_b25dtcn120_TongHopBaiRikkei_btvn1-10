@@ -1,0 +1,68 @@
+<style>
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color: rgb(245, 244, 243);
+    color: black;
+}
+#clinic-hender{
+    background-color: #3b94c4;
+    color: white;
+    text-align: center;
+}
+#clinic-hender h1{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.slogan{
+    font-size: italic;
+}
+h2{
+    color: #0369a1;
+    text-transform: capitalize; 
+}
+h2 + p {
+    color: #334155;
+    line-height: 1.4;
+}
+.intro p {
+    line-height: 1.5;
+}
+.triet_ly em {
+    font-size: italic;
+    color: #0ea5e9;
+}
+.dich-vu ul {
+    list-style: none;
+    cursor: pointer;
+}
+.dich-vu li::before {
+    content: "🦷 ";
+}
+.dich-vu li:hover{
+    color: #0284c7;
+
+}
+.canh_bao {
+    color: red;
+    font-size: italic;
+}
+.contact a{
+    color: #1d4ed8;
+    text-decoration: none;
+}
+a[target="_blank"] {
+    text-decoration: underline;
+    font-weight: bold;
+}
+.contact a:hover{
+    color: #334155;
+}
+.footer{
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+    background-color: #0ea5e9;
+}
