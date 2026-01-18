@@ -1,0 +1,41 @@
+body{
+    width:400px;
+    border:5px solid gray;
+}
+h1{
+    text-align:center;
+    color:darkcyan;
+}
+form{
+    width:400px;
+    height:400px;
+}
+label{
+    font-weight: 800;
+    color:darkcyan;
+    margin:10px;
+    position: relative;
+    left:10px;
+}
+input{
+    position: relative;
+    left:20px;
+    margin:5px;
+}
+select{
+    position: relative;
+    left:20px;
+    margin:5px;
+}
+textarea{
+    margin:5px;
+    position: relative;
+    left:20px;
+}
+input[type="submit"]{
+    background-color: darkcyan;
+    color:white;
+    border-radius: 10px;
+    width:350px;
+    height:30px;
+}

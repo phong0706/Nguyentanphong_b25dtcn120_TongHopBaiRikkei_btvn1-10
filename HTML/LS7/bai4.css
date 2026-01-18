@@ -1,0 +1,24 @@
+
+.container{
+    background-color: rgb(247, 245, 245);
+    display: flex;
+    gap: 20px;
+}
+.nha-khoa h2{
+    text-align: center; 
+    color: rgb(39, 202, 239);
+}
+.nha-khoa p{
+    text-align: center;
+    font-size: 18px;
+    color:black;
+} 
+.nha-khoa{
+    background-color: white;
+    text-align: center;
+    border: 2px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin:20px;
+    
+}  

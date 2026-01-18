@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BàI 7</title>
+    <link rel="stylesheet" href="./bai7.css">
+</head>
+<body>
+<form>
+    <h1>Biều Mẫu Feedback Phòng Khám Nha Khoa</h1>
+    <label for="name">Họ và tên:</label><br>
+    <input type="text" id="name" name="name" placeholder="Nhập họ và tên" required><br>
+
+    <label for="email">Email</label><br>
+    <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br>
+
+    <label for="dich-vu">Dịch vụ sử dụng</label><br>
+    <select id="dich-vu">
+        <option value="Khám răng tổng quát">Khám răng tổng quát</option>
+        <option value="Chăm sóc răng miệng">Chăm sóc răng miệng</option>
+        <option value="Trám răng">Trám răng</option>
+    </select><br>
+
+    <label for="feel">Mức độ hài lòng</label><br>
+    <select id="feel">
+        <option value="Rất hài lòng">Rất hài lòng</option>
+        <option value="Hài lòng">Hài lòng</option>
+        <option value="Bình thường">Bình thường</option>
+        <option value="Không hài lòng">Không hài lòng</option>
+    </select><br>
+    <label for="note">Nội dung phản hồi</label><br>
+    <textarea id="note" name="note"  placeholder="Hãy cho chúng tôi biết cảm nhận của bạn..."></textarea><br>
+    
+    <input type="submit" value="Gửi feedback">
+</form>    
+    
+</body>
+</html>

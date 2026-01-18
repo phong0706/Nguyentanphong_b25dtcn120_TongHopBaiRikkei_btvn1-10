@@ -1,68 +1,360 @@
-<style>
-*{
-    font-family: Arial, Helvetica, sans-serif;
+/* ======================================================
+   1. CÀI ĐẶT CHUNG (RESET & VARIABLES)
+   ====================================================== */
+:root {
+    --primary-color: #0088ff; /* Xanh dương chuẩn */
+    --primary-dark: #0066cc;  /* Xanh đậm hơn khi hover */
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --white: #ffffff;
+    --bg-light: #f4f7f6; /* Màu nền tổng thể hơi xám nhẹ cho dịu mắt */
+    
+    /* Gradient xanh phẳng, không quá bóng */
+    --gradient: linear-gradient(135deg, #0088ff 0%, #00c6ff 100%);
+    
+    /* --- BÓNG ĐỔ NHẸ NHÀNG (SOFT SHADOW) --- */
+    /* Bóng tĩnh: Rất mờ, chỉ đủ để tách lớp nền */
+    --shadow-card: 0 5px 20px rgba(0, 0, 0, 0.05); 
+    
+    /* Bóng khi hover: Đậm hơn một chút xíu, tạo độ nổi 3D nhẹ */
+    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
-body{
-    background-color: rgb(245, 244, 243);
-    color: black;
-}
-#clinic-hender{
-    background-color: #3b94c4;
-    color: white;
-    text-align: center;
-}
-#clinic-hender h1{
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-.slogan{
-    font-size: italic;
-}
-h2{
-    color: #0369a1;
-    text-transform: capitalize; 
-}
-h2 + p {
-    color: #334155;
-    line-height: 1.4;
-}
-.intro p {
-    line-height: 1.5;
-}
-.triet_ly em {
-    font-size: italic;
-    color: #0ea5e9;
-}
-.dich-vu ul {
-    list-style: none;
-    cursor: pointer;
-}
-.dich-vu li::before {
-    content: "🦷 ";
-}
-.dich-vu li:hover{
-    color: #0284c7;
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-.canh_bao {
-    color: red;
-    font-size: italic;
+
+html {
+    scroll-behavior: smooth;
 }
-.contact a{
-    color: #1d4ed8;
+
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif; /* Font có chân sang trọng */
+    font-weight: 700;
+}
+
+/* ======================================================
+   2. HEADER & MENU (CĂN GIỮA - KHÔNG KÍNH)
+   ====================================================== */
+.header {
+    background: var(--gradient); /* Nền xanh phẳng */
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Bóng đổ dưới header cực nhẹ */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+}
+
+.header-content {
+    display: flex;
+    flex-direction: column; /* Xếp dọc để căn giữa */
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    margin-bottom: 15px;
+}
+
+.logo h1 {
+    color: var(--white);
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Bóng chữ rất nhẹ */
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+.nav-link {
     text-decoration: none;
+    color: var(--white);
+    font-weight: 500;
+    padding: 8px 25px;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* Giữ chỗ cho viền */
 }
-a[target="_blank"] {
-    text-decoration: underline;
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Nền trắng mờ 20% */
+}
+
+/* Nút đang chọn (Active) - Nền trắng chữ xanh */
+.nav-link.active {
+    background-color: var(--white);
+    color: var(--primary-color);
     font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
-.contact a:hover{
-    color: #334155;
-}
-.footer{
+
+/* ======================================================
+   3. BANNER SECTION
+   ====================================================== */
+.banner {
+    background: var(--gradient);
+    min-height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    color: white;
-    font-size: 30px;
-    font-weight: 900;
-    background-color: #0ea5e9;
+    color: var(--white);
+    margin-top: -1px;
+}
+
+.banner-content {
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.banner-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.banner-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 35px;
+    font-weight: 300;
+    opacity: 0.95;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: var(--white);
+    color: var(--primary-color);
+    padding: 14px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Bóng nút vừa phải */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px); /* Nổi lên nhẹ */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    color: var(--primary-dark);
+}
+
+/* ======================================================
+   4. ABOUT SECTION (THẺ TRẮNG SẠCH)
+   ====================================================== */
+.about-section {
+    padding: 80px 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.section-title {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+/* Gạch chân dưới tiêu đề */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: var(--primary-color); /* Màu xanh đặc, không gradient */
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+
+.about-text {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    color: var(--text-gray);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* --- THẺ FEATURE: NỀN XÁM NHẠT HOẶC TRẮNG --- */
+.feature-item {
+    background: #f8f9fa; /* Nền xám rất nhạt giống web mẫu */
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent; /* Không viền */
+}
+
+/* Hiệu ứng hover: Nổi lên nền trắng và bóng mờ */
+.feature-item:hover {
+    background: var(--white);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover); /* Bóng đen mờ lan toả */
+}
+
+.feature-icon {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.feature-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.feature-desc {
+    color: var(--text-gray);
+    font-size: 0.95rem;
+}
+
+/* ======================================================
+   5. SERVICES & CONTACT (BÓNG NHẸ + VIỀN TRÁI)
+   ====================================================== */
+.services-section {
+    padding: 80px 0;
+    background-color: var(--white);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    margin-bottom: 40px;
+}
+
+.services-table {
+    width: 100%;
+    border-collapse: collapse; /* Gộp viền để nhìn gọn gàng */
+    box-shadow: var(--shadow-card); /* Bóng bao quanh bảng */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.services-table th {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 18px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.services-table td {
+    padding: 18px;
+    border-bottom: 1px solid #eee;
+    color: var(--text-dark);
+}
+
+.services-table tr:hover {
+    background-color: #f0f7ff; /* Hover màu xanh rất nhạt */
+}
+
+/* --- CONTACT CARDS: ĐIỂM NHẤN CHÍNH --- */
+.contact-section {
+    padding: 60px 0 80px;
+    background-color: var(--white);
+}
+
+.contact-content {
+    margin-top: 50px;
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.info-item {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px; /* Bo góc ít hơn feature một chút cho nam tính */
+    
+    /* ĐẶC ĐIỂM NHẬN DIỆN: Viền xanh bên trái 5px */
+    border-left: 5px solid var(--primary-color);
+    
+    /* Bóng đổ rất nhẹ bao quanh */
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); 
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-item:hover {
+    transform: translateY(-5px); /* Nổi lên nhẹ nhàng */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Bóng sâu hơn chút */
+}
+
+.info-title {
+    font-size: 1.2rem;
+    color: var(--primary-dark);
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+}
+
+.info-text {
+    color: var(--text-gray);
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+/* ======================================================
+   6. FOOTER & MOBILE
+   ====================================================== */
+.footer {
+    background-color: #222;
+    color: #eee;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-title { font-size: 1.6rem; margin-bottom: 15px; color: var(--white); }
+.footer-heading { font-size: 1.1rem; margin-bottom: 15px; color: var(--white); }
+.footer-links { list-style: none; }
+.footer-links li { margin-bottom: 10px; }
+.footer-links a { color: #aaa; text-decoration: none; transition: 0.3s; }
+.footer-links a:hover { color: var(--primary-color); }
+.footer-bottom { border-top: 1px solid #444; padding-top: 20px; text-align: center; color: #777; font-size: 0.9rem; }
+
+@media (max-width: 768px) {
+    .features, .contact-info, .footer-content { grid-template-columns: 1fr; }
+    .banner-title { font-size: 2.5rem; }
+    .services-table { display: block; overflow-x: auto; white-space: nowrap; }
 }
