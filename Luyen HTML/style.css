@@ -1,360 +1,239 @@
-/* ======================================================
-   1. CÀI ĐẶT CHUNG (RESET & VARIABLES)
-   ====================================================== */
-:root {
-    --primary-color: #0088ff; /* Xanh dương chuẩn */
-    --primary-dark: #0066cc;  /* Xanh đậm hơn khi hover */
-    --text-dark: #333333;
-    --text-gray: #666666;
-    --white: #ffffff;
-    --bg-light: #f4f7f6; /* Màu nền tổng thể hơi xám nhẹ cho dịu mắt */
-    
-    /* Gradient xanh phẳng, không quá bóng */
-    --gradient: linear-gradient(135deg, #0088ff 0%, #00c6ff 100%);
-    
-    /* --- BÓNG ĐỔ NHẸ NHÀNG (SOFT SHADOW) --- */
-    /* Bóng tĩnh: Rất mờ, chỉ đủ để tách lớp nền */
-    --shadow-card: 0 5px 20px rgba(0, 0, 0, 0.05); 
-    
-    /* Bóng khi hover: Đậm hơn một chút xíu, tạo độ nổi 3D nhẹ */
-    --shadow-hover: 0 10px 25px rgba(0, 0, 0, 0.1);
-}
-
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: var(--text-dark);
-    background-color: var(--white);
+  font-family: "Quicksand", sans-serif;
+  background: #fff8f0;
+  color: #3c2f2f;
+  line-height: 1.6;
 }
 
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif; /* Font có chân sang trọng */
-    font-weight: 700;
-}
-
-/* ======================================================
-   2. HEADER & MENU (CĂN GIỮA - KHÔNG KÍNH)
-   ====================================================== */
-.header {
-    background: var(--gradient); /* Nền xanh phẳng */
-    padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    /* Bóng đổ dưới header cực nhẹ */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); 
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  z-index: 100;
 }
 
 .header-content {
-    display: flex;
-    flex-direction: column; /* Xếp dọc để căn giữa */
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
 }
 
 .logo {
-    margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  color: #e76f51;
 }
 
-.logo h1 {
-    color: var(--white);
-    font-size: 28px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.1); /* Bóng chữ rất nhẹ */
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    gap: 10px;
+nav {
+  display: flex;
+  gap: 40px;
 }
 
 .nav-link {
-    text-decoration: none;
-    color: var(--white);
-    font-weight: 500;
-    padding: 8px 25px;
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent; /* Giữ chỗ cho viền */
+  text-decoration: none;
+  color: #3c2f2f;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s;
 }
 
 .nav-link:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Nền trắng mờ 20% */
+  color: #e76f51;
 }
 
-/* Nút đang chọn (Active) - Nền trắng chữ xanh */
-.nav-link.active {
-    background-color: var(--white);
-    color: var(--primary-color);
-    font-weight: bold;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.dat-ban {
+  background: #e76f51;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s;
 }
 
-/* ======================================================
-   3. BANNER SECTION
-   ====================================================== */
-.banner {
-    background: var(--gradient);
-    min-height: 75vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--white);
-    margin-top: -1px;
+.dat-ban:hover {
+  background: #c65a40;
+  transform: translateY(-3px);
 }
 
-.banner-content {
-    max-width: 800px;
-    padding: 0 20px;
+.noi-bat {
+  height: 80vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
 }
 
-.banner-title {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+.noi-bat-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 800px;
 }
 
-.banner-subtitle {
-    font-size: 1.2rem;
-    margin-bottom: 35px;
-    font-weight: 300;
-    opacity: 0.95;
+.noi-bat h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
 }
 
-.btn-primary {
-    display: inline-block;
-    background-color: var(--white);
-    color: var(--primary-color);
-    padding: 14px 40px;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Bóng nút vừa phải */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.noi-bat p {
+  font-size: 1.4rem;
+  max-width: 600px;
 }
 
-.btn-primary:hover {
-    transform: translateY(-3px); /* Nổi lên nhẹ */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    color: var(--primary-dark);
-}
-
-/* ======================================================
-   4. ABOUT SECTION (THẺ TRẮNG SẠCH)
-   ====================================================== */
-.about-section {
-    padding: 80px 0;
-    background-color: var(--white);
-    text-align: center;
+.menu-section {
+  padding: 0px 0 100px 0;
 }
 
 .section-title {
-    color: var(--primary-color);
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    position: relative;
-    display: inline-block;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 60px;
+  color: #e76f51;
 }
 
-/* Gạch chân dưới tiêu đề */
-.section-title::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 4px;
-    background: var(--primary-color); /* Màu xanh đặc, không gradient */
-    margin: 10px auto 0;
-    border-radius: 2px;
+.highlight-cards {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
-.about-text {
-    max-width: 800px;
-    margin: 0 auto 60px;
-    color: var(--text-gray);
-    font-size: 1.1rem;
-    line-height: 1.8;
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s;
 }
 
-.features {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+.card:hover {
+  transform: translateY(-15px);
 }
 
-/* --- THẺ FEATURE: NỀN XÁM NHẠT HOẶC TRẮNG --- */
-.feature-item {
-    background: #f8f9fa; /* Nền xám rất nhạt giống web mẫu */
-    padding: 40px 30px;
-    border-radius: 15px;
-    transition: all 0.3s ease;
-    border: 1px solid transparent; /* Không viền */
+.card-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
 }
 
-/* Hiệu ứng hover: Nổi lên nền trắng và bóng mờ */
-.feature-item:hover {
-    background: var(--white);
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-hover); /* Bóng đen mờ lan toả */
+.card-body {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  gap: 10px;
 }
 
-.feature-icon {
-    font-size: 2.2rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
+.card-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: #3c2f2f;
 }
 
-.feature-title {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-    color: var(--text-dark);
+.card-price {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #e76f51;
 }
 
-.feature-desc {
-    color: var(--text-gray);
-    font-size: 0.95rem;
+.card-desc {
+  flex-grow: 1;
+  color: #666;
 }
 
-/* ======================================================
-   5. SERVICES & CONTACT (BÓNG NHẸ + VIỀN TRÁI)
-   ====================================================== */
-.services-section {
-    padding: 80px 0;
-    background-color: var(--white);
+.full-menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
 }
 
-.section-subtitle {
-    text-align: center;
-    color: var(--text-gray);
-    margin-bottom: 40px;
+.menu-item {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  width: calc(50% - 30px);
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
-.services-table {
-    width: 100%;
-    border-collapse: collapse; /* Gộp viền để nhìn gọn gàng */
-    box-shadow: var(--shadow-card); /* Bóng bao quanh bảng */
-    border-radius: 10px;
-    overflow: hidden;
+.menu-item-name {
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
-.services-table th {
-    background: var(--primary-color);
-    color: var(--white);
-    padding: 18px;
-    text-align: left;
-    font-weight: 600;
+.menu-item-price {
+  color: #e76f51;
+  font-weight: 600;
+  margin-left: auto;
 }
 
-.services-table td {
-    padding: 18px;
-    border-bottom: 1px solid #eee;
-    color: var(--text-dark);
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.services-table tr:hover {
-    background-color: #f0f7ff; /* Hover màu xanh rất nhạt */
-}
-
-/* --- CONTACT CARDS: ĐIỂM NHẤN CHÍNH --- */
-.contact-section {
-    padding: 60px 0 80px;
-    background-color: var(--white);
-}
-
-.contact-content {
-    margin-top: 50px;
-}
-
-.contact-info {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-}
-
-.info-item {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 8px; /* Bo góc ít hơn feature một chút cho nam tính */
-    
-    /* ĐẶC ĐIỂM NHẬN DIỆN: Viền xanh bên trái 5px */
-    border-left: 5px solid var(--primary-color);
-    
-    /* Bóng đổ rất nhẹ bao quanh */
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08); 
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.info-item:hover {
-    transform: translateY(-5px); /* Nổi lên nhẹ nhàng */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12); /* Bóng sâu hơn chút */
-}
-
-.info-title {
-    font-size: 1.2rem;
-    color: var(--primary-dark);
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-weight: 700;
-}
-
-.info-text {
-    color: var(--text-gray);
-    margin-bottom: 5px;
-    font-size: 1rem;
-}
-
-/* ======================================================
-   6. FOOTER & MOBILE
-   ====================================================== */
-.footer {
-    background-color: #222;
-    color: #eee;
-    padding: 60px 0 20px;
+footer {
+  background: #3c2f2f;
+  color: #eee;
+  padding: 80px 0 40px;
 }
 
 .footer-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: 40px;
-    margin-bottom: 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 40px;
 }
 
-.footer-title { font-size: 1.6rem; margin-bottom: 15px; color: var(--white); }
-.footer-heading { font-size: 1.1rem; margin-bottom: 15px; color: var(--white); }
-.footer-links { list-style: none; }
-.footer-links li { margin-bottom: 10px; }
-.footer-links a { color: #aaa; text-decoration: none; transition: 0.3s; }
-.footer-links a:hover { color: var(--primary-color); }
-.footer-bottom { border-top: 1px solid #444; padding-top: 20px; text-align: center; color: #777; font-size: 0.9rem; }
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
 
-@media (max-width: 768px) {
-    .features, .contact-info, .footer-content { grid-template-columns: 1fr; }
-    .banner-title { font-size: 2.5rem; }
-    .services-table { display: block; overflow-x: auto; white-space: nowrap; }
+.footer-col h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #e76f51;
+  margin-bottom: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid #555;
+  font-size: 0.9rem;
 }

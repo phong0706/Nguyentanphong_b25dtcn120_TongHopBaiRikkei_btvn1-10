@@ -1,204 +1,398 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nha Khoa Dental Care - Chăm Sóc Nụ Cười Của Bạn</title>
-    <meta name="description" content="Nha khoa Dental Care - Cung cấp dịch vụ chăm sóc răng miệng chuyên nghiệp với đội ngũ bác sĩ giàu kinh nghiệm">
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <title>Bún Chả Hà Nội - Flexbox Mini Project</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Quicksand:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <style>
+        /* Reset cơ bản */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: #FFF8F0;
+            color: #3C2F2F;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* HEADER - Flexbox */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            color: #E76F51;
+        }
+
+        nav {
+            display: flex;
+            gap: 40px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #3C2F2F;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #E76F51;
+        }
+
+        .btn-book {
+            background: #E76F51;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-book:hover {
+            background: #C65A40;
+            transform: translateY(-3px);
+        }
+
+        /* HERO - Flexbox center */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                url('https://images.unsplash.com/photo-1555921015-5532091f6026?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+        }
+
+        .hero p {
+            font-size: 1.4rem;
+            max-width: 600px;
+        }
+
+        /* MENU HIGHLIGHTS - Flexbox row */
+        .menu-section {
+            padding: 0px 0 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 60px;
+            color: #E76F51;
+        }
+
+        .highlight-cards {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 320px;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            gap: 10px;
+        }
+
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6rem;
+            color: #3C2F2F;
+        }
+
+        .card-price {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #E76F51;
+        }
+
+        .card-desc {
+            flex-grow: 1;
+            color: #666;
+        }
+
+        /* FULL MENU - Flexbox wrap */
+        .full-menu {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .menu-item {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            width: 280px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .menu-item-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .menu-item-price {
+            color: #E76F51;
+            font-weight: 600;
+            margin-left: auto;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* FOOTER - Flexbox 3 cột */
+        footer {
+            background: #3C2F2F;
+            color: #EEE;
+            padding: 80px 0 40px;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-col h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #E76F51;
+            margin-bottom: 10px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #555;
+            font-size: 0.9rem;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <h1>🦷 Nha Khoa Dental Care</h1>
-                </div>
-                <nav class="navigation"> <!--menu-->
-                    <ul class="nav-list">
-                        <li class="nav-item"><a href="#home" class="nav-link active">Trang Chủ</a></li>
-                        <li class="nav-item"><a href="#about" class="nav-link">Giới Thiệu</a></li>
-                        <li class="nav-item"><a href="#contact" class="nav-link">Liên Hệ</a></li>
-                    </ul>
-                </nav>
-            </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">🍲 Bún Chả Hà Nội</div>
+            <nav>
+                <a href="#" class="nav-link">Trang chủ</a>
+                <a href="#" class="nav-link">Menu</a>
+                <a href="#" class="nav-link">Đặt bàn</a>
+                <a href="#" class="nav-link">Liên hệ</a>
+            </nav>
+            <a href="#" class="btn-book">Đặt bàn ngay</a>
         </div>
     </header>
 
-    <!-- Banner Section -->
-    <section id="home" class="banner">
-        <div class="banner-overlay">
-            <div class="container">
-                <div class="banner-content">
-                    <h2 class="banner-title">Chăm Sóc Nụ Cười Của Bạn</h2>
-                    <p class="banner-subtitle">Dịch vụ nha khoa chuyên nghiệp - Đội ngũ bác sĩ giàu kinh nghiệm</p>
-                    <a href="#services" class="btn-primary">Xem Dịch Vụ</a>
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Hương Vị Hà Nội Xưa</h1>
+            <p>Bún chả nướng than hoa, nước chấm gia truyền, rau sống tươi sạch mỗi ngày. Không gian ấm cúng như ở nhà.
+            </p>
+            <a href="#" class="btn-book" style="font-size: 1.3rem; padding: 15px 40px;">Đặt bàn hôm nay</a>
+        </div>
+    </section>
+
+    <!-- MENU HIGHLIGHTS -->
+    <section class="menu-section container">
+        <h2 class="section-title">Món Nổi Bật</h2>
+        <div class="highlight-cards">
+            <div class="card">
+                <img src="https://images.pexels.com/photos/3858270/pexels-photo-3858270.jpeg" alt="Bún chả"
+                    class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Bún Chả Đặc Biệt</h3>
+                    <div class="card-price">95.000đ</div>
+                    <p class="card-desc">Chả nướng than hoa thơm lừng, thịt tươi mềm, nước chấm cân bằng chua ngọt.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="ca"
+                    alt="Nem cuốn" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Nem Hà Nội</h3>
+                    <div class="card-price">60.000đ / 4 cái</div>
+                    <p class="card-desc">Nem rán giòn tan, nhân thịt + mộc nhĩ + bún tàu, chấm nước mắm pha.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img src="https://media.istockphoto.com/id/1462352351/vi/anh/ph%E1%BB%9F.jpg?s=612x612&w=0&k=20&c=H8CFdkpTEMIHCrtByEkhpW0um8IPmjPVyeHKYpLyoVc=" alt="Phở bò"
+                    class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">Phở Bò Tái</h3>
+                    <div class="card-price">85.000đ</div>
+                    <p class="card-desc">Nước dùng ninh 12 tiếng, thịt bò tươi tái lăn, bánh phở dai mềm.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <h2 class="section-title">Giới Thiệu</h2>
-            <div class="about-content">
-                <p class="about-text">
-                    <strong>Nha Khoa Dental Care</strong> là một trong những phòng khám nha khoa hàng đầu tại Việt Nam, 
-                    với hơn 15 năm kinh nghiệm trong lĩnh vực chăm sóc sức khỏe răng miệng. 
-                    Chúng tôi cam kết mang đến cho bạn những dịch vụ tốt nhất với đội ngũ bác sĩ chuyên nghiệp, 
-                    trang thiết bị hiện đại và quy trình điều trị an toàn.
-                </p>
-                <div class="features">
-                    <div class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <h3 class="feature-title">Đội Ngũ Chuyên Nghiệp</h3>
-                        <p class="feature-desc">Bác sĩ giàu kinh nghiệm, tận tâm</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <h3 class="feature-title">Trang Thiết Bị Hiện Đại</h3>
-                        <p class="feature-desc">Công nghệ tiên tiến từ Mỹ, Đức</p>
-                    </div>
-                    <div class="feature-item">
-                        <div class="feature-icon">✓</div>
-                        <h3 class="feature-title">Cam Kết Chất Lượng</h3>
-                        <p class="feature-desc">Bảo hành dài hạn, hậu mãi tốt</p>
-                    </div>
+    <!-- FULL MENU -->
+    <section class="menu-section container">
+        <h2 class="section-title">Thực Đơn</h2>
+        <div class="full-menu">
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Bún chả thường</span>
+                    <span class="menu-item-price">75.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Bún chả đặc biệt</span>
+                    <span class="menu-item-price">95.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Phở bò tái nạm</span>
+                    <span class="menu-item-price">85.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Phở gà</span>
+                    <span class="menu-item-price">80.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Nem Hà Nội (4 cái)</span>
+                    <span class="menu-item-price">60.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Trà đá</span>
+                    <span class="menu-item-price">10.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Coca / Pepsi</span>
+                    <span class="menu-item-price">20.000đ</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="price-row">
+                    <span class="menu-item-name">Bia hơi Hà Nội</span>
+                    <span class="menu-item-price">25.000đ</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services-section">
-        <div class="container">
-            <h2 class="section-title">Dịch Vụ Nha Khoa</h2>
-            <p class="section-subtitle">Cung cấp đa dạng các dịch vụ chăm sóc răng miệng chuyên sâu</p>
-            
-            <table class="services-table">
-                <thead>
-                    <tr>
-                        <th>STT</th>
-                        <th>Tên Dịch Vụ</th>
-                        <th>Mô Tả</th>
-                        <th>Giá Từ</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Tẩy Trắng Răng</td>
-                        <td>Làm trắng răng an toàn, hiệu quả với công nghệ Whitening hiện đại</td>
-                        <td>1.500.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>2</td>
-                        <td>Niềng Răng</td>
-                        <td>Chỉnh nha thẩm mỹ, niềng răng mắc cài kim loại và trong suốt</td>
-                        <td>15.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>3</td>
-                        <td>Trồng Răng Implant</td>
-                        <td>Cấy ghép implant titan nguyên khối, bền vững lâu dài</td>
-                        <td>12.000.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>4</td>
-                        <td>Bọc Răng Sứ</td>
-                        <td>Răng sứ thẩm mỹ cao cấp, tự nhiên như răng thật</td>
-                        <td>2.500.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>5</td>
-                        <td>Nhổ Răng Khôn</td>
-                        <td>Nhổ răng khôn an toàn, không đau với kỹ thuật hiện đại</td>
-                        <td>800.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>6</td>
-                        <td>Điều Trị Tủy</td>
-                        <td>Chữa tủy răng, giải quyết đau nhức răng hiệu quả</td>
-                        <td>500.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>7</td>
-                        <td>Lấy Cao Răng</td>
-                        <td>Vệ sinh răng miệng định kỳ, làm sạch mảng bám và cao răng</td>
-                        <td>200.000đ</td>
-                    </tr>
-                    <tr>
-                        <td>8</td>
-                        <td>Hàn Trám Răng</td>
-                        <td>Trám răng composite thẩm mỹ, khôi phục răng bị sâu</td>
-                        <td>300.000đ</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <h2 class="section-title">Liên Hệ</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <h3 class="info-title">📍 Địa Chỉ</h3>
-                        <p class="info-text">123 Đường Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
-                    </div>
-                    <div class="info-item">
-                        <h3 class="info-title">📞 Điện Thoại</h3>
-                        <p class="info-text">Hotline: 1900 xxxx</p>
-                        <p class="info-text">Điện thoại: (028) 1234 5678</p>
-                    </div>
-                    <div class="info-item">
-                        <h3 class="info-title">📧 Email</h3>
-                        <p class="info-text">info@dentalcare.vn</p>
-                        <p class="info-text">support@dentalcare.vn</p>
-                    </div>
-                    <div class="info-item">
-                        <h3 class="info-title">🕐 Giờ Làm Việc</h3>
-                        <p class="info-text">Thứ 2 - Thứ 6: 8:00 - 20:00</p>
-                        <p class="info-text">Thứ 7 - Chủ Nhật: 8:00 - 17:00</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- FOOTER -->
+    <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">Nha Khoa Dental Care</h3>
-                    <p class="footer-text">Chăm sóc nụ cười của bạn là niềm tự hào của chúng tôi</p>
+                <div class="footer-col">
+                    <h3>🍲 Bún Chả Hà Nội</h3>
+                    <p>Hương vị truyền thống hơn 30 năm<br>Không gian ấm cúng – phục vụ tận tình</p>
                 </div>
-                <div class="footer-section">
-                    <h4 class="footer-heading">Liên Kết Nhanh</h4>
-                    <ul class="footer-links">
-                        <li><a href="#home">Trang Chủ</a></li>
-                        <li><a href="#about">Giới Thiệu</a></li>
-                        <li><a href="#services">Dịch Vụ</a></li>
-                        <li><a href="#contact">Liên Hệ</a></li>
-                    </ul>
+                <div class="footer-col">
+                    <h3>Giờ mở cửa</h3>
+                    <p>Thứ 2 - Thứ 7: 10:00 - 21:00<br>Chủ nhật: 10:00 - 20:00</p>
                 </div>
-                <div class="footer-section">
-                    <h4 class="footer-heading">Theo Dõi Chúng Tôi</h4>
-                    <p class="footer-text">Facebook | Instagram | YouTube</p>
+                <div class="footer-col">
+                    <h3>Liên hệ</h3>
+                    <p>📍 12 Hàng Mành, Hoàn Kiếm, Hà Nội<br>☎️ 024 3825 1234<br>📱 0988 888 888</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 Nha Khoa Dental Care. All rights reserved.</p>
+                © 2025 Bún Chả Hà Nội – Mini Project
             </div>
         </div>
     </footer>
+
 </body>
+
 </html>
