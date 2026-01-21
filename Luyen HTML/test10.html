@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: white;
+        min-width: 100vh;
+        color: #333;
+      }
+
+      header {
+        background-color: #0d5ed7;
+        color: white;
+        padding: 1rem;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .header-inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+      }
+      .logo {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .search-bar {
+        flex: 1;
+        max-width: 400px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 30px;
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-inner">
+        <div class="logo">Elearning</div>
+        <div class="search-bar">
+          <input type="text" name="" id="" placeholder="Tìm kiếm khóa học..." />
+        </div>
+        <nav class="nav-desktop">
+          <a href="">Khóa học</a>
+          <a href="">Tiến độ</a>
+          <a href="">Hồ sơ</a>
+        </nav>
+      </div>
+    </header>
+  </body>
+</html>
