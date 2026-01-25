@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form thông tin</title>
+</head>
+<body>
+    <form action="/dang-ky" method="get">
+        <label for="hoten">Họ và tên:</label>
+        <input id="hoten" name="hoten" type="text"><br><br>
+        <label for="ngaysinh">Ngày sinh:</label>
+        <input id="ngaysinh" name="ngaysinh" type="date"><br><br>
+        <label>Giới tính:</label>
+        <input type="radio" id="nam" name="gioitinh" value="nam">
+        <label for="nam">Nam</label>
+        <input type="radio" id="nu" name="gioitinh" value="nu">
+        <label for="nu">Nữ</label><br><br>
+        <label for="sdt">Số điện thoại:</label>
+        <input id="sdt" name="sdt" type="text"><br><br>
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email"><br><br>
+        <label for="diachi">Địa chỉ:</label>
+        <textarea id="diachi" name="diachi"></textarea><br><br>
+        <label for="vaitro">Vai trò trong nhóm:</label>
+        <select id="vaitro" name="vaitro">
+            <option value="tv">Thành viên</option>
+            <option value="ct">Chủ tịch</option>
+        </select><br><br>
+        <label for="sothich">Sở thích:</label>
+        <input id="sothich" name="sothich" type="text"><br><br>
+        <label for="kynang">Kỹ năng:</label>
+        <textarea id="kynang" name="kynang"></textarea><br><br>
+        <label>Thời gian rảnh:</label>
+        <input type="checkbox" id="sang" name="time" value="sang">
+        <label for="sang">Sáng</label>
+        <input type="checkbox" id="chieu" name="time" value="chieu">
+        <label for="chieu">Chiều</label>
+        <input type="checkbox" id="toi" name="time" value="toi">
+        <label for="toi">Tối</label><br><br>
+        <label for="lydo">Lý do tham gia nhóm:</label>
+        <textarea id="lydo" name="lydo"></textarea><br><br>
+        <label for="mausac">Màu yêu thích:</label>
+        <input id="mausac" name="mausac" type="color"><br><br>
+        <label>Đăng ký nhận bản tin:</label>
+        <input type="checkbox" id="news" name="news">
+        <label for="news">Có</label><br><br>
+        <label>Nhận thông báo qua email:</label>
+        <input type="radio" id="tbemail" name="thongbao" value="email">
+        <label for="tbemail">Email</label>
+        <input type="radio" id="tbsms" name="thongbao" value="sms">
+        <label for="tbsms">SMS</label><br><br>
+        <input type="submit" value="Đăng ký thành viên">
+    </form>
+</body>

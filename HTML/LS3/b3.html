@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thông tin</title>
+</head>
+<body>
+
+    <table>
+        <tr>
+            <td><label for="ho_ten">Họ và tên:</label></td>
+            <td><input type="text" id="ho_ten" name="ho_ten"></td>
+        </tr>
+
+        <tr>
+            <td><label for="email">Email:</label></td>
+            <td><input type="email" id="email" name="email"></td>
+        </tr>
+
+        <tr>
+            <td><label for="ngay_sinh">Ngày sinh:</label></td>
+            <td><input type="date" id="ngay_sinh" name="ngay_sinh"></td>
+        </tr>
+
+        <tr>
+            <td><label>Giới tính:</label></td>
+            <td>
+                <input type="radio" id="Nam" name="gender" value="Nam">
+                <label for="Nam">Nam</label>
+                <input type="radio" id="Nu" name="gender" value="Nữ">
+                <label for="Nu">Nữ</label>
+            </td>
+        </tr>
+
+        <tr>
+            <td><label for="sdt">Số điện thoại:</label></td>
+            <td><input type="tel" id="sdt" name="sdt"></td>
+        </tr>
+
+        <tr>
+            <td><label for="nganh">Chuyên ngành:</label></td>
+            <td><input type="text" id="nganh" name="nganh"></td>
+        </tr>
+        <tr>
+            <td><label for="year">Năm nhập học:</label></td>
+            <td><input type="text" id="year" name="year" size="5"></td>
+        </tr>
+        <tr>
+            <td><label for="GPA">Điểm GPA:</label></td>
+            <td><input type="text" id="GPA" name="GPA" size="5"></td>
+
+        </tr>
+        <tr>
+            <td><label for="address">Địa chỉ:</label></td>
+            <td><textarea id="address" name="address"></textarea></td>
+        </tr>
+        <tr>
+            <td><label for="Class">Lớp:</label></td>
+            <td><select id="class_section" name="class_section">
+                <option value="class_section">Lớp 1</option>
+                <option value="class_section">Lớp 2</option>
+                <option value="class_section">Lớp 3</option>
+                <option value="class_section">Lớp 4</option>
+                <option value="class_section">Lớp 5</option>
+                <option value="class_section">Lớp 6</option>
+                <option value="class_section">Lớp 7</option>
+                <option value="class_section">Lớp 8</option>
+                <option value="class_section">Lớp 9</option>
+                <option value="class_section">Lớp 10</option>
+                <option value="class_section">Lớp 11</option>
+                <option value="class_section">Lớp 12</option>
+            </select></td> 
+            </tr>
+            <td><label for="ngay_dang_ky">Ngày đăng ký học:</label></td>
+            <td><input type= datetime-local id="ngay_dang_ky" name="ngay_dang_ky"></td>
+        </tr>
+        <td colspan="0" style="text-align: center;">
+            <input type="submit" value="Gửi thông tin">
+        </td>
+    </table>
+
+</body>
+</html>

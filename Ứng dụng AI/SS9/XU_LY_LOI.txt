@@ -1,0 +1,121 @@
+========================================
+    HUONG DAN XU LY LOI
+========================================
+
+I. LOI "PERMISSION DENIED" KHI BIEN DICH:
+------------------------------------------
+
+Loi: c:/mingw/bin/.../ld.exe: cannot open output file quiz_game.exe: Permission denied
+
+NGUYEN NHAN:
+- File quiz_game.exe dang duoc su dung (dang chay)
+- Khong co quyen ghi file
+- File bi khoa boi antivirus hoac process khac
+
+CACH SUA:
+
+1. DONG CHUONG TRINH DANG CHAY:
+   - Nhan Ctrl + C trong cua so terminal dang chay quiz_game.exe
+   - Hoac dong cua so Command Prompt/PowerShell dang chay chuong trinh
+   - Hoac mo Task Manager (Ctrl + Shift + Esc) va tim quiz_game.exe, chon End Task
+
+2. XOA FILE CU:
+   - Xoa file quiz_game.exe cu bang lenh:
+     del quiz_game.exe
+   - Hoac xoa bang tay trong File Explorer
+
+3. CHAY VOI QUYEN ADMINISTRATOR:
+   - Click chuot phai vao Command Prompt
+   - Chon "Run as administrator"
+   - Chay lai lenh bien dich
+
+4. KIEM TRA ANTIVIRUS:
+   - Tam thoi tat antivirus hoac them ngoai le cho thu muc
+
+5. SU DUNG FILE BATCH:
+   - Chay file chay_game.bat (da duoc cap nhat de xu ly loi)
+
+
+II. LOI HIEN THI KY TU BI GARBLE (MOJIBAKE):
+---------------------------------------------
+
+Loi: Hien thi ky tu la: "Cháo mẞng bẞín -æßin vßdi Quiz Game!"
+
+NGUYEN NHAN:
+- Console chua duoc set encoding UTF-8
+- Font console khong ho tro Unicode
+- Chay truc tiep ma khong qua file batch
+
+CACH SUA:
+
+1. SU DUNG FILE BATCH (KHUYEN NGHI):
+   - Chay file chay_game.bat
+   - File nay tu dong set encoding UTF-8 truoc khi chay
+
+2. SET ENCODING THU CONG:
+   - Mo Command Prompt
+   - Chay lenh: chcp 65001
+   - Sau do chay: quiz_game.exe
+
+3. SU DUNG WINDOWS TERMINAL (KHUYEN NGHI):
+   - Cai dat Windows Terminal tu Microsoft Store
+   - Windows Terminal ho tro UTF-8 tot hon Command Prompt cu
+   - Mo Windows Terminal va chay chuong trinh
+
+4. CAI DAT FONT:
+   - Click chuot phai vao thanh tieu de cua Command Prompt
+   - Chon Properties > Font
+   - Chon font: "Consolas" hoac "Lucida Console"
+   - Click OK
+
+5. SU DUNG CODE::BLOCKS HOAC DEV-C++:
+   - Cac IDE nay tu dong xu ly encoding tot hon
+   - Bien dich va chay tu trong IDE
+
+
+III. LOI KHAC:
+--------------
+
+1. LOI "gcc: command not found":
+   -> Cai dat MinGW hoac GCC
+   -> Hoac su dung Code::Blocks, Dev-C++ (co san GCC)
+
+2. LOI KHI NHAP TEN HOAC DAP AN:
+   -> Chuong trinh da co validation, chi can nhap lai theo yeu cau
+
+3. LOI KHI MO FILE:
+   -> Kiem tra quyen ghi trong thu muc
+   -> Kiem tra antivirus co chan khong
+
+
+IV. CACH CHAY CHUONG TRINH DUNG CACH:
+--------------------------------------
+
+CACH 1: Dung file batch (KHUYEN NGHI)
+   chay_game.bat
+
+CACH 2: Thu cong
+   1. chcp 65001
+   2. gcc -o quiz_game.exe quiz_game.c
+   3. quiz_game.exe
+
+CACH 3: Trong IDE
+   - Mo file quiz_game.c trong Code::Blocks hoac Dev-C++
+   - Nhan F9 de bien dich va chay
+
+
+V. KIEM TRA NHANH:
+------------------
+
+Neu gap loi, thu theo thu tu:
+1. Dong tat ca cua so quiz_game.exe dang chay
+2. Xoa file quiz_game.exe cu
+3. Chay file chay_game.bat
+4. Neu van loi, chay Command Prompt voi quyen Administrator
+5. Neu van loi encoding, su dung Windows Terminal
+
+
+========================================
+Chuc ban thanh cong!
+========================================
+

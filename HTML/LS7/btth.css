@@ -1,0 +1,107 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background-color:ghostwhite;
+}
+header{
+    background-image: linear-gradient(to right, #051937, #0064e0);
+    color: white;
+    padding: 50px 100px 50px 200px;
+}
+header span{
+    border: 0.5px solid gray;
+    border-radius: 20px;
+    padding: 5px 10px;
+
+}
+h1{
+    font-weight: 700;
+}
+input[type=submit]{
+    background-color: #0064e0;
+    color:white;
+    font-weight:700;
+    border: 0.5px solid none;
+    border-radius:40px;
+    padding: 10px 20px;
+    margin:0px 0px 20px;
+    height:50px;
+    cursor: pointer;
+    
+}
+input[value="Xem dịch vụ"]:hover{
+    background-color: #5a5c5f;
+}
+ header div{
+    align-items: center;
+    border:2px solid rgba(155, 152, 152, 0.5);
+    color:white;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    width:150px;
+    height:50px;
+    padding: 10px;
+
+ }
+main{
+    padding: 50px 50px 50px 200px;
+    color:#5a5c5f;
+    width:70%; 
+}
+.price{
+    color:#73aff8;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 30px;
+    cursor: pointer;
+ }
+
+ main div{
+    background-color: rgb(251, 252, 252);
+    border:1px solid gray;
+    border-radius: 20px;
+    padding: 10px;
+    margin:0px;
+    width:80%;
+    box-shadow: #5a5c5f 2px 2px 5px 0px;
+    position: relative;
+    transform: all 0.3s ease 0.3s;
+ }
+ .hot{
+    border:2px solid rgb(218, 211, 211);
+    background-color: rgb(242, 233, 233);
+    color:blue;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 15px;
+    position: absolute;
+    right:10px;
+    transform: rotate(3deg);
+
+ }
+ h3{
+    margin:0px;
+    padding: 0px;
+ }
+main div:hover{
+    transition: all 0.3s ease-in 0.2s  ; /* Thêm hiệu ứng chuyển đổi mượt mà */
+    transform: translateY(-5px); /* Hiệu ứng nhấc nút lên khi di chuột */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
+
+}
+header div:hover{
+    transition: all 0.3s ;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+input:hover{
+    transition: all 0.3s ;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer{
+    padding: 0px 100px 50px 200px;
+}

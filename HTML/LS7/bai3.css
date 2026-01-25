@@ -1,0 +1,20 @@
+.box {
+    text-align: left;
+    width:500px;
+    border: 5px solid black;
+
+}
+h1{
+    color:coral
+}
+.doctor-name{
+    font-weight:500px;
+}
+.p1{
+    color:green;
+    font-size: 20px;
+    font-weight:1000px;
+}
+.p2{
+    
+}

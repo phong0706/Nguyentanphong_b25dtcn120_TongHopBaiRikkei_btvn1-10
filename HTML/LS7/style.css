@@ -1,0 +1,183 @@
+/* --- 1. THIẾT LẬP NỀN TẢNG (RESET) --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+* {
+    margin: 0;            /* Xóa khoảng cách ngoài mặc định */
+    padding: 0;           /* Xóa khoảng cách trong mặc định */
+    box-sizing: border-box; /* Quan trọng: Giúp padding và border không làm tăng kích thước thật của ô */
+    font-family: 'Inter', sans-serif; /* Sử dụng font chữ hiện đại, sạch sẽ */
+}
+
+body {
+    background-color: #ffffff; /* Màu nền trắng cho toàn trang */
+    color: #1e293b;           /* Màu chữ mặc định (xám đậm) */
+}
+
+.container {
+    max-width: 1000px; /* Giới hạn chiều ngang để nội dung không tràn hết màn hình lớn */
+    margin: 0 auto;    /* Căn giữa toàn bộ nội dung */
+    padding: 0 40px;   /* Tạo khoảng đệm hai bên mép màn hình */
+}
+
+/* --- 2. PHẦN HERO (MÀU XANH ĐẬM) --- */
+.hero {
+    /* Tạo dải màu từ xanh đen (trái) sang xanh dương (phải) giống trong ảnh */
+    background: linear-gradient(90deg, #091e3d 0%, #123567 35%, #1a73e8 100%);
+    padding: 80px 0;
+    color: white; /* Chữ trong phần này mặc định là màu trắng */
+    position: relative;
+    /* Đổ bóng cho cả khối màu xanh đè lên phần trắng bên dưới */
+    box-shadow: 0px 15px 25px -10px rgba(0, 0, 0, 0.3);
+    z-index: 10; /* Đảm bảo cái bóng này luôn nằm trên phần trắng bên dưới */
+}
+
+.tag {
+    display: inline-block; /* Để thẻ co giãn vừa với chữ */
+    background: rgba(255, 255, 255, 0.1); /* Nền trắng trong suốt 10% */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Viền trắng rất mờ */
+    padding: 6px 18px;
+    border-radius: 50px; /* Bo tròn hoàn toàn hai đầu */
+    font-size: 13px;
+    margin-bottom: 25px; /* Khoảng cách với tiêu đề bên dưới */
+}
+
+h1 {
+    font-size: 44px; /* Chữ lớn để gây chú ý */
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px; /* Thu hẹp khoảng cách các chữ cái cho gọn gàng */
+}
+
+.subtitle {
+    font-size: 16px;
+    max-width: 550px; /* Không để dòng chữ quá dài, khó đọc */
+    line-height: 1.6; /* Khoảng cách giữa các dòng */
+    margin-bottom: 40px;
+    color: rgba(255, 255, 255, 0.85); /* Chữ trắng mờ hơn một chút */
+}
+
+/* Nút bấm (Buttons) */
+.hero__cta {
+    display: flex; /* Xếp hai nút nằm ngang */
+    gap: 15px;      /* Khoảng cách giữa hai nút */
+    margin-bottom: 50px;
+}
+
+.btn {
+    padding: 12px 30px;
+    border-radius: 50px; /* Hình viên thuốc */
+    text-decoration: none; /* Bỏ gạch chân mặc định của link */
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s; /* Hiệu ứng đổi màu mượt mà khi di chuột */
+}
+
+.btn:first-child {
+    background-color: #1a73e8; /* Màu xanh nút Đặt lịch */
+    color: white;
+}
+
+.btn--ghost {
+    background-color: #2563eb; /* Màu xanh nút Xem dịch vụ (như ảnh bạn gửi) */
+    color: white;
+}
+
+/* --- 3. CÁC Ô SỐ LIỆU (STATS) - XẾP DỌC --- */
+.hero__stats {
+    display: flex;
+    flex-direction: column; /* Quan trọng: Xếp các ô stats theo cột dọc */
+    gap: 12px;              /* Khoảng cách giữa các ô */
+}
+
+.stat {
+    /* Hiệu ứng Kính mờ (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.06); 
+    backdrop-filter: blur(8px);           /* Làm mờ hình ảnh phía sau lớp kính */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 16px 25px;
+    border-radius: 14px;
+    width: 220px; /* Độ rộng cố định cho các ô stats */
+}
+
+.stat strong {
+    display: block;   /* Ép chữ số xuống một dòng riêng */
+    font-size: 22px;
+    margin-bottom: 2px;
+}
+
+.stat span {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6); /* Chữ chú thích mờ hơn */
+}
+
+/* --- 4. PHẦN DỊCH VỤ (CARD TRẮNG) --- */
+.section {
+    padding: 80px 0;
+}
+
+.section__head h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section__head p {
+    color: #64748b;
+    margin-bottom: 50px;
+}
+
+.card {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    /* Đổ bóng cực nhẹ để card trông sang trọng */
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03); 
+    position: relative; /* Làm gốc để đặt badge "HOT" */
+    max-width: 700px;
+}
+
+.card__badge {
+    position: absolute; /* Đặt vị trí tự do trong card */
+    top: 30px;
+    right: 30px;
+    background: #e0f2fe; /* Màu nền xanh dương nhạt */
+    color: #0369a1;      /* Màu chữ xanh dương đậm */
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+.list {
+    list-style: none; /* Bỏ dấu chấm mặc định của HTML */
+    margin: 25px 0;
+}
+
+.list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+/* Tạo dấu chấm xanh bằng CSS */
+.list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #1a73e8;
+    font-weight: bold;
+}
+
+.card__link {
+    color: #1a73e8;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* --- 5. FOOTER --- */
+.footer {
+    padding: 40px 0;
+    border-top: 1px solid #f1f5f9;
+    color: #94a3b8;
+    font-size: 14px;
+}

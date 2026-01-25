@@ -1,0 +1,52 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100vw;
+}
+
+.card {
+  width: 500px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 15px;
+  background-color: #f4f4f9;
+}
+
+.text-header {
+  text-align: center;
+}
+
+.text-header p:first-child {
+  color: #1e90ff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.text-body {
+  margin-top: 10px;
+}
+
+.text-body p {
+  margin-top: 10px;
+}
+
+.text-body p:first-child {
+  text-decoration: underline;
+  text-decoration: line-through;
+}
+
+.text-body p:nth-child(2) {
+  font-weight: 800;
+}
+
+.text-body p:nth-child(3) {
+  font-weight: 500;
+}
+
+.text-body p:last-child {
+  letter-spacing: 2px;
+}

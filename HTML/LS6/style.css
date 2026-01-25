@@ -1,0 +1,114 @@
+* {
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+}
+body {
+  background-color: white;
+  color: black;
+}
+.tieu-de h1 {
+  background-color: #a7f0d6;
+  color: #19d791;
+  text-align: center;
+}
+.menu {
+  background-color: #cae3fd;
+  text-align: center;
+}
+.menu a {
+  color: #0056b3;
+  text-decoration: none;
+  display: inline-block;
+}
+.menu a:hover {
+  color: #06182e;
+  font-size: 19px;
+  text-decoration: none;
+}
+.img {
+  background-color: #f0f8ff;
+  text-align: center;
+  margin-top: 20px;
+}
+.gioi-thieu h2 {
+  color: #005b6e;
+}
+.dich-vu-noi-bat h2 {
+  color: #005b6e;
+}
+li:hover {
+  background-color: #e8f0fe;
+  color: #005b6e;
+  cursor: pointer;
+}
+.footer {
+  background-color: #37755e;
+  text-align: center;
+  color: white;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1;
+  width: 100%;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+table,
+th,
+td {
+  border: 1px solid #333;
+}
+th {
+  background-color: #bde3ff;
+  color: #005b6e;
+  padding: 15px;
+  text-align: center;
+}
+td {
+  padding: 12px;
+  text-align: left;
+}
+tr:hover {
+  background-color: #bde3ff;
+}
+form {
+  text-align: center;
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #ebe7e7;
+}
+label {
+  display: block;
+  font-family: "Times New Roman";
+  margin-bottom: 5px;
+  font-size: 16px;
+  padding-left: 2px;
+  color: #005b5b;
+  font-weight: bold;
+}
+input,
+select,
+textarea {
+  font-size: 15px;
+  color: #333;
+  padding: 5px 10px;
+  border: 1px solid #767676;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  width: auto;
+  min-width: 150px;
+  padding: 5px 20px;
+  background-color: #00a3a3;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  margin-top: 5px;
+  border: 1px solid #000000;
+}
+input[type="submit"]:hover {
+  background-color: #008075;
+  cursor: pointer;
+}

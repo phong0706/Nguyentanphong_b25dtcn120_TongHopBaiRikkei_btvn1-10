@@ -1,0 +1,57 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+main{
+   height:auto;
+   max-width:600px;
+   margin:auto;
+   background-color:white ;
+   padding:20px;
+
+}
+.full-name{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    gap:50px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e1e1e1;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    color: #333;
+}
+
+.btn-submit{
+    width:100%;
+    background-color:#0d6dfc ;
+    color:white;
+    height:50px;
+}
+.register, .status{
+    text-align: center;
+}
+.register p{
+  color:#b2b3bf;
+}
+.status a{
+    text-decoration: none;
+    color:#b2b3bf;
+}
+@media screen and (max-width:768px){
+    .full-name{
+        flex-direction: column;
+    }
+    .col input{
+        width:100%;
+    }
+    main{
+        width:100%;
+    }
+}
