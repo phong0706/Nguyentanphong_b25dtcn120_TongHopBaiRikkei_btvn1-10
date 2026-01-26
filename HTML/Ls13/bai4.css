@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f9fafb; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 600px; 
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h2 {
+    color: #1f2937;
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #6b7280;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+input{
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #4b5563;
+    cursor: pointer;
+}
+
+.forgot-password {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #2563eb; /* Màu xanh dương giống ảnh */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 25px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.footer a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}

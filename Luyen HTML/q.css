@@ -1,18 +1,199 @@
-@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
-* {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-html,
-body {
-  margin: 0px;
-  height: 100%;
-}
-/* a blue color as a generic focus style */
-button:focus-visible {
-  outline: 2px solid #4a90e2 !important;
-  outline: -webkit-focus-ring-color auto 5px !important;
-}
-a {
-  text-decoration: none;
-}
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <title>Rikkei Education - Học Tập Không Giới Hạn</title>
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="body">
+      <header class="header">
+        <div class="rikkei-education" role="img" aria-label="Rikkei Education Logo"></div>
+        <nav class="nav-list" role="navigation" aria-label="Main navigation">
+          <a href="#" class="item-link"><span class="text-wrapper">Trang chủ</span></a>
+          <a href="#" class="div-wrapper"><span class="div">Khóa học</span></a>
+          <a href="#" class="item-link-2"><span class="text-wrapper-2">Giới thiệu</span></a>
+          <a href="#" class="item-link-3"><span class="text-wrapper-3">Liên hệ</span></a>
+        </nav>
+        <a href="#" class="link"><span class="text-wrapper-4">Đăng nhập</span></a>
+        <a href="#" class="link-2"><span class="text-wrapper-5">Đăng ký</span></a>
+      </header>
+      <section class="section">
+        <h1 class="heading-h-c-t-p-kh">Học Tập Không Giới<br />Hạn</h1>
+        <p class="kh-m-ph-h-ng-ngh-n">
+          Khám phá hàng nghìn khóa học chất lượng cao từ các<br />chuyên gia hàng đầu. Nâng cao kỹ năng và phát triển
+          sự<br />nghiệp của bạn ngay hôm nay.
+        </p>
+        <a href="#" class="link-3"><span class="text-wrapper-6">Khám phá khóa học</span></a>
+        <a href="#" class="link-4"><span class="text-wrapper-7">Tìm hiểu thêm</span></a>
+        <article class="paragraph-background">
+          <span class="text-wrapper-8" role="img" aria-label="Books emoji">📚</span>
+          <h2 class="heading">1000+</h2>
+          <p class="text-wrapper-9">Khóa học</p>
+        </article>
+        <article class="paragraph-background-2">
+          <h2 class="heading-2">50,000+</h2>
+          <p class="text-wrapper-10">Học viên</p>
+        </article>
+        <article class="paragraph-background-3">
+          <span class="text-wrapper-11" role="img" aria-label="Star emoji">⭐</span>
+          <h2 class="heading-3">4.8/5</h2>
+          <p class="text-wrapper-12">Đánh giá</p>
+        </article>
+      </section>
+      <section class="container-wrapper">
+        <div class="container">
+          <h2 class="heading-t-i-sao-ch">Tại Sao Chọn Rikkei Education?</h2>
+          <article class="paragraph-background-4">
+            <span class="text-wrapper-13" role="img" aria-label="Target emoji">🎯</span>
+            <h3 class="heading-h-c-linh">Học Linh Hoạt</h3>
+            <p class="h-c-m-i-l-c-m-i-n-i">Học mọi lúc, mọi nơi<br />với nền tảng trực tuyến<br />tiện lợi</p>
+          </article>
+          <article class="paragraph-background-5">
+            <h3 class="heading-gi-ng-vi-n">Giảng Viên<br />Chuyên Nghiệp</h3>
+            <p class="i-ng-gi-ng-vi-n-gi-u">Đội ngũ giảng viên giàu<br />kinh nghiệm và tận tâm</p>
+          </article>
+          <article class="paragraph-background-6">
+            <span class="text-wrapper-13" role="img" aria-label="Certificate emoji">📜</span>
+            <h3 class="heading-ch-ng-ch">Chứng Chỉ Uy<br />Tín</h3>
+            <p class="nh-n-ch-ng-ch-c-c-ng">Nhận chứng chỉ được<br />công nhận sau khi<br />hoàn thành</p>
+          </article>
+          <article class="paragraph-background-7">
+            <span class="text-wrapper-13" role="img" aria-label="Money emoji">💰</span>
+            <h3 class="heading-gi-c-h-p-l">Giá Cả Hợp Lý</h3>
+            <p class="chi-ph-ph-i-ch-ng">Chi phí phải chăng,<br />nhiều ưu đãi hấp dẫn</p>
+          </article>
+        </div>
+      </section>
+      <section class="section-2">
+        <h2 class="heading-kh-a-h-c-n">Khóa Học Nổi Bật</h2>
+        <p class="p">Khám phá các khóa học được yêu thích nhất</p>
+        <article class="background-border">
+          <span class="background"><span class="text-wrapper-14">Lập trình</span></span>
+          <h3 class="heading-l-p-tr-nh">Lập Trình Web Từ Cơ Bản Đến<br />Nâng Cao</h3>
+          <p class="h-c-HTML-CSS">Học HTML, CSS, JavaScript và các<br />framework hiện đại</p>
+          <div class="paragraph">
+            <span class="text-wrapper-15">⏱️ 40 giờ</span>
+            <span class="text-wrapper-16">📊 Cơ bản</span>
+            <span class="text-wrapper-17">⭐ 4.9 (2,345)</span>
+          </div>
+          <p class="text-wrapper-18"><s>2,999,000đ</s></p>
+          <p class="text-wrapper-19">1,999,000đ</p>
+          <a href="#" class="link-5"><span class="text-wrapper-20">Đăng ký ngay</span></a>
+          <div class="lp-trnh-web" role="img" aria-label="Lập trình web course image"></div>
+          <span class="background-2"><span class="text-wrapper-21">Bán chạy</span></span>
+        </article>
+        <article class="background-border-2">
+          <span class="background-3"><span class="text-wrapper-22">Thiết kế</span></span>
+          <h3 class="heading-UI-UX">UI/UX Design Chuyên Nghiệp</h3>
+          <p class="text-wrapper-23">Thiết kế giao diện người dùng đẹp mắt và<br />trải nghiệm tối ưu</p>
+          <div class="paragraph-2">
+            <span class="text-wrapper-15">⏱️ 35 giờ</span>
+            <span class="text-wrapper-24">📊 Trung cấp</span>
+            <span class="text-wrapper-17">⭐ 4.8 (1,890)</span>
+          </div>
+          <p class="text-wrapper-25"><s>2,499,000đ</s></p>
+          <p class="text-wrapper-26">1,699,000đ</p>
+          <a href="#" class="link-6"><span class="text-wrapper-20">Đăng ký ngay</span></a>
+          <div class="UI-UX-design" role="img" aria-label="UI/UX Design course image"></div>
+          <span class="background-4"><span class="text-wrapper-27">Hot</span></span>
+        </article>
+        <article class="background-border-3">
+          <span class="background-5"><span class="text-wrapper-28">Mobile</span></span>
+          <h3 class="heading-ph-t-tri-n">Phát Triển Ứng Dụng Di Động</h3>
+          <p class="x-y-d-ng-ng-d-ng-ios">Xây dựng ứng dụng iOS và Android với<br />React Native</p>
+          <div class="paragraph-2">
+            <span class="text-wrapper-15">⏱️ 45 giờ</span>
+            <span class="text-wrapper-29">📊 Nâng cao</span>
+            <span class="text-wrapper-17">⭐ 4.7 (1,234)</span>
+          </div>
+          <p class="text-wrapper-25"><s>3,499,000đ</s></p>
+          <p class="text-wrapper-26">2,299,000đ</p>
+          <a href="#" class="link-6"><span class="text-wrapper-20">Đăng ký ngay</span></a>
+          <div class="pht-trin-mobile" role="img" aria-label="Mobile development course image"></div>
+        </article>
+        <article class="background-border-4">
+          <span class="background-6"><span class="text-wrapper-30">Marketing</span></span>
+          <h3 class="heading-digital">Digital Marketing Toàn Diện</h3>
+          <p class="text-wrapper-23">Chiến lược marketing online hiệu quả cho<br />doanh nghiệp</p>
+          <div class="paragraph-2">
+            <span class="text-wrapper-15">⏱️ 30 giờ</span>
+            <span class="text-wrapper-16">📊 Cơ bản</span>
+            <span class="text-wrapper-31">⭐ 4.6 (987)</span>
+          </div>
+          <p class="text-wrapper-25"><s>1,999,000đ</s></p>
+          <p class="text-wrapper-26">1,299,000đ</p>
+          <a href="#" class="link-6"><span class="text-wrapper-20">Đăng ký ngay</span></a>
+          <div class="digital-marketing" role="img" aria-label="Digital marketing course image"></div>
+        </article>
+        <article class="background-border-5">
+          <span class="AI-data-wrapper"><span class="AI-data">AI &amp; Data</span></span>
+          <h3 class="heading-machine">Machine Learning Cơ Bản</h3>
+          <p class="nh-p-m-n-tr-tu-nh-n">Nhập môn trí tuệ nhân tạo và học máy với<br />Python</p>
+          <div class="paragraph-2">
+            <span class="text-wrapper-15">⏱️ 50 giờ</span>
+            <span class="text-wrapper-24">📊 Trung cấp</span>
+            <span class="text-wrapper-31">⭐ 4.9 (756)</span>
+          </div>
+          <p class="text-wrapper-25"><s>3,999,000đ</s></p>
+          <p class="text-wrapper-26">2,799,000đ</p>
+          <a href="#" class="link-6"><span class="text-wrapper-20">Đăng ký ngay</span></a>
+          <div class="machine-learning" role="img" aria-label="Machine learning course image"></div>
+          <span class="background-7"><span class="text-wrapper-32">Mới</span></span>
+        </article>
+        <article class="background-border-6">
+          <span class="background-8"><span class="text-wrapper-33">Kinh doanh</span></span>
+          <h3 class="heading-qu-n-tr-d">Quản Trị Dự Án Chuyên<br />Nghiệp</h3>
+          <p class="k-n-ng-qu-n-l-d-n-hi">Kỹ năng quản lý dự án hiệu quả với Agile và<br />Scrum</p>
+          <div class="paragraph">
+            <span class="text-wrapper-15">⏱️ 25 giờ</span>
+            <span class="text-wrapper-16">📊 Cơ bản</span>
+            <span class="text-wrapper-31">⭐ 4.7 (654)</span>
+          </div>
+          <p class="text-wrapper-18"><s>1,799,000đ</s></p>
+          <p class="text-wrapper-19">1,199,000đ</p>
+          <a href="#" class="link-5"><span class="text-wrapper-20">Đăng ký ngay</span></a>
+          <div class="qun-tr-d-n" role="img" aria-label="Project management course image"></div>
+        </article>
+      </section>
+      <footer class="footer">
+        <div class="container-2">
+          <div class="rikkei-education-2" role="img" aria-label="Rikkei Education Logo"></div>
+          <p class="n-n-t-ng-h-c-tr-c">
+            Nền tảng học trực tuyến hàng đầu Việt Nam, mang đến<br />kiến thức chất lượng cho mọi người.
+          </p>
+          <a href="#" class="link-facebook" aria-label="Facebook"><span class="text-wrapper-34">Facebook</span></a>
+          <a href="#" class="link-twitter" aria-label="Twitter"><span class="text-wrapper-35">Twitter</span></a>
+          <a href="#" class="link-linkedin" aria-label="LinkedIn"><span class="text-wrapper-36">LinkedIn</span></a>
+          <a href="#" class="link-instagram" aria-label="Instagram"><span class="text-wrapper-37">Instagram</span></a>
+          <h3 class="heading-kh-a-h-c">Khóa học</h3>
+          <nav class="list" aria-label="Course categories">
+            <a href="#" class="item-link-4"><span class="text-wrapper-38">Lập trình</span></a>
+            <a href="#" class="item-link-5"><span class="text-wrapper-39">Thiết kế</span></a>
+            <a href="#" class="item-link-6"><span class="text-wrapper-40">Marketing</span></a>
+            <a href="#" class="item-link-7"><span class="text-wrapper-41">Kinh doanh</span></a>
+          </nav>
+          <h3 class="heading-v-ch-ng-t">Về chúng tôi</h3>
+          <nav class="list-2" aria-label="About us">
+            <a href="#" class="item-link-8"><span class="text-wrapper-42">Giới thiệu</span></a>
+            <a href="#" class="item-link-9"><span class="text-wrapper-43">Giảng viên</span></a>
+            <a href="#" class="item-link-10"><span class="text-wrapper-44">Tin tức</span></a>
+            <a href="#" class="item-link-11"><span class="text-wrapper-45">Tuyển dụng</span></a>
+          </nav>
+          <h3 class="heading-h-tr">Hỗ trợ</h3>
+          <nav class="list-3" aria-label="Support">
+            <a href="#" class="item-link-12"><span class="text-wrapper-46">Trung tâm trợ giúp</span></a>
+            <a href="#" class="item-link-13"><span class="text-wrapper-47">Điều khoản</span></a>
+            <a href="#" class="item-link-14"><span class="text-wrapper-48">Chính sách</span></a>
+            <a href="#" class="item-link-15"><span class="text-wrapper-49">Liên hệ</span></a>
+          </nav>
+          <div class="horizontal-border">
+            <p class="text-wrapper-50">© 2026 Rikkei Education. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

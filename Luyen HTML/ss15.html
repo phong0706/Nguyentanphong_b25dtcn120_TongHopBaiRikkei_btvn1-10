@@ -1,0 +1,704 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lập Trình Web Từ Cơ Bản Đến Nâng Cao - Rikkei Education</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="ss15.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <img
+            src="https://api.builder.io/api/v1/image/assets/TEMP/55dceeb05058abc83b7027602538ebca57550972?width=229"
+            alt="Rikkei Education Logo"
+            class="logo"
+          />
+
+          <nav class="nav desktop-nav">
+            <a href="#" class="nav-link">Trang chủ</a>
+            <a href="#" class="nav-link">Khóa học</a>
+            <a href="#" class="nav-link">Giới thiệu</a>
+            <a href="#" class="nav-link">Liên hệ</a>
+          </nav>
+
+          <div class="auth-buttons desktop-auth">
+            <button class="btn btn-outline">Đăng nhập</button>
+            <button class="btn btn-primary">Đăng ký</button>
+          </div>
+
+          <button class="mobile-menu-toggle" id="menuToggle">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+            >
+              <line x1="4" y1="6" x2="20" y2="6"></line>
+              <line x1="4" y1="12" x2="20" y2="12"></line>
+              <line x1="4" y1="18" x2="20" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <nav class="mobile-menu" id="mobileMenu" style="display: none">
+          <a href="#" class="nav-link">Trang chủ</a>
+          <a href="#" class="nav-link">Khóa học</a>
+          <a href="#" class="nav-link">Giới thiệu</a>
+          <a href="#" class="nav-link">Liên hệ</a>
+          <div
+            class="auth-buttons"
+            style="flex-direction: column; margin-top: 16px"
+          >
+            <button class="btn btn-outline">Đăng nhập</button>
+            <button class="btn btn-primary">Đăng ký</button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+      <div class="container">
+        <a href="#" class="breadcrumb-link">Trang chủ</a>
+        <span class="breadcrumb-separator">›</span>
+        <a href="#" class="breadcrumb-link">Khóa học</a>
+        <span class="breadcrumb-separator">›</span>
+        <span class="breadcrumb-active">Lập Trình Web</span>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-left">
+            <span class="hero-badge">Lập trình</span>
+
+            <h1 class="hero-title">Lập Trình Web Từ Cơ Bản Đến Nâng Cao</h1>
+
+            <p class="hero-description">
+              Học HTML, CSS, JavaScript và các framework hiện đại để trở thành
+              Web Developer chuyên nghiệp
+            </p>
+
+            <div class="hero-stats">
+              <div class="stat">
+                <span class="stat-emoji">⭐</span>
+                <span><strong>4.9</strong> (2,345 đánh giá)</span>
+              </div>
+              <div class="stat">
+                <span class="stat-emoji">👥</span>
+                <span><strong>12,567</strong> học viên</span>
+              </div>
+              <div class="stat">
+                <span class="stat-emoji">📅</span>
+                <span>Cập nhật: <strong>Tháng 12/2025</strong></span>
+              </div>
+              <div class="stat">
+                <span class="stat-emoji">🌐</span>
+                <span>Tiếng Việt</span>
+              </div>
+            </div>
+
+            <div class="instructor">
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/1b5254364a445b420485078f34ca7fb11536bd83?width=100"
+                alt="Nguyễn Văn A"
+                class="instructor-avatar"
+              />
+              <div>
+                <div class="instructor-label">Giảng viên</div>
+                <div class="instructor-name">Nguyễn Văn A</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Course Card -->
+          <div class="course-card">
+            <div class="card-video">
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/44287c00d16ab0d64ac12524069202eb326fc6ec?width=800"
+                alt="Course preview"
+                class="video-img"
+              />
+              <div class="video-overlay">
+                <button class="play-btn">▶</button>
+                <span class="video-label">Xem giới thiệu</span>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <div class="pricing">
+                <span class="price">1,999,000đ</span>
+                <span class="discount-badge">Giảm 33%</span>
+              </div>
+              <div class="original-price">2,999,000đ</div>
+
+              <div class="alert">
+                <span>⏰</span>
+                <span>Ưu đãi kết thúc sau <strong>2 ngày</strong></span>
+              </div>
+
+              <div class="card-buttons">
+                <button class="btn btn-primary btn-large">Đăng ký ngay</button>
+                <button class="btn btn-outline btn-large">
+                  Thêm vào giỏ hàng
+                </button>
+              </div>
+
+              <div class="card-includes">
+                <h4>Khóa học bao gồm:</h4>
+                <div class="includes-list">
+                  <div class="include-item">
+                    <span>🎥</span>
+                    <span>40 giờ video học</span>
+                  </div>
+                  <div class="include-item">
+                    <span>📄</span>
+                    <span>25 bài tập thực hành</span>
+                  </div>
+                  <div class="include-item">
+                    <span>📱</span>
+                    <span>Truy cập trên mọi thiết bị</span>
+                  </div>
+                  <div class="include-item">
+                    <span>♾️</span>
+                    <span>Truy cập trọn đời</span>
+                  </div>
+                  <div class="include-item">
+                    <span>📜</span>
+                    <span>Chứng chỉ hoàn thành</span>
+                  </div>
+                  <div class="include-item">
+                    <span>💬</span>
+                    <span>Hỗ trợ 24/7</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="guarantee">
+                <span class="guarantee-icon">✓</span>
+                <span>Hoàn tiền 100% trong 30 ngày</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="container">
+        <!-- What You'll Learn -->
+        <section class="section learning-section">
+          <h2 class="section-title">Bạn sẽ học được gì</h2>
+          <div class="learning-grid">
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span
+                >Nắm vững HTML5 và CSS3 để xây dựng giao diện web hiện đại</span
+              >
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Lập trình JavaScript từ cơ bản đến nâng cao</span>
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Sử dụng thành thạo React.js để xây dựng ứng dụng web</span>
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Thiết kế responsive cho mọi thiết bị</span>
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Làm việc với API và xử lý dữ liệu</span>
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Triển khai website lên hosting và domain</span>
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Xây dựng 5+ dự án thực tế để bổ sung portfolio</span>
+            </div>
+            <div class="learning-item">
+              <span class="checkmark">✓</span>
+              <span>Áp dụng best practices và coding standards</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- Course Description -->
+        <section class="section description-section">
+          <h2 class="section-title">Mô tả khóa học</h2>
+
+          <p class="description-text">
+            Chào mừng bạn đến với khóa học
+            <strong>Lập Trình Web Từ Cơ Bản Đến Nâng Cao</strong> - khóa học
+            toàn diện nhất về phát triển web tại Rikkei Education!
+          </p>
+
+          <p class="description-text">
+            Khóa học này được thiết kế dành cho những người mới bắt đầu muốn trở
+            thành Web Developer chuyên nghiệp. Bạn sẽ được học từ những kiến
+            thức cơ bản nhất về HTML, CSS cho đến các công nghệ hiện đại như
+            React.js, Node.js.
+          </p>
+
+          <h3 class="section-subtitle">Tại sao nên chọn khóa học này?</h3>
+
+          <ul class="description-list">
+            <li>
+              <strong>Học từ cơ bản:</strong> Không cần kiến thức nền tảng, bạn
+              sẽ được hướng dẫn từng bước một
+            </li>
+            <li>
+              <strong>Thực hành nhiều:</strong> Mỗi bài học đều có bài tập và dự
+              án thực tế
+            </li>
+            <li>
+              <strong>Giảng viên kinh nghiệm:</strong> Được giảng dạy bởi các
+              chuyên gia có hơn 10 năm kinh nghiệm
+            </li>
+            <li>
+              <strong>Cập nhật liên tục:</strong> Nội dung được cập nhật theo xu
+              hướng công nghệ mới nhất
+            </li>
+            <li>
+              <strong>Hỗ trợ tận tình:</strong> Đội ngũ hỗ trợ sẵn sàng giải đáp
+              mọi thắc mắc 24/7
+            </li>
+          </ul>
+
+          <h3 class="section-subtitle">Sau khóa học, bạn có thể:</h3>
+
+          <ul class="description-list">
+            <li>Tự tin xây dựng các website hoàn chỉnh từ A-Z</li>
+            <li>Ứng tuyển vào các vị trí Junior/Mid-level Web Developer</li>
+            <li>Freelance và nhận các dự án web development</li>
+            <li>Tiếp tục học các khóa nâng cao về Full-stack Development</li>
+          </ul>
+
+          <p class="description-text">
+            Đăng ký ngay hôm nay để bắt đầu hành trình trở thành Web Developer
+            chuyên nghiệp!
+          </p>
+        </section>
+
+        <!-- Curriculum -->
+        <section class="section curriculum-section">
+          <h2 class="section-title">Nội dung khóa học</h2>
+          <p class="curriculum-subtitle">8 phần • 67 bài học • 40 giờ học</p>
+
+          <div class="curriculum-list">
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▼</span>
+                <h3>Phần 1: Giới thiệu và Cơ bản HTML</h3>
+                <span class="curriculum-meta">8 bài học • 3 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: block">
+                <div class="lesson">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-title"
+                    >Giới thiệu khóa học và lộ trình học</span
+                  >
+                  <span class="lesson-time">10:30</span>
+                </div>
+                <div class="lesson">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-title"
+                    >Cài đặt môi trường phát triển</span
+                  >
+                  <span class="lesson-time">15:45</span>
+                </div>
+                <div class="lesson">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-title"
+                    >HTML cơ bản: Tags và Elements</span
+                  >
+                  <span class="lesson-time">25:20</span>
+                </div>
+                <div class="lesson">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-title">Làm việc với Text và Links</span>
+                  <span class="lesson-time">20:15</span>
+                </div>
+                <div class="lesson">
+                  <span class="lesson-icon">▶️</span>
+                  <span class="lesson-title">Images và Multimedia</span>
+                  <span class="lesson-time">18:30</span>
+                </div>
+                <div class="lesson">
+                  <span class="lesson-icon">📝</span>
+                  <span class="lesson-title"
+                    >Bài tập: Tạo trang HTML đầu tiên</span
+                  >
+                  <span class="lesson-time">30:00</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 2: CSS Cơ Bản và Nâng Cao</h3>
+                <span class="curriculum-meta">10 bài học • 5 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 3: Responsive Design</h3>
+                <span class="curriculum-meta">7 bài học • 4 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 4: JavaScript Cơ Bản</h3>
+                <span class="curriculum-meta">12 bài học • 6 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 5: JavaScript Nâng Cao</h3>
+                <span class="curriculum-meta">10 bài học • 5.5 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 6: React.js Fundamentals</h3>
+                <span class="curriculum-meta">12 bài học • 7 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 7: Làm việc với API</h3>
+                <span class="curriculum-meta">6 bài học • 4 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+
+            <div class="curriculum-item">
+              <div class="curriculum-header" onclick="toggleCurriculum(this)">
+                <span class="curriculum-toggle">▶</span>
+                <h3>Phần 8: Dự Án Cuối Khóa và Triển Khai</h3>
+                <span class="curriculum-meta">8 bài học • 5.5 giờ</span>
+              </div>
+              <div class="curriculum-content" style="display: none">
+                <p style="padding: 16px; color: #666">
+                  Nội dung sẽ hiển thị khi mở rộng...
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Requirements -->
+        <section class="section requirements-section">
+          <h2 class="section-title">Yêu cầu</h2>
+          <ul class="simple-list">
+            <li>Máy tính có kết nối internet</li>
+            <li>Không cần kiến thức lập trình trước đó</li>
+            <li>Tinh thần học hỏi và sẵn sàng thực hành</li>
+            <li>Cam kết dành ít nhất 5-10 giờ/tuần để học</li>
+          </ul>
+        </section>
+
+        <!-- Who is this for -->
+        <section class="section who-section">
+          <h2 class="section-title">Khóa học dành cho ai</h2>
+          <ul class="simple-list">
+            <li>Người mới bắt đầu muốn học lập trình web</li>
+            <li>Sinh viên ngành CNTT muốn nâng cao kỹ năng</li>
+            <li>Người muốn chuyển nghề sang lập trình</li>
+            <li>Freelancer muốn mở rộng dịch vụ</li>
+            <li>Designer muốn học code để tự implement design</li>
+          </ul>
+        </section>
+
+        <!-- Instructor Profile -->
+        <section class="section instructor-section">
+          <h2 class="section-title">Giảng viên</h2>
+
+          <div class="instructor-profile">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/7311831d064eb0d10a07246b2fb4e567c5bb053a?width=240"
+              alt="Nguyễn Văn A"
+              class="instructor-large-avatar"
+            />
+
+            <div class="instructor-info">
+              <h3 class="instructor-title">Nguyễn Văn A</h3>
+              <p class="instructor-role">Senior Full-stack Developer</p>
+
+              <div class="instructor-stats">
+                <div class="stat">
+                  <span>⭐</span>
+                  <span>4.9 Đánh giá</span>
+                </div>
+                <div class="stat">
+                  <span>👥</span>
+                  <span>45,678 Học viên</span>
+                </div>
+                <div class="stat">
+                  <span>🎥</span>
+                  <span>15 Khóa học</span>
+                </div>
+              </div>
+
+              <p class="instructor-bio">
+                Nguyễn Văn A là một Senior Full-stack Developer với hơn 10 năm
+                kinh nghiệm trong ngành phát triển web. Anh đã làm việc cho
+                nhiều công ty công nghệ lớn và tham gia xây dựng các dự án quy
+                mô lớn.
+              </p>
+
+              <p class="instructor-bio">
+                Với niềm đam mê chia sẻ kiến thức, anh đã đào tạo hơn 45,000 học
+                viên trên khắp Việt Nam và nhận được đánh giá cao về phương pháp
+                giảng dạy dễ hiểu, thực tế.
+              </p>
+
+              <p class="instructor-bio">
+                <strong>Chuyên môn:</strong> JavaScript, React.js, Node.js,
+                MongoDB, AWS, Docker
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Reviews -->
+        <section class="section reviews-section">
+          <h2 class="section-title">Đánh giá từ học viên</h2>
+
+          <div class="reviews-header">
+            <div class="rating-summary">
+              <div class="rating-number">4.9</div>
+              <div class="rating-stars">⭐⭐⭐⭐⭐</div>
+              <div class="rating-count">2,345 đánh giá</div>
+            </div>
+
+            <div class="rating-bars">
+              <div class="rating-bar">
+                <span class="rating-label">5 sao</span>
+                <div class="bar-fill">
+                  <div class="bar-progress" style="width: 85%"></div>
+                </div>
+                <span class="rating-percent">85%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">4 sao</span>
+                <div class="bar-fill">
+                  <div class="bar-progress" style="width: 12%"></div>
+                </div>
+                <span class="rating-percent">12%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">3 sao</span>
+                <div class="bar-fill">
+                  <div class="bar-progress" style="width: 2%"></div>
+                </div>
+                <span class="rating-percent">2%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">2 sao</span>
+                <div class="bar-fill">
+                  <div class="bar-progress" style="width: 1%"></div>
+                </div>
+                <span class="rating-percent">1%</span>
+              </div>
+              <div class="rating-bar">
+                <span class="rating-label">1 sao</span>
+                <div class="bar-fill">
+                  <div class="bar-progress" style="width: 0%"></div>
+                </div>
+                <span class="rating-percent">0%</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="reviews-list">
+            <div class="review-item">
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/285484f7d9210e9137731e460f52aa742e521414?width=100"
+                alt="Trần Thị B"
+                class="review-avatar"
+              />
+              <div class="review-content">
+                <div class="review-header">
+                  <h4 class="review-name">Trần Thị B</h4>
+                  <span class="review-time">2 tuần trước</span>
+                </div>
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">
+                  Khóa học rất chi tiết và dễ hiểu. Giảng viên giải thích rất rõ
+                  ràng, từng bước một. Mình đã hoàn thành khóa học và tự tin làm
+                  được nhiều dự án web. Rất đáng tiền!
+                </p>
+                <button class="review-helpful">👍 Có (234)</button>
+              </div>
+            </div>
+
+            <div class="review-item">
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/e0dd0db95a7acdb3a222a864a28bf78eb93f16a3?width=100"
+                alt="Lê Văn C"
+                class="review-avatar"
+              />
+              <div class="review-content">
+                <div class="review-header">
+                  <h4 class="review-name">Lê Văn C</h4>
+                  <span class="review-time">1 tháng trước</span>
+                </div>
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">
+                  Mình là người chuyển nghề sang IT, khóa học này giúp mình rất
+                  nhiều. Nội dung cập nhật, bài tập thực tế. Sau 3 tháng học,
+                  mình đã apply được vị trí Junior Developer. Cảm ơn thầy và
+                  Rikkei Education!
+                </p>
+                <button class="review-helpful">👍 Có (189)</button>
+              </div>
+            </div>
+
+            <div class="review-item">
+              <img
+                src="https://api.builder.io/api/v1/image/assets/TEMP/9a960e767ff5336e6e88018b118b343a28a2f8bc?width=100"
+                alt="Phạm Thị D"
+                class="review-avatar"
+              />
+              <div class="review-content">
+                <div class="review-header">
+                  <h4 class="review-name">Phạm Thị D</h4>
+                  <span class="review-time">1 tháng trước</span>
+                </div>
+                <div class="review-rating">⭐⭐⭐⭐⭐</div>
+                <p class="review-text">
+                  Khóa học tuyệt vời! Giảng viên nhiệt tình, support nhanh. Nội
+                  dung từ cơ bản đến nâng cao, phù hợp cho người mới. Mình đã
+                  làm được 3 dự án và đang freelance kiếm thêm thu nhập.
+                </p>
+                <button class="review-helpful">👍 Có (156)</button>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn-outline">Xem thêm đánh giá</button>
+        </section>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-top">
+            <img
+              src="https://api.builder.io/api/v1/image/assets/TEMP/55dceeb05058abc83b7027602538ebca57550972?width=229"
+              alt="Rikkei Education"
+              class="footer-logo"
+              style="filter: brightness(0) invert(1)"
+            />
+            <p class="footer-description">
+              Nền tảng học trực tuyến hàng đầu Việt Nam, mang đến kiến thức chất
+              lượng cho mọi người.
+            </p>
+
+            <div class="social-links">
+              <a href="#">Facebook</a>
+              <a href="#">Twitter</a>
+              <a href="#">LinkedIn</a>
+              <a href="#">Instagram</a>
+            </div>
+          </div>
+
+          <div class="footer-columns">
+            <div class="footer-col">
+              <h4>Khóa học</h4>
+              <ul>
+                <li><a href="#">Lập trình</a></li>
+                <li><a href="#">Thiết kế</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li><a href="#">Kinh doanh</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Về chúng tôi</h4>
+              <ul>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Giảng viên</a></li>
+                <li><a href="#">Tin tức</a></li>
+                <li><a href="#">Tuyển dụng</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-col">
+              <h4>Hỗ trợ</h4>
+              <ul>
+                <li><a href="#">Trung tâm trợ giúp</a></li>
+                <li><a href="#">Điều khoản</a></li>
+                <li><a href="#">Chính sách</a></li>
+                <li><a href="#">Liên hệ</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <p>© 2026 Rikkei Education. All rights reserved.</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
