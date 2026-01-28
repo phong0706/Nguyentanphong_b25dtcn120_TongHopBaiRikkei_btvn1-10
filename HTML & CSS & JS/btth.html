@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Sử dụng lệnh prompt() để yêu cầu người dùng nhập lần lượt các thông tin sau và lưu vào các biến:
+- Tên sách (Ví dụ: "  lap trinh javascript  ")
+
+- Tên tác giả (Ví dụ: "nguyen van a")
+
+- Năm xuất bản (Ví dụ: "2020")
+
+- Giá tiền một cuốn (Ví dụ: "150000")
+
+- Số lượng nhập kho (Ví dụ: "10")
+
+ 
+
+Chuẩn hóa dữ liệu:
+- Tên sách: Loại bỏ khoảng trắng thừa ở 2 đầu (trim) và chuyển tất cả thành chữ in hoa.
+
+- Tên tác giả: Chuyển thành chữ in hoa.
+
+ 
+
+Tạo mã định danh (Book ID):
+- Mã sách được tạo tự động theo công thức: 3 ký tự đầu của Tên tác giả + Năm xuất bản + một số ngẫu nhiên từ 1 đến 1000.
+
+- Ví dụ: Tác giả "NGUYEN VAN A", năm "2020", số ngẫu nhiên "123" -> Mã sách: "NGU2020-123"
+
+ 
+
+Tính toán số liệu:
+- Tuổi của sách: Tính xem sách đã xuất bản được bao nhiêu năm (Lấy năm hiện tại là 2026 trừ đi Năm xuất bản).
+
+- Tổng giá trị nhập kho: Giá tiền x Số lượng.
+
+ 
+
+Sử dụng console.log() và Template String để in ra phiếu nhập kho với định dạng sau (chú ý các thông tin phải được xử lý đúng như yêu cầu trên):
+ 		--- PHIẾU NHẬP KHO ---
+
+Mã sách: NGU2020-123
+
+Tên sách: LAP TRINH JAVASCRIPT
+
+Tác giả: NGUYEN VAN A
+
+Năm xuất bản: 2023
+
+Tuổi sách: 3 năm
+
+Tổng giá trị: 1500000 VNĐ
+
+Ngăn kệ gợi ý: Kệ số 5 (Số ngẫu nhiên từ 1-10 tạo ra bằng Math Object)
+
+ </p>
+
+ <script>
+    let nameBook=(prompt("Tên sách"));
+    let nameAuthur=(prompt("Tên tác giả"));
+    let yearOfPublication = Number(prompt("Năm xuất bản: "));
+    let price=(prompt("Gía tiền một cuốn: "));
+    let bookQuanlity=(prompt("Số lượng nhập kho: "));
+    // chuẩn hóa dữ liệu
+    // let newNameBook=nameBook.trim().toUpperCase();
+    // let newNameAuthur=nameAuthur.toUpperCase();
+    // let bookCode=`${nameAuthur.slice(0,4)} - ${yearOfPublication} - ${Math.floor(Math.random()*1000)} `;
+    // let totalAmount= price*bookQuanlity;
+
+    console.log(`--PHIẾU NHẬP KHO--`);
+    console.log(`Mã sách: ${nameAuthur.trim().toUpperCase().replace(/\s+/g, "").slice(0,3)}${yearOfPublication} - ${Math.floor(Math.random()*1000)}`);
+    console.log(`Tên sách: ${nameBook.trim().toUpperCase()}`);
+    console.log(`Tác giả: ${nameAuthur.toUpperCase()}`);
+    console.log(`Năm xuất bản: ${yearOfPublication}`);
+    console.log(`Tuổi sách:${new Date().getFullYear()-yearOfPublication} năm`);
+    console.log(`Tổng giá trị: ${ price*bookQuanlity}`);
+    console.log(`Ngăn kệ gợi ý: Kệ số ${Math.floor(Math.random()*10)+1}`);
+</script>
+</body>
+</html>

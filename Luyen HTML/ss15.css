@@ -183,7 +183,7 @@ body {
   font-weight: 500;
 }
 
-/* ==================== Hero Section ==================== */
+/* ==================== Herotion ==================== */
 
 .hero {
   background-color: var(--gray-800);
@@ -667,7 +667,7 @@ body {
   font-size: 14px;
   margin-bottom: 8px;
 }
-
+      
 .rating-count {
   font-size: 15px;
   color: var(--gray-500);

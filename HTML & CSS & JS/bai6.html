@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Bài 6</h1>
+    <script>
+        let nameBook=prompt("Tên sách: ");
+        let stt=Number(prompt("Số thự tự của sách trong thư viện"));
+        // xóa khoảng trắng, viết hoa tên sách     
+        let newNameBook=nameBook.trim().toUpperCase();
+        // chuẩn hóa mã sách
+        let bookCode=`LIB - ${newNameBook} - ${stt}`;
+
+        console.log(`Tên sách gốc: ${nameBook}`);
+        console.log(`Mã sách sau chuẩn hóa: ${bookCode}`);
+        
+    </script>
+</body>
+</html>

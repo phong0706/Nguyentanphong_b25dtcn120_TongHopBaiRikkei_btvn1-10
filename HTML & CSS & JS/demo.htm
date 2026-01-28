@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý nhập kho sách</title>
+  </head>
+  <body>
+    <script>
+      let rawBookName = prompt("Nhập tên sách:");
+      let rawAuthorName = prompt("Nhập tên tác giả:");
+      let publishYear = Number(prompt("Nhập năm xuất bản:"));
+      let price = Number(prompt("Nhập giá tiền một cuốn:"));
+      let quantity = Number(prompt("Nhập số lượng nhập kho:"));
+
+      let bookName = rawBookName.trim().toUpperCase();
+      let authorName = rawAuthorName.trim().toUpperCase();
+
+      let authorPrefix = authorName.slice(0, 3);
+      let randomNumber = Math.floor(Math.random() * 900) + 100;
+      let bookId = `${authorPrefix}${publishYear}-${randomNumber}`;
+
+      let currentYear = new Date().getFullYear();
+      let bookAge = currentYear - publishYear;
+      let totalValue = price * quantity;
+      let shelfNumber = Math.floor(Math.random() * 10) + 1;
+
+      console.log(`--- PHIẾU NHẬP KHO ---`);
+      console.log(`Mã sách: ${bookId}`);
+      console.log(`Tên sách: ${bookName}`);
+      console.log(`Tác giả: ${authorName}`);
+      console.log(`Năm xuất bản: ${publishYear}`);
+      console.log(`Tuổi sách: ${bookAge} năm`);
+      console.log(`Tổng giá trị: ${totalValue.toLocaleString("vi-VN")} VNĐ`);
+      console.log(`Ngăn kệ gợi ý: Kệ số ${shelfNumber}`);
+      console.log(`----------------------`);
+    </script>
+  </body>
+</html>
+  
