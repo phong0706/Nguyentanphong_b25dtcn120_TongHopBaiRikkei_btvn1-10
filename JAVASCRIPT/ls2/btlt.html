@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ thống mượn trả</title>
+  </head>
+  <body>
+    <script>
+      let userName = prompt("Nhập tên người dùng:");
+      let roleInput = prompt("Nhập vai trò (admin, student, guest)");
+          let balance = Number(prompt("Nhập số dư tài khoản:"));
+          let statusInput = prompt(
+            "Trạng thái thẻ (Nhập true nếu đang hoạt động):",
+          );
+          let dueDate = Number(prompt("Số ngày quá hạn trả sách:"));
+
+          let role = roleInput ? roleInput.toLowerCase() : "";
+          let isActive = statusInput === "true";
+
+          let accessMsg = "";
+          switch (role) {
+            case "admin":
+              accessMsg = "Chào Admin, bạn có toàn quyền hệ thống";
+              break;
+            case "student":
+              accessMsg = "Chào sinh viên, bạn có thể mượn sách";
+              break;
+            case "guest":
+              accessMsg = "Chào khách, bạn chỉ có thể đọc tại chỗ";
+              break;
+            default:
+              accessMsg = "Lỗi: Vai trò không hợp lệ!";
+          }
+
+          let canBorrow = false;
+          let reason = "";
+
+          if (!userName) {
+            reason = "Tên không được để trống";
+          } else if (role !== "admin" && role !== "student") {
+            reason = "Vai trò không có quyền mượn";
+          } else if (balance <= 0 || !isActive) {
+            reason = "Tài khoản hết tiền hoặc thẻ bị khóa";
+          } else {
+            canBorrow = true;
+          }
+
+          let borrowResult = canBorrow
+            ? "ĐƯỢC PHÉP MƯỢN SÁCH"
+            : `YÊU CẦU BỊ TỪ CHỐI (${reason})`;
+
+          let fine = 0;
+          let returnStatus = "";
+
+          if (dueDate <= 0) {
+            returnStatus = "Cảm ơn bạn đã trả đúng hạn";
+            fine = 0;
+          } else {
+            returnStatus = `Quá hạn ${dueDate} ngày`;
+            if (dueDate <= 5) {
+              fine = dueDate * 5000;
+            } else if (dueDate <= 10) {
+              fine = dueDate * 10000;
+            } else {
+              fine = 200000;
+              returnStatus += " - TÀI KHOẢN BỊ KHÓA";
+            }
+          }
+
+          console.log(`--- HỆ THỐNG MƯỢN TRẢ ---`);
+          console.log(`Người dùng: ${userName ? userName.toUpperCase() : "N/A"}`);
+          console.log(`Quyền hạn: ${accessMsg}`);
+          console.log(`Kết quả mượn: ${borrowResult}`);
+          console.log(`Tình trạng trả sách: ${returnStatus}`);
+          console.log(`Tiền phạt: ${fine.toLocaleString()} VNĐ`);
+        </script>
+      </body>
+    </html>

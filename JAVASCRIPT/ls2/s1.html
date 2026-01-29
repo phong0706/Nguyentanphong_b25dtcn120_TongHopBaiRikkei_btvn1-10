@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let tenSach = prompt("Mời bạn nhập tên sách:");
+      let tacGia = prompt("Mời bạn nhập tên tác giả:");
+      let namXuatBan = Number(prompt("Mời bạn nhập năm xuất bản:"));
+
+      let namHienTai = new Date().getFullYear();
+
+      console.log(`--- Thông tin sách ---`);
+      console.log(`Tên sách: ${tenSach}`);
+      console.log(`Tác giả: ${tacGia}`);
+
+      if (namXuatBan === namHienTai) {
+        console.log("Thông báo: Đây là sách mới!");
+      } else if (namXuatBan >= namHienTai - 5) {
+        console.log("Thông báo: Sách khá mới");
+      } else {
+        console.log("Thông báo: Sách đã cũ");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let bookName = prompt("Nhập tên sách:");
+      let status = prompt("Nhập trạng thái sách (có sẵn hoặc đã mượn):");
+      let publishYear = Number(prompt("Nhập năm xuất bản:"));
+
+      let currentYear = 2026;
+      let age = currentYear - publishYear;
+
+      if (status === "có sẵn" && age <= 5) {
+        console.log("Sách này mới và có sẵn để mượn");
+      } else if (status === "đã mượn" && age <= 10) {
+        console.log("Sách này đã mượn nhưng khá mới, có thể mượn lại sau");
+      } else if (status === "đã mượn" && age > 10) {
+        console.log("Sách này đã mượn và khá cũ");
+      } else if (status === "có sẵn" && age > 5) {
+        console.log("Sách này có sẵn nhưng đã lâu năm");
+      }
+    </script>
+  </body>
+</html>
