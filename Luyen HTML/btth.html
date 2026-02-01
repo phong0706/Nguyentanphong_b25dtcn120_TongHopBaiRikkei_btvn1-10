@@ -1,45 +1,308 @@
-
 <!DOCTYPE html>
 <html lang="vi">
-  <head>
+<head>
     <meta charset="UTF-8">
-    <title>Phòng Khám Nha Sĩ</title>
-    <link rel="stylesheet" href="mini.css">
-  </head>
-  <body>
-  
-    <header class="header">
-      <h1>Phòng Khám Nha Sĩ</h1>
-      <p>Chăm sóc răng miệng chuyên nghiệp</p>
-    </header>
-   
-    <div class="menu">
-      <a href="">Trang chủ</a>
-      <a href="">Giới thiệu</a>
-      <a href="">Bác sĩ</a>
-      <a href="">Dịch vụ</a>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Holographic Profile | Ultimate Luxury</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <style>
+        /* --- CẤU HÌNH CHUNG --- */
+        :root {
+            --primary-font: 'Poppins', sans-serif;
+            --title-font: 'Playfair Display', serif;
+            /* Gradient cầu vồng sang trọng */
+            --holo-gradient: linear-gradient(135deg, #ff00cc, #3333ff, #00ccff, #00ff99, #ffff00, #ff3300);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: var(--primary-font);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            overflow-x: hidden;
+            padding: 20px;
+        }
+
+        /* --- NỀN AURORA CỰC QUANG ĐA SẮC --- */
+        .aurora-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -2;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab, #c723d5);
+            background-size: 400% 400%;
+            animation: auroraMove 15s ease infinite;
+            filter: brightness(0.8); /* Làm tối nhẹ để nổi bật card */
+        }
+        @keyframes auroraMove {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Lớp hạt lấp lánh */
+        .sparkles {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: url('https://www.transparenttextures.com/patterns/stardust.png');
+            opacity: 0.3;
+            animation: sparkleFade 4s infinite alternate;
+        }
+        @keyframes sparkleFade { from { opacity: 0.1; } to { opacity: 0.4; } }
+
+        /* --- THẺ KÍNH HOLOGRAM (TRUNG TÂM) --- */
+        .holo-card {
+            position: relative;
+            width: 100%;
+            max-width: 500px; /* Mobile default */
+            /* Hiệu ứng kính siêu mờ, siêu dày */
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(40px) saturate(200%);
+            -webkit-backdrop-filter: blur(40px) saturate(200%);
+            border-radius: 30px;
+            padding: 30px;
+            color: #fff;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            transition: all 0.5s ease;
+        }
+
+        /* Viền sáng cầu vồng chạy xung quanh */
+        .holo-card::before {
+            content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px;
+            z-index: -1; border-radius: 32px;
+            background: var(--holo-gradient);
+            background-size: 300% 300%;
+            animation: auroraMove 5s linear infinite;
+            filter: blur(10px); opacity: 0.7;
+        }
+
+        /* --- CỘT TRÁI: PROFILE & NHẠC --- */
+        .profile-section {
+            text-align: center;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        .avatar-wrapper {
+            position: relative; width: 150px; height: 150px; margin-bottom: 20px;
+        }
+
+        .avatar {
+            width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+            border: 4px solid rgba(255,255,255,0.5);
+            box-shadow: 0 0 30px rgba(255,255,255,0.2);
+        }
+        
+        /* Vòng xoay đa sắc quanh avatar */
+        .avatar-ring {
+            position: absolute; top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 50%; border: 3px solid transparent;
+            background: var(--holo-gradient) border-box;
+            -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out; mask-composite: exclude;
+            animation: spin 4s linear infinite;
+        }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+
+        .user-name {
+            font-family: var(--title-font); font-size: 2.2rem; margin-bottom: 5px;
+            background: var(--holo-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+
+        .user-bio { font-size: 0.9rem; opacity: 0.8; letter-spacing: 1px; margin-bottom: 25px; }
+
+        /* Trình phát nhạc Hologram */
+        .music-player {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0,0,0,0.2);
+            border-radius: 20px;
+            display: flex; align-items: center; justify-content: space-between;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .play-btn {
+            width: 50px; height: 50px; border: none; border-radius: 50%;
+            background: var(--holo-gradient); color: #fff; font-size: 1.2rem; cursor: pointer;
+            box-shadow: 0 0 15px rgba(255,255,255,0.4);
+            transition: 0.3s; display: flex; justify-content: center; align-items: center;
+        }
+        .play-btn:hover { transform: scale(1.1); box-shadow: 0 0 25px var(--holo-gradient); }
+        .play-btn.playing i { margin-left: 0; } .play-btn i { margin-left: 3px; }
+        .song-info strong { background: var(--holo-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* --- CỘT PHẢI: LIÊN KẾT MẠNG XÃ HỘI --- */
+        .links-section {
+            display: grid; grid-template-columns: 1fr; gap: 15px; width: 100%;
+        }
+
+        .link-card {
+            display: flex; align-items: center; padding: 15px 20px;
+            background: rgba(255,255,255,0.07); border-radius: 15px;
+            text-decoration: none; color: white; font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.1); transition: 0.4s;
+            position: relative; overflow: hidden;
+        }
+        
+        /* Hiệu ứng quét sáng khi hover */
+        .link-card::after {
+            content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: 0.6s;
+        }
+        .link-card:hover::after { left: 100%; }
+
+        .link-card:hover {
+            transform: translateY(-3px) scale(1.02);
+            background: rgba(255,255,255,0.15);
+            border-color: rgba(255,255,255,0.5);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .link-icon {
+            width: 40px; height: 40px; display: flex; justify-content: center; align-items: center;
+            border-radius: 50%; margin-right: 15px; font-size: 1.2rem; color: #fff;
+            background: rgba(255,255,255,0.1); box-shadow: inset 0 0 10px rgba(255,255,255,0.1);
+        }
+        /* Màu riêng cho từng icon */
+        .fb { background: linear-gradient(45deg, #1877f2, #3b5998); }
+        .ins { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); }
+        .tik { background: linear-gradient(45deg, #000000, #25f4ee, #fe2c55); }
+        .git { background: linear-gradient(45deg, #333, #6e5494); }
+
+
+        /* =========================================
+           RESPONSIVE DESIGN (CHÌA KHÓA QUAN TRỌNG)
+        ========================================= */
+
+        /* Tablet (>= 768px) */
+        @media (min-width: 768px) {
+            .holo-card { max-width: 700px; padding: 40px; }
+            .links-section { grid-template-columns: 1fr 1fr; } /* 2 cột link */
+            .user-name { font-size: 2.8rem; }
+        }
+
+        /* Desktop (>= 1024px) - Bố cục ngang sang trọng */
+        @media (min-width: 1024px) {
+            .holo-card {
+                max-width: 950px;
+                flex-direction: row; /* Chuyển sang ngang */
+                align-items: flex-start;
+                gap: 50px; padding: 50px;
+            }
+            .profile-section {
+                width: 40%; /* Cột trái nhỏ hơn */
+                align-items: flex-start; text-align: left;
+                position: sticky; top: 20px;
+            }
+            .links-section {
+                width: 60%; /* Cột phải chứa link lớn hơn */
+                grid-template-columns: 1fr 1fr; /* Lưới 2xN */
+                gap: 20px;
+            }
+            .avatar-wrapper { width: 180px; height: 180px; margin: 0 0 25px 0; }
+            .user-name { font-size: 3.5rem; line-height: 1.2; }
+            .link-card { padding: 20px 25px; font-size: 1.1rem; }
+            .link-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="aurora-bg"></div>
+    <div class="sparkles"></div>
+
+    <div class="holo-card" data-aos="zoom-in-up" data-aos-duration="1000">
+        
+        <div class="profile-section">
+            <div class="avatar-wrapper" data-aos="zoom-in" data-aos-delay="200">
+                <div class="avatar-ring"></div>
+                <img src="https://i.pinimg.com/736x/0a/53/c3/0a53c3bbe2f56a1ddac34ea449474008.jpg" alt="Avatar" class="avatar">
+            </div>
+            <h1 class="user-name" id="typing-text"></h1>
+            <p class="user-bio" data-aos="fade-up" data-aos-delay="400">Holographic Designer / Luxury Vibes</p>
+
+            <div class="music-player" data-aos="fade-up" data-aos-delay="500">
+                <div class="song-info">
+                    <i class="fas fa-music" style="color: var(--holo-gradient); margin-right: 10px;"></i>
+                    <span>Đang phát: <strong>Vibe Lấp Lánh</strong></span>
+                </div>
+                <audio id="myAudio" loop>
+                    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" type="audio/mpeg">
+                </audio>
+                <button id="playBtn" class="play-btn"><i class="fas fa-play"></i></button>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <a href="#" class="link-card" data-aos="fade-left" data-aos-delay="600">
+                <div class="link-icon fb"><i class="fab fa-facebook-f"></i></div>
+                <span>Facebook Profile</span>
+            </a>
+            <a href="#" class="link-card" data-aos="fade-left" data-aos-delay="700">
+                <div class="link-icon ins"><i class="fab fa-instagram"></i></div>
+                <span>Instagram Vibes</span>
+            </a>
+            <a href="#" class="link-card" data-aos="fade-left" data-aos-delay="800">
+                <div class="link-icon tik"><i class="fab fa-tiktok"></i></div>
+                <span>TikTok Trending</span>
+            </a>
+            <a href="#" class="link-card" data-aos="fade-left" data-aos-delay="900">
+                <div class="link-icon git"><i class="fab fa-github"></i></div>
+                <span>GitHub Projects</span>
+            </a>
+            <a href="#" class="link-card" data-aos="fade-left" data-aos-delay="1000" style="grid-column: 1 / -1;"> <div class="link-icon" style="background: linear-gradient(45deg, #ff00cc, #3333ff);"><i class="fas fa-envelope"></i></div>
+                <span>Contact Me Now</span>
+            </a>
+        </div>
     </div>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-    <main class="gioi-thieu">
-      <section class="section">
-        <h2>Giới thiệu phòng khám</h2>
-        <p>
-          Phòng khám nha sĩ cung cấp các dịch vụ chăm sóc răng miệng với đội ngũ
-          bác sĩ có chuyên môn cao và trang thiết bị hiện đại.
-        </p>
-      </section>
+    <script>
+        // 1. Init Animations
+        AOS.init({ once: true, offset: 100 });
 
-      <section class="uy-tin">
-        <h2>Uy tín & cam kết</h2>
-        <p> ✓ Bác sĩ có chứng chỉ hành nghề</p>
-        <p> ✓ Thiết bị hiện đại</p>
-        <p> ✓ Chi phí minh bạch</p>
-      </section>
-    </main>
-    <footer class="footer">
-      <p>© 2026 Phòng Khám Nha Sĩ</p>
-      <p>Hotline: 0900 111 222</p>
-    </footer>
-  </body>
+        // 2. Typing Effect (Gõ chữ)
+        const text = "Nguyễn Văn A"; // <--- THAY TÊN BẠN Ở ĐÂY
+        const typingElement = document.getElementById("typing-text");
+        let index = 0;
+        function typeWriter() {
+            if (index < text.length) {
+                typingElement.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeWriter, 120);
+            }
+        }
+        window.onload = typeWriter;
+
+        // 3. Music Player Logic
+        const audio = document.getElementById("myAudio");
+        const playBtn = document.getElementById("playBtn");
+        const icon = playBtn.querySelector("i");
+
+        playBtn.addEventListener("click", () => {
+            if (audio.paused) {
+                audio.play();
+                playBtn.classList.add("playing");
+                icon.className = "fas fa-pause";
+            } else {
+                audio.pause();
+                playBtn.classList.remove("playing");
+                icon.className = "fas fa-play";
+            }
+        });
+    </script>
+</body>
 </html>

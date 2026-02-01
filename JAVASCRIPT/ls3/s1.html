@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let totalBorrowings = parseInt(
+        prompt("Hôm nay có bao nhiêu lượt mượn sách?"),
+      );
+
+      if (totalBorrowings > 0) {
+        for (let i = 1; i <= totalBorrowings; i++) {
+          let borrowerName = prompt("Nhập tên người mượn lượt " + i + ":");
+          let bookTitle = prompt("Nhập tên sách:");
+          let borrowDays = parseInt(prompt("Nhập số ngày mượn (1-30 ngày):"));
+
+          if (borrowDays > 14) {
+            console.log(
+              "Cảnh báo: Thời gian mượn vượt quy định (tối đa 14 ngày)",
+            );
+          } else {
+            console.log("Mượn thành công");
+          }
+        }
+
+        console.log("Tổng số lượt mượn: " + totalBorrowings);
+      } else {
+        console.log("Số lượng nhập vào không hợp lệ.");
+      }
+    </script>
+  </body>
+</html>

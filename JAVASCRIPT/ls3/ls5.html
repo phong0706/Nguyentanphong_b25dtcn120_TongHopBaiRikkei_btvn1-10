@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let totalProcessed = 0;
+      let totalSuccessful = 0;
+      let totalRejected = 0;
+      let totalPending = 0;
+      let isOperating = true;
+
+      while (isOperating) {
+        let continueRequest = prompt(
+          "Có yêu cầu đặt mượn trước mới không? (có/không)",
+        ).toLowerCase();
+
+        if (continueRequest === "không") {
+          isOperating = false;
+        } else if (continueRequest === "có") {
+          let readerName = prompt("Nhập tên bạn đọc:");
+          let bookCode = prompt("Nhập mã sách muốn đặt trước:");
+          let bookTitle = prompt("Nhập tên sách:");
+          let expectedWaitDays = parseInt(
+            prompt("Nhập số ngày dự kiến chờ (số nguyên ≥ 1):"),
+          );
+          let priorityLevel = parseInt(
+            prompt(
+              "Nhập mức độ ưu tiên (1 = Sinh viên, 2 = Giảng viên, 3 = Đặc cách):",
+            ),
+          );
+
+          totalProcessed++;
+
+          if (expectedWaitDays > 45) {
+            console.log("Từ chối: Thời gian chờ quá lâu (>45 ngày)");
+            totalRejected++;
+          } else if (priorityLevel === 3) {
+            console.log("Đặt trước thành công - Ưu tiên đặc cách cao nhất");
+            totalSuccessful++;
+          } else if (priorityLevel === 2 && expectedWaitDays <= 30) {
+            console.log("Đặt trước thành công - Ưu tiên giảng viên/nghiên cứu");
+            totalSuccessful++;
+          } else if (priorityLevel === 1 && expectedWaitDays <= 21) {
+            console.log("Đặt trước thành công");
+            totalSuccessful++;
+          } else {
+            console.log("Đặt trước tạm thời - Chờ xét duyệt thêm");
+            totalPending++;
+          }
+        }
+      }
+
+      console.log("--- BÁO CÁO CHI TIẾT CA LÀM VIỆC ---");
+      console.log("Tổng số yêu cầu đã xử lý: " + totalProcessed);
+      console.log("Số yêu cầu được đặt trước thành công: " + totalSuccessful);
+      console.log("Số yêu cầu bị từ chối: " + totalRejected);
+      console.log("Số yêu cầu chờ xét duyệt: " + totalPending);
+    </script>
+  </body>
+</html>

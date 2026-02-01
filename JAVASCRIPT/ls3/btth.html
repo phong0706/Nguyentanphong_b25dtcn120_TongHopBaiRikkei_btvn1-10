@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let correctPassword = "admin123";
+      let loginAttempts = 0;
+      let isAuthenticated = false;
+
+      while (loginAttempts < 3) {
+        let passwordInput = prompt("Vui lòng nhập mật khẩu hệ thống:");
+
+        if (passwordInput === correctPassword) {
+          console.log("Đăng nhập thành công!");
+          isAuthenticated = true;
+          break;
+        } else {
+          loginAttempts++;
+          alert("Sai mật khẩu! Bạn còn " + (3 - loginAttempts) + " lần thử.");
+        }
+      }
+
+      if (!isAuthenticated) {
+        console.log("Hệ thống bị khóa do nhập sai quá 3 lần.");
+      } else {
+        let isSystemRunning = true;
+
+        while (isSystemRunning) {
+          let menuOption = prompt(
+            "--- HỆ THỐNG QUẢN LÝ THƯ VIỆN ---\n" +
+              "1. Nhập lô sách mới\n" +
+              "2. Vẽ sơ đồ kệ sách\n" +
+              "3. Thoát\n" +
+              "Vui lòng chọn chức năng (1-3):",
+          );
+
+          if (menuOption === "1") {
+            let bookCount = parseInt(
+              prompt("Bạn muốn nhập bao nhiêu cuốn sách?"),
+            );
+            let totalValue = 0;
+
+            for (let i = 1; i <= bookCount; i++) {
+              let bookPrice = parseFloat(
+                prompt("Nhập giá tiền cuốn sách thứ " + i + ":"),
+              );
+
+              if (isNaN(bookPrice) || bookPrice <= 0) {
+                alert("Giá tiền không hợp lệ, vui lòng kiểm tra lại!");
+                continue;
+              }
+              totalValue += bookPrice;
+            }
+            console.log("Tổng giá trị nhập kho đợt này là: " + totalValue);
+          } else if (menuOption === "2") {
+            for (let areaIndex = 1; areaIndex <= 3; areaIndex++) {
+              for (let shelfIndex = 1; shelfIndex <= 5; shelfIndex++) {
+                if (areaIndex === 2 && shelfIndex === 3) {
+                  console.log(
+                    "Khu vực " +
+                      areaIndex +
+                      " - Kệ " +
+                      shelfIndex +
+                      " (Đang sửa chữa)",
+                  );
+                  continue;
+                }
+                console.log("Khu vực " + areaIndex + " - Kệ " + shelfIndex);
+              }
+            }
+          } else if (menuOption === "3") {
+            console.log("Hẹn gặp lại!");
+            isSystemRunning = false;
+            break;
+          } else {
+            alert("Lựa chọn không hợp lệ!");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

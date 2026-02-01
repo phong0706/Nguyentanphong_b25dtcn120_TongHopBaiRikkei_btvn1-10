@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let totalBooksChecked = 0;
+      let lostBooksCount = 0;
+      let outOfStockBooksCount = 0;
+      let highStockBooksCount = 0;
+      let normalStockBooksCount = 0;
+      let isInventoryActive = true;
+
+      while (isInventoryActive) {
+        let continueInput = prompt(
+          "Tiếp tục kiểm kê sách tiếp theo? (có/không)",
+        ).toLowerCase();
+
+        if (continueInput === "không") {
+          isInventoryActive = false;
+        } else if (continueInput === "có") {
+          let bookCode = "";
+          while (bookCode.trim() === "") {
+            bookCode = prompt("Nhập mã sách (không được để trống):");
+          }
+
+          let bookTitle = prompt("Nhập tên sách:");
+          let actualQuantity = parseInt(
+            prompt("Nhập số lượng thực tế trong kho (số nguyên ≥ 0):"),
+          );
+          let bookCondition = parseInt(
+            prompt("Nhập tình trạng sách (1 - Bình thường, 2 - Mất):"),
+          );
+
+          totalBooksChecked++;
+
+          if (bookCondition === 2) {
+            lostBooksCount++;
+            console.log("Ghi nhận: Sách mất");
+          } else if (bookCondition === 1) {
+            if (actualQuantity === 0) {
+              outOfStockBooksCount++;
+              console.log("Ghi nhận: Sách hết (vẫn còn trong hệ thống)");
+            } else if (actualQuantity >= 10) {
+              highStockBooksCount++;
+              console.log("Ghi nhận: Sách tồn kho nhiều");
+            } else if (actualQuantity >= 1 && actualQuantity <= 9) {
+              normalStockBooksCount++;
+              console.log("Ghi nhận: Sách tồn kho bình thường");
+            }
+          }
+        }
+      }
+
+      console.log("--- BÁO CÁO KIỂM KÊ ---");
+      console.log("Tổng số sách đã kiểm kê: " + totalBooksChecked + " cuốn");
+      console.log("Số sách mất: " + lostBooksCount + " cuốn");
+      console.log("Số sách hết hàng: " + outOfStockBooksCount + " cuốn");
+    </script>
+  </body>
+</html>
