@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let username = prompt("Nhập tài khoản:");
+      let password = prompt("Nhập mật khẩu:");
+
+      if (username == "admin") {
+        if (password == "12345") {
+          alert("Đăng nhập thành công!");
+
+          let choice = prompt(
+            "1. Kiểm tra mã sách (Chẵn/Lẻ)\n2. Kiểm tra kệ ưu tiên\n3. Tính phí phạt trả muộn\nLựa chọn:",
+          );
+
+          if (choice == "1") {
+            let bookId = Number(prompt("Nhập mã số sách:"));
+            let isEven = bookId % 2 == 0;
+
+            if (isEven == true) {
+              alert("Sách Khoa học (Mã chẵn)");
+            } else {
+              alert("Sách Nghệ thuật (Mã lẻ)");
+            }
+          } else if (choice == "2") {
+            let row = Number(prompt("Nhập số hàng:"));
+            let col = Number(prompt("Nhập số cột:"));
+
+            if (row == col) {
+              alert("Vị trí này là Kệ ưu tiên");
+            } else {
+              alert("Vị trí này là Kệ thường");
+            }
+          } else if (choice == "3") {
+            let days = Number(prompt("Số ngày trả muộn:"));
+
+            if (days <= 3) {
+              alert("Phí phạt: 5.000 VNĐ");
+            } else if (days <= 7) {
+              alert("Phí phạt: 15.000 VNĐ");
+            } else {
+              alert("Phí phạt: 50.000 VNĐ và khóa thẻ");
+            }
+          } else {
+            alert("Lựa chọn không tồn tại");
+          }
+        } else {
+          alert("Mật khẩu không chính xác");
+        }
+      } else {
+        alert("Tài khoản không chính xác");
+      }
+    </script>
+  </body>
+</html>
