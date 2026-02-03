@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let listBook = [];
+      let quantity = parseInt(prompt("Bạn muốn nhập bao nhiêu cuốn?"));
+
+      if (quantity > 0) {
+        for (let i = 0; i < quantity; i++) {
+          let tenSach = prompt("Nhập tên cuốn sách thứ " + (i + 1) + ":");
+          listBook.push(tenSach);
+        }
+
+        console.log("Kết quả");
+        console.log("Tổng số sách được trả: " + listBook.length);
+        console.log("Danh sách đã trả:");
+
+        for (let i = 0; i < listBook.length; i++) {
+          console.log(i + 1 + ". " + listBook[i]);
+        }
+      } else {
+        console.log("Vui lòng nhập một số lượng sách hợp lệ (lớn hơn 0).");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let booksLate = [];
+      let quantity = parseInt(
+        prompt("Hôm nay có bao nhiêu cuốn sách bị trả muộn?"),
+      );
+
+      if (quantity > 0) {
+        for (let i = 0; i < quantity; i++) {
+          let bookName = prompt("Nhập tên sách bị trả muộn" + (i + 1) + ":");
+          booksLate.push(bookName);
+        }
+        console.log("Tổng số sách bị trả muộn" + booksLate.length);
+        console.log("Danh sách bị trả muộn");
+
+        let countBooks = 0;
+        for (i = 0; i < booksLate.length; i++) {
+          console.log(i + 1 + "." + booksLate[i]);
+          if (booksLate[i].length > 20) {
+            countBooks++;
+          }
+        }
+        console.log("Số lượng sách dài hơn 20 kí tự " + countBooks);
+      } else {
+        console.log("Không có sách trả muộn hoặc nhập sai số lượng ");
+      }
+    </script>
+  </body>
+</html>
