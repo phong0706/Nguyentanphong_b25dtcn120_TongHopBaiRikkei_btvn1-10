@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+    //     let myArray = [1, 2, 3, 4, 5];
+    //     console.log(myArray);
+    //     // java script có thể in trực tiếp mảmg
+
+    //     //let array =[1, 2, 3, 4, 5]
+    //     // 2 mảng đang sd chung 1 địa chỉ trong bộ nhớ
+    //     let array = myArray; // nó sẽ bằng nhau
+    //     array[0] = "Phần tử mới";
+    //     console.log(myArray == array);
+    //     console.log("myArr", myArray);
+
+    //   ---------------Các thao tác với mảng CRUD---------------------
+    //     let myArr = [1, 2, 3, 4, 5];
+    //   Thao tác đọc
+    //     for (let i = 0; i < myArr.length; i++) {
+    //       console.log(`Phần tử có chỉ số ${i} có giá trị: ${mayArr[i]}`);
+    //     }
+    //     for(let index in myArr){
+    //       console.log(`chi số của tất cả các phần tử là ${index} `);
+    //       for (let element of myArr) {
+    //           console.log(`Giá trị của phần tử ${element}`);
+
+    //       }
+
+    //   Thao tác thêm phần tử
+
+    //     // Thêm vào cuối
+    //     myArr.push(1, 2, 3, "Đây là giá trị cối mảng");
+    //     // Thêm vào đầu
+    //     myArr.unshift("Đây là đầu mảng", 4, 5, 6);
+    //     // Thêm vào vị trí
+    //     myArr.splice(4, 0, "Đây là phần tử được chèn");
+    //     console.log(myArr);
+    //     // Xóa phần từ
+    //     //Xóa ở cuối
+    //     myArr.pop();
+    //     // Xóa ở đầu
+    //     myArr.shift();
+    //     // Xóa ở vị trí bất kì
+    //     myArr.splice(4, 1, "Phần tử mới", 2);
+    //     //Thao tác cập nhật phần tử
+    //     myArr[i] ="Phần tử mới"
+
+    //   --------Các Phương Thức làm việc với mảng-----------
+
+      let myArr = [11, 3, 9, 6, 7, 9];
+      //Chỉ số phần tử đầu tiên thông qua giá trị
+      let firstPosition = myArr.indexOf(9);
+      //Chỉ số phần tử đầu tiên thông qua giá trị
+      let lastPosition = myArr.lastIndexOf(9);
+      // Nối 2 mảng lại với nhau
+      myArr = myArr.concat([1, 2, 3]);
+      // Chuyển mảng thành chuỗi
+      let arrString = myArr.toLocaleString();
+      console.log(position);
+
+    </script>
+  </body>
+</html>
