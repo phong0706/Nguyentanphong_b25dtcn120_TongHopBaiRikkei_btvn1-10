@@ -1,59 +1,141 @@
 <!doctype html>
-<html lang="en">
+<html lang="vi">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Hệ thống Quản trị Thư viện</title>
   </head>
   <body>
+    <h1>Hệ thống Quản trị Thư viện</h1>
     <script>
-      let username = prompt("Nhập tài khoản:");
-      let password = prompt("Nhập mật khẩu:");
+      let loginAttempts = 0;
+      let isLoginSuccess = false;
 
-      if (username == "admin") {
-        if (password == "12345") {
+      while (loginAttempts < 3) {
+        let username = prompt("ĐĂNG NHẬP\nNhập tài khoản (admin):");
+        let password = prompt("ĐĂNG NHẬP\nNhập mật khẩu (12345):");
+
+        if (username === "admin" && password === "12345") {
           alert("Đăng nhập thành công!");
+          isLoginSuccess = true;
+          break;
+        } else {
+          loginAttempts++;
+          let remaining = 3 - loginAttempts;
 
-          let choice = prompt(
-            "1. Kiểm tra mã sách (Chẵn/Lẻ)\n2. Kiểm tra kệ ưu tiên\n3. Tính phí phạt trả muộn\nLựa chọn:",
+          if (username !== "admin") {
+            alert("Sai 'Tài khoản'. Bạn còn " + remaining + " lần thử.");
+          } else if (password !== "12345") {
+            alert("Sai 'Mật khẩu'. Bạn còn " + remaining + " lần thử.");
+          }
+        }
+      }
+
+      if (isLoginSuccess === false) {
+        alert("Tài khoản đã bị khóa! F5 để thử lại.");
+      } else {
+        let choice = 0;
+
+        do {
+          choice = Number(
+            prompt(
+              "--- MENU QUẢN LÝ ---\n" +
+                "1. Phân loại sách (Chẵn/Lẻ)\n" +
+                "2. Sơ đồ kho (Lưới)\n" +
+                "3. Dự toán phí bảo trì\n" +
+                "4. Sách may mắn\n" +
+                "5. Thoát\n" +
+                "Mời chọn (1-5):",
+            ),
           );
 
-          if (choice == "1") {
-            let bookId = Number(prompt("Nhập mã số sách:"));
-            let isEven = bookId % 2 == 0;
+          if (choice === 1) {
+            let totalBooks = 0;
+            let evenBooks = 0;
+            let oddBooks = 0;
+            let bookCode;
 
-            if (isEven == true) {
-              alert("Sách Khoa học (Mã chẵn)");
-            } else {
-              alert("Sách Nghệ thuật (Mã lẻ)");
-            }
-          } else if (choice == "2") {
-            let row = Number(prompt("Nhập số hàng:"));
-            let col = Number(prompt("Nhập số cột:"));
+            do {
+              bookCode = Number(
+                prompt("Chức năng 1: Nhập mã sách (Nhập 0 để dừng):"),
+              );
+              if (bookCode !== 0) {
+                totalBooks++;
+                if (bookCode % 2 === 0) {
+                  evenBooks++;
+                } else {
+                  oddBooks++;
+                }
+              }
+            } while (bookCode !== 0);
 
-            if (row == col) {
-              alert("Vị trí này là Kệ ưu tiên");
-            } else {
-              alert("Vị trí này là Kệ thường");
-            }
-          } else if (choice == "3") {
-            let days = Number(prompt("Số ngày trả muộn:"));
+            alert(
+              "Tổng: " +
+                totalBooks +
+                "\nKhoa học (Chẵn): " +
+                evenBooks +
+                "\nNghệ thuật (Lẻ): " +
+                oddBooks,
+            );
+          } else if (choice === 2) {
+            let rows = Number(prompt("Chức năng 2: Nhập số Hàng:"));
+            let cols = Number(prompt("Chức năng 2: Nhập số Cột:"));
+            let mapStr = "";
 
-            if (days <= 3) {
-              alert("Phí phạt: 5.000 VNĐ");
-            } else if (days <= 7) {
-              alert("Phí phạt: 15.000 VNĐ");
-            } else {
-              alert("Phí phạt: 50.000 VNĐ và khóa thẻ");
+            for (let i = 1; i <= rows; i++) {
+              for (let j = 1; j <= cols; j++) {
+                if (i === j) {
+                  mapStr += "[ " + i + "-" + j + " VIP ] ";
+                } else {
+                  mapStr += "[ " + i + "-" + j + " ] ";
+                }
+              }
+              mapStr += "\n";
             }
+            console.log(mapStr);
+            alert("Xem console hoặc kết quả dưới đây:\n\n" + mapStr);
+          } else if (choice === 3) {
+            let qty = Number(prompt("Chức năng 3: Số lượng sách:"));
+            let cost = Number(prompt("Chức năng 3: Phí 1 cuốn hiện tại:"));
+            let years = Number(prompt("Chức năng 3: Số năm dự toán:"));
+            let report = "";
+
+            for (let y = 1; y <= years; y++) {
+              cost = cost * 1.1;
+              let totalCost = cost * qty;
+              report +=
+                "Năm " +
+                y +
+                ": Đơn giá " +
+                Math.round(cost) +
+                " -> Tổng " +
+                Math.round(totalCost) +
+                "\n";
+            }
+            alert(report);
+          } else if (choice === 4) {
+            let N = Number(prompt("Chức năng 4: Nhập giới hạn N:"));
+            let resultList = "";
+            let countLucky = 0;
+
+            for (let k = 1; k <= N; k++) {
+              if (k % 3 === 0 && k % 5 !== 0) {
+                resultList += k + " ";
+                countLucky++;
+              }
+            }
+            alert(
+              "Các số may mắn: " +
+                resultList +
+                "\nTổng cộng: " +
+                countLucky +
+                " số.",
+            );
+          } else if (choice === 5) {
+            alert("Đang đăng xuất... Tạm biệt!");
           } else {
-            alert("Lựa chọn không tồn tại");
+            alert("Chọn sai rồi, mời chọn lại từ 1-5.");
           }
-        } else {
-          alert("Mật khẩu không chính xác");
-        }
-      } else {
-        alert("Tài khoản không chính xác");
+        } while (choice !== 5);
       }
     </script>
   </body>
