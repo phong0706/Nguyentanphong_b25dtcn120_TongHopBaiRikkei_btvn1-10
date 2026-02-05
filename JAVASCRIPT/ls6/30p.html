@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const rawData = "Quý, Nam, Lan, Hùng, Nam";
+
+      const students = rawData.split(", ");
+
+      students.reverse();
+
+      if (students.includes("Lan")) {
+        console.log("Tên Lan tồn tại trong mảng");
+      } else {
+        console.log("Tên Lan không tồn tại trong mảng");
+      }
+
+      const targetIndex = students.indexOf("Nam");
+      console.log(targetIndex);
+    </script>
+  </body>
+</html>

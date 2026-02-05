@@ -1,93 +1,78 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
-    <title>Flappy Bird Mini</title>
-    <style>
-      canvas {
-        border: 2px solid #333;
-        display: block;
-        margin: 20px auto;
-        background: #70c5ce;
-      }
-    </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
   </head>
   <body>
-    <canvas id="gameCanvas" width="320" height="480"></canvas>
-
     <script>
-      const canvas = document.getElementById("gameCanvas");
-      const ctx = canvas.getContext("2d");
+      let books = ["Nha Gia Kim", "Dac Nhan Tam", "Tuan Lam Viec 4 Gio"];
+      let isRunning = true;
 
-      // 1. Khởi tạo đối tượng
-      let bird = { x: 50, y: 150, w: 20, h: 20, velocity: 0 }; // tọa độ xy
-      let gravity = 0.25;
-      let jump = -4.6;
-      let pipes = []; // Danh sách các ống nước
-      let frame = 0; // Biến đếm khung hình để biết khi nào tạo ống mới
+      while (isRunning) {
+        let menu = `----- THƯ VIỆN -----
+         1. Xem danh sách
+         2. Nhập sách mới
+         3. Mượn sách
+         4. Sửa tên sách
+         5. Sắp xếp
+         0. Thoát
+        Mời bạn chọn:`;
 
-      // 2. Hàm tạo ống nước mới
-      function createPipe() {
-        let gap = 100; // Khoảng trống giữa 2 ống
-        let topHeight = Math.random() * (canvas.height / 2);
-        pipes.push({
-          x: canvas.width,
-          topHeight: topHeight,
-          bottomHeight: canvas.height - topHeight - gap,
-        });
-      }
+        let choice = parseInt(prompt(menu));
 
-      // 3. Hàm cập nhật Logic
-      function update() {
-        bird.velocity += gravity;
-        bird.y += bird.velocity;
+        if (choice === 1) {
+          // logi chức năng 1
+          console.log("=> Danh sách hiện tại (" + books.length + " cuốn):");
+          for (let i = 0; i < books.length; i++) {
+            console.log(i + 1 + ". " + books[i]);
+          }
+        } else if (choice === 2) {
+          // Chức năng 2
+          let newBook = prompt("Nhập tên sách mới:");
+          if (newBook) {
+            books.push(newBook);
+            console.log("Đã thêm thành công: " + newBook);
+          }
+        } else if (choice === 3) {
+          // Chức năng 3
+          let borrowName = prompt("Nhập tên sách muốn mượn");
+          let index = books.indexOf(borrowName);
 
-        // Cứ mỗi 100 khung hình thì tạo 1 ống mới
-        if (frame % 100 === 0) createPipe();
+          if (index !== -1) {
+            books.splice(index, 1);
+            console.log("Đã cho mượn cuốn " + borrowName + "`");
+          } else {
+            console.log("Lỗi: không tìm thấy sách" + borrowName + "!");
+          }
+        } else if (choice === 4) {
+          // Chức năng 4
+          let oldName = prompt("Nhập sách cũ cần sửa");
+          let index = books.indexOf(oldName);
 
-        pipes.forEach((pipe, index) => {
-          pipe.x -= 2;
-          // Xóa ống khi nó chạy khỏi màn hình để nhẹ máy
-          if (pipe.x + 50 < 0) pipes.splice(index, 1);
-        });
-
-        if (bird.y + bird.h > canvas.height || bird.y < 0) {
-          location.reload(); // Thua thì load lại trang cho nhanh
+          if (index !== -1) {
+            let newName = prompt("Nhập tên mới");
+            books[index] = newName;
+            console.log("Đã cập nhật" + oldName + "->" + newName);
+          } else {
+            console.log("Không tìm thấy sách " + oldName);
+          }
+        } else if (choice === 5) {
+          // Chức năng 5
+          books.sort();
+          console.log("Đã sắp xếp kệ sách theo bảng chữ cái.");
+          console.log("Danh sách sau khi sắp xếp:");
+          for (let i = 0; i < books.length; i++) {
+            console.log(i + 1 + ". " + books[i]);
+          }
+        } else if (choice === 0) {
+          console.log("Cảm ơn bạn đã sử dụng hệ thống.");
+          isRunning = false;
+        } else {
+          console.log("Lựa chọn không hợp lệ, vui lòng chọn lại.");
         }
-        frame++;
       }
-
-      // 4. Hàm vẽ hình
-      function draw() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-        ctx.fillStyle = "yellow";
-        ctx.fillRect(bird.x, bird.y, bird.w, bird.h);
-
-        ctx.fillStyle = "green";
-        pipes.forEach((pipe) => {
-          ctx.fillRect(pipe.x, 0, 50, pipe.topHeight);
-          ctx.fillRect(
-            pipe.x,
-            canvas.height - pipe.bottomHeight,
-            50,
-            pipe.bottomHeight,
-          );
-        });
-      }
-
-      // 5. Vòng lặp chính (Game Loop)
-      function loop() {
-        update();
-        draw();
-        requestAnimationFrame(loop); // Đây là lệnh tạo sự mượt mà
-      }
-
-      window.addEventListener("keydown", (e) => {
-        if (e.code === "Space") bird.velocity = jump;
-      });
-
-      // Bắt đầu chạy game
-      loop();
     </script>
   </body>
 </html>
