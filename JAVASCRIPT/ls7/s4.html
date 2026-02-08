@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let players = [
+        "P001-Nguyễn Văn A-Thủ môn",
+        "P002-Trần Văn B-Hậu vệ",
+        "P003-Lê Văn C-Tiền vệ",
+        "P004-Phạm Văn D-Tiền đạo",
+        "P005-Hoàng Văn E-Thủ môn",
+        "P006-Đỗ Văn F-Hậu vệ",
+      ];
+
+      function printTeamRoster() {
+        console.log("DANH SÁCH ĐỘI BÓNG:");
+        console.log("STT | Mã | Tên | Vị trí");
+        for (let i = 0; i < players.length; i++) {
+          let parts = players[i].split("-");
+          console.log(`${i + 1} | ${parts[0]} | ${parts[1]} | ${parts[2]}`);
+        }
+      }
+
+      function countPlayerByPosition(list) {
+        let counts = {};
+        for (let i = 0; i < list.length; i++) {
+          let parts = list[i].split("-");
+          let position = parts[2];
+
+          if (counts[position]) {
+            counts[position]++;
+          } else {
+            counts[position] = 1;
+          }
+        }
+        return counts;
+      }
+
+      function hasGoalkeeper() {
+        for (let i = 0; i < players.length; i++) {
+          let parts = players[i].split("-");
+          if (parts[2] === "Thủ môn") {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      printTeamRoster();
+
+      console.log("--------------------");
+      let result = countPlayerByPosition(players);
+      console.log("Thống kê số lượng cầu thủ theo vị trí:", result);
+
+      console.log("--------------------");
+      if (hasGoalkeeper()) {
+        console.log("Đội bóng đã có thủ môn.");
+      } else {
+        console.log("Đội bóng chưa có thủ môn.");
+      }
+    </script>
+  </body>
+</html>

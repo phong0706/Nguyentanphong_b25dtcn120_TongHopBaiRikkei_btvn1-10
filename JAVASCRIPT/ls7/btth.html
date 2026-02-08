@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let playerNames = [];
+      let playerGoals = [];
+
+      function addPlayer(name, goal) {
+        playerNames.push(name);
+        playerGoals.push(goal);
+        console.log(`=> Đã thêm ${name} thành công.`);
+      }
+
+      function showSquad() {
+        console.log("--- DANH SÁCH ĐỘI HÌNH ---");
+        for (let i = 0; i < playerNames.length; i++) {
+          console.log(`${i + 1}. ${playerNames[i]} - ${playerGoals[i]} bàn`);
+        }
+      }
+
+      const getTotalGoals = function () {
+        let total = 0;
+        for (let i = 0; i < playerGoals.length; i++) {
+          total += playerGoals[i];
+        }
+        return total;
+      };
+
+      function findMostGoals(goalsArray) {
+        if (goalsArray.length === 0) return 0;
+        let max = goalsArray[0];
+        for (let i = 1; i < goalsArray.length; i++) {
+          if (goalsArray[i] > max) {
+            max = goalsArray[i];
+          }
+        }
+        return max;
+      }
+
+      while (true) {
+        let choice = prompt(`MENU QUẢN LÝ ĐỘI BÓNG:
+1. Nhập cầu thủ
+2. Xem danh sách
+3. Tổng bàn thắng
+4. Xem Vua phá lưới
+0. Thoát`);
+
+        if (choice === "1") {
+          let name = prompt("Nhập tên cầu thủ:");
+          let goal = Number(prompt("Nhập số bàn thắng:"));
+          addPlayer(name, goal);
+        } else if (choice === "2") {
+          showSquad();
+        } else if (choice === "3") {
+          let total = getTotalGoals();
+          console.log(`=> Tổng số bàn thắng của cả đội là: ${total} bàn.`);
+        } else if (choice === "4") {
+          let maxGoals = findMostGoals(playerGoals);
+          console.log(`=> Vua phá lưới hiện tại ghi được: ${maxGoals} bàn.`);
+
+          let topScorers = [];
+          for (let i = 0; i < playerGoals.length; i++) {
+            if (playerGoals[i] === maxGoals) {
+              topScorers.push(playerNames[i]);
+            }
+          }
+          console.log(`(Cầu thủ: ${topScorers.join(", ")})`);
+        } else if (choice === "0") {
+          console.log("Thoát chương trình.");
+          break;
+        } else {
+          alert("Lựa chọn không hợp lệ!");
+        }
+      }
+    </script>
+  </body>
+</html>

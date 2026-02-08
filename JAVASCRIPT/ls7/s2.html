@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let playerIds = ["P001", "P002", "P003"];
+      let playerNames = ["Nguyen Van A", "Tran Van B", "Le Van C"];
+      let playerJerseyNumbers = [10, 7, 9];
+
+      function printTeamRoster() {
+        console.log(`Danh sách đội bóng hiện tại:`);
+        for (let i = 0; i < playerIds.length; i++) {
+          console.log(
+            `${i + 1}. Mã: ${playerIds[i]} - Tên: ${playerNames[i]} - Số áo: ${playerJerseyNumbers[i]}`,
+          );
+        }
+      }
+
+      function updatePlayerNameAndJersey(playerId, newName, newJerseyNumber) {
+        let index = playerIds.indexOf(playerId);
+        if (index !== -1) {
+          playerNames[index] = newName;
+          playerJerseyNumbers[index] = newJerseyNumber;
+          return true;
+        }
+        return false;
+      }
+
+      let updateId = prompt("Nhập mã cầu thủ muốn cập nhật (ví dụ: P001): ");
+
+      if (playerIds.includes(updateId)) {
+        let newName = prompt("Nhập tên mới cho cầu thủ:");
+        let newJerseyNumber = Number(prompt("Nhập số áo mới (từ 1 đến 99):"));
+
+        let isSuccess = updatePlayerNameAndJersey(
+          updateId,
+          newName,
+          newJerseyNumber,
+        );
+
+        if (isSuccess) {
+          console.log("Cập nhật thành công!");
+          printTeamRoster();
+        }
+      } else {
+        console.log("Không tìm thấy cầu thủ với mã này!");
+      }
+    </script>
+  </body>
+</html>

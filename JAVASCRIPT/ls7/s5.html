@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let players = [
+        "P001-Nguyễn Văn An-Thủ môn",
+        "P002-Trần Thị Bích-Hậu vệ",
+        "P003-Lê Văn Cường-Tiền vệ",
+        "P004-Phạm Văn Dũng Dũng-Tiền đạo",
+        "P005-Hoàng Văn Em-Thủ môn",
+        "P006-Đỗ Văn F-Hậu vệ",
+      ];
+
+      function getAllPositions() {
+        let positions = [];
+        for (let i = 0; i < players.length; i++) {
+          let parts = players[i].split("-");
+          let pos = parts[2];
+
+          if (!positions.includes(pos)) {
+            positions.push(pos);
+          }
+        }
+        return positions;
+      }
+
+      function findPlayersWithLongestName() {
+        let longestName = "";
+        for (let i = 0; i < players.length; i++) {
+          let parts = players[i].split("-");
+          let name = parts[1];
+
+          if (name.length > longestName.length) {
+            longestName = name;
+          }
+        }
+        return longestName;
+      }
+
+      function countPlayersStartingWithLetter(letter) {
+        let count = 0;
+        let char = letter.toLowerCase();
+
+        for (let i = 0; i < players.length; i++) {
+          let parts = players[i].split("-");
+          let name = parts[1];
+
+          if (name.toLowerCase().startsWith(char)) {
+            count++;
+          }
+        }
+        return count;
+      }
+
+      console.log("Danh sách các vị trí duy nhất:");
+      console.log(getAllPositions());
+
+      console.log("--------------------");
+      console.log("Tên cầu thủ dài nhất là:");
+      console.log(findPlayersWithLongestName());
+
+      console.log("--------------------");
+      let letter = "N";
+      console.log(`Số lượng cầu thủ có tên bắt đầu bằng chữ '${letter}':`);
+      console.log(countPlayersStartingWithLetter(letter));
+
+      let letter2 = "T";
+      console.log(`Số lượng cầu thủ có tên bắt đầu bằng chữ '${letter2}':`);
+      console.log(countPlayersStartingWithLetter(letter2));
+    </script>
+  </body>
+</html>

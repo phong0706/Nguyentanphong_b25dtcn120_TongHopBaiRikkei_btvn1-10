@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let players = [];
+
+      const positionMap = {
+        1: "Thủ môn",
+        2: "Hậu vệ",
+        3: "Tiền vệ",
+        4: "Tiền đạo",
+      };
+
+      function pushPlayer(code, name, position) {
+        let entry = `${code}-${name}-${position}`;
+        players.push(entry);
+      }
+
+      function printTeamRoster() {
+        console.log(`Danh sách đội bóng (${players.length} cầu thủ):`);
+        for (let i = 0; i < players.length; i++) {
+          let parts = players[i].split("-");
+          console.log(
+            `${i + 1}. Mã: ${parts[0]} - Tên: ${parts[1]} - Vị trí: ${parts[2]}`,
+          );
+        }
+      }
+
+      let count = Number(prompt("Có bao nhiêu cầu thủ cần nhập vào đội bóng?"));
+
+      for (let i = 0; i < count; i++) {
+        console.log(`Nhập thông tin cầu thủ thứ ${i + 1}:`);
+
+        let code;
+        while (true) {
+          code = prompt("Nhập mã cầu thủ:");
+          let isExist = false;
+
+          for (let j = 0; j < players.length; j++) {
+            let existingCode = players[j].split("-")[0];
+            if (existingCode === code) {
+              isExist = true;
+              break;
+            }
+          }
+
+          if (isExist) {
+            alert("Mã cầu thủ đã tồn tại!");
+          } else if (!code) {
+            alert("Mã không được để trống!");
+          } else {
+            break;
+          }
+        }
+
+        let name;
+        while (true) {
+          name = prompt("Nhập tên cầu thủ:");
+          if (name) break;
+          alert("Tên không được để trống!");
+        }
+
+        let posNum;
+        let posName;
+        while (true) {
+          posNum = Number(
+            prompt(
+              "Chọn vị trí (1: Thủ môn, 2: Hậu vệ, 3: Tiền vệ, 4: Tiền đạo):",
+            ),
+          );
+          if (positionMap[posNum]) {
+            posName = positionMap[posNum];
+            break;
+          } else {
+            alert("Vui lòng chọn từ 1 đến 4!");
+          }
+        }
+
+        pushPlayer(code, name, posName);
+      }
+
+      printTeamRoster();
+    </script>
+  </body>
+</html>
