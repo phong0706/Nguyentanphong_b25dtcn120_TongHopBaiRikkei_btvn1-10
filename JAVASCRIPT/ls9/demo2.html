@@ -51,10 +51,10 @@
             let isAllPriceAbove100 = prices.every((price) => price > 100);
 
             alert(
-              "Có sản phẩm nào hết hàng (số lượng = 0) không? " +
-                (isOutOfStock ? "Có" : "Không") +
+              "Có sản phẩm nào hết hàng không? " +
+                (isOutOfStock ? "\n Có" : "\n Không") +
                 "\nTất cả sản phẩm có giá > 100 không? " +
-                (isAllPriceAbove100 ? "Có" : "Không"),
+                (isAllPriceAbove100 ? "\n Có" : "\n Không"),
             );
             break;
           }
