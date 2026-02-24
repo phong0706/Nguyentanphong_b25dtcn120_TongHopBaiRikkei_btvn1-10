@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const squad = [
+        ["Nguyen Van A", 10, "FW"],
+        ["Tran Van B", 5, "MF"],
+        ["Le Van C", 2, "DF"],
+        ["Pham Van D", 12, "FW"],
+        ["Hoang Van E", 0, "GK"],
+        ["Dang Van F", 7, "MF"],
+      ];
+
+      function runMenu() {
+        let choice;
+        do {
+          choice = prompt(
+            "--- QUẢN LÝ ĐỘI BÓNG ---\n" +
+              "1. Xem danh sách\n" +
+              "2. Tìm kiếm (Find)\n" +
+              "3. Lọc vị trí (Filter)\n" +
+              "4. Tổng bàn thắng (Reduce)\n" +
+              "5. Kiểm tra hiệu suất (Some/Every)\n" +
+              "0. Thoát\n\n" +
+              "Nhập lựa chọn của bạn:",
+          );
+
+          switch (choice) {
+            case "1":
+              function showSquad() {
+                squad.forEach((player) => {
+                  console.log(
+                    `${player[0]} (${player[2]}): ${player[1]} bàn thắng`,
+                  );
+                });
+              }
+              break;
+            case "2":
+              function filterByPosition() {
+                const pos = prompt("Nhập vị trí muốn lọc (FW/MF/DF/GK):");
+                const filteredPlayers = squad.filter(
+                  (player) => player[2].toUpperCase() === pos.toUpperCase(),
+                );
+
+                console.log("=> KẾT QUẢ LỌC:");
+                filteredPlayers.forEach((player) => {
+                  console.log(`- ${player[0]} (${player[1]} bàn)`);
+                });
+              }
+
+              break;
+            case "3":
+
+            case "4":
+              break;
+            case "5":
+              break;
+            case "0":
+              console.log("=> Hẹn gặp lại!");
+              break;
+            default:
+              if (choice !== null) console.log("Lựa chọn không hợp lệ!");
+          }
+        } while (choice !== "0" && choice !== null);
+      }
+
+      runMenu();
+    </script>
+  </body>
+</html>

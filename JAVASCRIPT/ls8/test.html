@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!doctype html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+      </head>
+      <body>
+        <script>
+          const squad = [
+            ["Nguyen Van A", 10, "FW"],
+            ["Tran Van B", 5, "MF"],
+            ["Le Van C", 2, "DF"],
+            ["Pham Van D", 12, "FW"],
+            ["Hoang Van E", 0, "GK"],
+            ["Dang Van F", 7, "MF"],
+          ];
+
+          // SỬA LỖI TẠI ĐÂY: Xóa đoạn kiểm tra foundPlayer bị thừa
+          function showSquad() {
+            console.log("--- DANH SÁCH ĐỘI BÓNG ---");
+            squad.forEach((player) => {
+              console.log(
+                `${player[0]} (${player[2]}): ${player[1]} bàn thắng`,
+              );
+            });
+          }
+
+          function runMenu() {
+            let choice;
+            do {
+              // Menu sẽ hiện ra qua hộp thoại prompt
+              choice = prompt(
+                "--- QUẢN LÝ ĐỘI BÓNG ---\n" +
+                  "1. Xem danh sách\n" +
+                  "2. Tìm kiếm (Find)\n" +
+                  "3. Lọc vị trí (Filter)\n" +
+                  "4. Tổng bàn thắng (Reduce)\n" +
+                  "5. Kiểm tra hiệu suất (Some/Every)\n" +
+                  "0. Thoát\n\n" +
+                  "Nhập lựa chọn của bạn:",
+              );
+
+              switch (choice) {
+                case "1":
+                  showSquad(); // Gọi hàm in danh sách ra Console
+                  break;
+                case "2":
+                  console.log("Chức năng Tìm kiếm đang phát triển...");
+                  break;
+                case "3":
+                  console.log("Chức năng Lọc đang phát triển...");
+                  break;
+                case "4":
+                  console.log("Chức năng Tổng bàn thắng đang phát triển...");
+                  break;
+                case "5":
+                  console.log("Chức năng Kiểm tra đang phát triển...");
+                  break;
+                case "0":
+                  console.log("=> Hẹn gặp lại!");
+                  break;
+                default:
+                  if (choice !== null) console.log("Lựa chọn không hợp lệ!");
+              }
+            } while (choice !== "0" && choice !== null);
+          }
+
+          // Kích hoạt hàm chạy menu
+          runMenu();
+        </script>
+      </body>
+    </html>
+  </body>
+</html>

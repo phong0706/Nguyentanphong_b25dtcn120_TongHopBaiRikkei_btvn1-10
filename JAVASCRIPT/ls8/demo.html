@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let student = ["An", "Hieu", "Dung", "Long", "Linh"];
+      let scroes = [5, 6, 7, 8, 9];
+      // forEach
+      student.forEach(function (element, index, arr) {
+        console.log("Gia tri phan tu: ", element);
+        console.log("Chỉ số phần tử: ", index);
+        console.log("mảng ban đầu: ", arr);
+      });
+
+      //map
+      let newScroes = scroes.map((element, index) => {});
+      console.log(newScroes);
+
+      //filter
+      let temp = student.filter((element, index) => element.includes("i"));
+      let goodScores = scroes.filter((element) => element >= 9);
+      console.log(temp);
+      console.log(goodScores);
+
+      //some & every
+      let check = scroes.every((element) => element >= 0);
+      let checks = scroes.some((element) => element < 0);
+      console.log(check);
+      console.log(checks);
+
+      //find & findIndex
+      let findStudent = student.find((element) => element === "Linhngu");
+      console.log(findStudent);
+
+      //findIndex
+      let findIdenxx = student.findIndex((element) => element === "Linh");
+      console.log(findIdenxx);
+
+      // reduce
+      let totals = scroes.reduce((accumulative, element, index, arr) => {
+        accumulative += element;
+        console.log("Giá trị tích lũy sau phần tử thứ ", index);
+        console.log(accumulative);
+        return accumulative; // có thể viết accumulative + elenment ( Kết quả vẫn thế !! (35))
+      }, 0); // 0 Giá trị khởi đầu
+      console.log(totals);
+    </script>
+  </body>
+</html>

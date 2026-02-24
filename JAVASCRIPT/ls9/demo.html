@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>NguyenTanPhong</h1>
+    <script>
+      let names = [
+        "MacBook Pro",
+        "Dell XPS",
+        "Logitech Mouse",
+        "Mechanical Keyboard",
+        "USB Type C",
+      ];
+      let prices = [2000, 1500, 50, 120, 20];
+      let stocks = [5, 0, 50, 15, 100];
+
+      while (true) {
+        let choice = prompt(
+          "--- MENU QUẢN LÝ KHO HÀNG ---\n" +
+            "1. Lọc danh mục sản phẩm cao cấp (> 500)\n" +
+            "2. Kiểm định trạng thái dữ liệu\n" +
+            "3. Phân tích giá trị vốn hóa\n" +
+            "4. Triển khai chiến dịch chiết khấu (Giảm 10%)\n" +
+            "5. Truy vấn sản phẩm theo từ khóa\n" +
+            "6. Báo cáo tình trạng tồn kho\n" +
+            "7. Thoát chương trình\n" +
+            "Nhập lựa chọn của bạn (1-7):",
+        );
+
+        if (choice === "7") {
+          alert("Đã thoát chương trình.");
+          break;
+        }
+
+        switch (choice) {
+          case "1": {
+            let premiumProducts = [];
+            for (let i = 0; i < prices.length; i++) {
+              if (prices[i] > 500) {
+                premiumProducts.push(names[i]);
+              }
+            }
+            alert("Sản phẩm cao cấp (>500): \n" + premiumProducts.join(", "));
+            break;
+          }
+
+          case "2": {
+            let isOutOfStock = false;
+            let isAllPriceAbove100 = true;
+
+            for (let i = 0; i < stocks.length; i++) {
+              if (stocks[i] === 0) {
+                isOutOfStock = true;
+                break;
+              }
+            }
+
+            for (let i = 0; i < prices.length; i++) {
+              if (prices[i] <= 100) {
+                isAllPriceAbove100 = false;
+                break;
+              }
+            }
+
+            alert(
+              "Có sản phẩm nào hết hàng (số lượng = 0) không? " +
+                (isOutOfStock ? "Có" : "Không") +
+                "\nTất cả sản phẩm có giá > 100 không? " +
+                (isAllPriceAbove100 ? "Có" : "Không"),
+            );
+            break;
+          }
+
+          case "3": {
+            let totalValue = prices.reduce((sum, currentPrice, index) => {
+              let currentStock = stocks[index];
+              return sum + currentPrice * currentStock;
+            }, 0);
+
+            alert("Tổng giá trị vốn hóa của kho: $" + totalValue);
+            break;
+          }
+
+          case "4": {
+            for (let i = 0; i < prices.length; i++) {
+              prices[i] = prices[i] * 0.9;
+            }
+            alert("Đã áp dụng giảm giá 10% cho toàn bộ sản phẩm!");
+            break;
+          }
+
+          case "5": {
+            let keyword = prompt("Nhập từ khóa cần tìm:").toLowerCase();
+            let searchResults = "";
+
+            for (let i = 0; i < names.length; i++) {
+              if (names[i].toLowerCase().includes(keyword)) {
+                searchResults += `- ${names[i]} | Giá: $${prices[i]} | Số lượng: ${stocks[i]}\n`;
+              }
+            }
+
+            if (searchResults === "") {
+              alert("Không tìm thấy sản phẩm nào chứa từ khóa: " + keyword);
+            } else {
+              alert("Kết quả tìm kiếm:\n" + searchResults);
+            }
+            break;
+          }
+
+          case "6": {
+            let inventoryReport = "";
+
+            for (let i = 0; i < stocks.length; i++) {
+              let status = stocks[i] > 0 ? "Còn hàng" : "Hết hàng";
+              inventoryReport += `- ${names[i]}: ${status}\n`;
+            }
+
+            alert("Báo cáo tình trạng tồn kho:\n" + inventoryReport);
+            break;
+          }
+
+          default:
+            alert("Lựa chọn không hợp lệ! Vui lòng nhập một số từ 1 đến 7.");
+        }
+      }
+    </script>
+  </body>
+</html>
