@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const players = [
+        "Messi - Forward - 25 - 15 - 34",
+        "Ronaldo - Forward - 30 - 10 - 38",
+        "Neymar - Forward - 18 - 20 - 32",
+        "De Bruyne - Midfielder - 8 - 25 - 35",
+        "Kante - Midfielder - 2 - 5 - 36",
+        "Van Dijk - Defender - 5 - 3 - 33",
+        "Alisson - Goalkeeper - 0 - 1 - 37",
+      ];
+
+      function reportByPosition(playerList) {
+        const groupedStats = playerList
+          .map((player) => {
+            const parts = player.split(" - ");
+            return {
+              position: parts[1],
+              goals: Number(parts[2]),
+              assists: Number(parts[3]),
+              matches: Number(parts[4]),
+            };
+          })
+          .reduce((accumulator, current) => {
+            if (!accumulator[current.position]) {
+              accumulator[current.position] = {
+                count: 0,
+                goals: 0,
+                assists: 0,
+                matches: 0,
+              };
+            }
+            accumulator[current.position].count += 1;
+            accumulator[current.position].goals += current.goals;
+            accumulator[current.position].assists += current.assists;
+            accumulator[current.position].matches += current.matches;
+
+            return accumulator;
+          }, {});
+
+        Object.entries(groupedStats).forEach(([position, stats]) => {
+          const averagePerformance = (
+            (stats.goals + stats.assists) /
+            stats.matches
+          ).toFixed(2);
+
+          console.log(`Vị trí: ${position}`);
+          console.log(`- Số lượng cầu thủ: ${stats.count}`);
+          console.log(`- Tổng bàn thắng: ${stats.goals}`);
+          console.log(`- Tổng kiến tạo: ${stats.assists}`);
+          console.log(`- Tổng số trận: ${stats.matches}`);
+          console.log(
+            `- Trung bình hiệu suất mỗi trận: ${averagePerformance}\n`,
+          );
+        });
+      }
+
+      reportByPosition(players);
+    </script>
+  </body>
+</html>
