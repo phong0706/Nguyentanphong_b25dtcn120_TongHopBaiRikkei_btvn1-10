@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let students = [
+        {
+          id: 1,
+          name: "an",
+        },
+
+        {
+          id: 2,
+          name: "hieu",
+        },
+      ];
+
+      let id = +prompt("Nhap id sinh vien");
+      let studentName = prompt("Nhap ten sinh vien");
+      let newStudent = {
+        id: Number(id), // Chuyển id từ dạng chữ (do prompt trả về) sang dạng số
+        name: studentName,
+      };
+      //Thêm sinh viên mới vào cuối danh sách
+      students.push(newStudent);
+
+      console.log("Danh sách sinh viên hiện tại:", students);
+
+      let findName = prompt("Nhap ten sv muốn tìm");
+      let findStudent = students.find((student) => student.name === findName);
+    </script>
+  </body>
+</html>

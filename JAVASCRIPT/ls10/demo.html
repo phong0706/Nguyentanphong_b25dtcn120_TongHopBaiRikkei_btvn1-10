@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let myObj = {
+        key: "value",
+        key2: "value2",
+      };
+
+      let student = {
+        firstname: "nguyen",
+        id: 1,
+        lastname: "an",
+      };
+
+      //read
+      console.log(student.firstname);
+
+      //creat
+      student.age = 20;
+      let input = "age";
+      console.log(student.age); // 27 và 28 giống nhau
+      console.log(student[input]);
+
+      //Update
+
+      student.age = 30;
+      let input= "age";
+
+      //Deleat
+      delete student.age;
+      console.log(student);
+    </script>
+  </body>
+</html>
