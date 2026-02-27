@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let players = [
+        { name: "Messi", years: 18, salary: 100 },
+        { name: "Ronaldo", years: 20, salary: 95 },
+        { name: "Neymar", years: 12, salary: 90 },
+        { name: "Mbappe", years: 7, salary: 85 },
+        { name: "Haaland", years: 5, salary: 80 },
+        { name: "Modric", years: 22, salary: 70 },
+        { name: "Benzema", years: 19, salary: 75 },
+      ];
+
+      function analyzeSalary(minYears, teamPlayers) {
+        let totalSalary = 0;
+        let highestPaid = null;
+        let lowestPaid = null;
+
+        for (let i = 0; i < teamPlayers.length; i++) {
+          let player = teamPlayers[i];
+
+          if (player.years >= minYears) {
+            totalSalary = totalSalary + player.salary;
+
+            if (highestPaid === null || player.salary > highestPaid.salary) {
+              highestPaid = player;
+            }
+
+            if (lowestPaid === null || player.salary < lowestPaid.salary) {
+              lowestPaid = player;
+            }
+          }
+        }
+
+        return {
+          totalSalary: totalSalary,
+          highestPaid: highestPaid,
+          lowestPaid: lowestPaid,
+        };
+      }
+
+      console.log(analyzeSalary(10, players));
+      console.log(analyzeSalary(30, players));
+    </script>
+  </body>
+</html>
