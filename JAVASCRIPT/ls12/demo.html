@@ -1,0 +1,345 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo</title>
+  </head>
+  <body>
+    <script>
+      // ==========================================
+      // 1. DATA VÀ CÁC HÀM TIỆN ÍCH (UTILITIES)
+      // ==========================================
+      let students = [
+        {
+          id: "S01",
+          name: "Nguyen Tan Phong",
+          age: 19,
+          gpa: 8.5,
+          status: "active",
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          deletedAt: null,
+        },
+        {
+          id: "S02",
+          name: "Dao Tuan Thanh",
+          age: 19,
+          gpa: 9.0,
+          status: "active",
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          deletedAt: null,
+        },
+        {
+          id: "S03",
+          name: "Le Van C",
+          age: 21,
+          gpa: 2.8,
+          status: "inactive",
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          deletedAt: Date.now(),
+        },
+      ];
+
+      const generateId = () => "SV" + Math.floor(Math.random() * 10000);
+
+      // Validate Số (ép nhập đúng min/max, hỗ trợ số thực cho GPA)
+      const getValidNumber = (msg, min, max, isFloat = false) => {
+        let val;
+        do {
+          let input = prompt(msg);
+          if (input === null) return null; // Thoát nếu user bấm Cancel
+          val = isFloat ? parseFloat(input) : parseInt(input);
+        } while (isNaN(val) || val < min || val > max);
+        return val;
+      };
+
+      // Validate Chuỗi (chống nhập rỗng hoặc toàn dấu cách)
+      const getValidString = (msg) => {
+        let input;
+        do {
+          input = prompt(msg);
+          if (input === null) return null;
+          input = input.trim();
+        } while (input === "");
+        return input;
+      };
+
+      // ==========================================
+      // 2. YÊU CẦU 1: QUẢN TRỊ DỮ LIỆU (CRUD)
+      // ==========================================
+      function createStudent() {
+        let name = getValidString(
+          "Nhập họ tên sinh viên (không được để trống):",
+        );
+        if (!name) return;
+
+        let age = getValidNumber("Nhập tuổi (16-60):", 16, 60);
+        if (!age) return;
+
+        let gpa = getValidNumber("Nhập GPA (0.0-10.0):", 0, 10, true);
+        if (gpa === null) return;
+
+        let newStudent = {
+          id: generateId(),
+          name: name,
+          age: age,
+          gpa: gpa,
+          status: "active",
+          createdAt: Date.now(),
+          updatedAt: Date.now(),
+          deletedAt: null,
+        };
+
+        students.push(newStudent);
+        alert(`Đã thêm sinh viên ${newStudent.name} thành công!`);
+      }
+
+      function updateStudent() {
+        let id = prompt("Nhập ID sinh viên cần sửa:");
+        let student = students.find((s) => s.id === id); // Tìm tham chiếu trực tiếp đến object
+
+        if (!student) return alert("Không tìm thấy sinh viên!");
+
+        let newName = prompt(
+          `Sửa tên (${student.name}) - Bấm Enter để bỏ qua:`,
+          student.name,
+        );
+        let newAgeStr = prompt(
+          `Sửa tuổi (${student.age}) - Bấm Enter để bỏ qua:`,
+          student.age,
+        );
+        let newGpaStr = prompt(
+          `Sửa GPA (${student.gpa}) - Bấm Enter để bỏ qua:`,
+          student.gpa,
+        );
+
+        // Partial Update: Chỉ ghi đè nếu user có nhập dữ liệu mới hợp lệ
+        if (newName && newName.trim() !== "") student.name = newName.trim();
+        if (newAgeStr && !isNaN(parseInt(newAgeStr)))
+          student.age = parseInt(newAgeStr);
+        if (newGpaStr && !isNaN(parseFloat(newGpaStr)))
+          student.gpa = parseFloat(newGpaStr);
+
+        student.updatedAt = Date.now();
+        alert("Cập nhật thành công!");
+      }
+
+      function softDeleteStudent() {
+        let id = prompt("Nhập ID sinh viên cần xóa (Soft Delete):");
+        let student = students.find((s) => s.id === id);
+
+        if (!student) return alert("Không tìm thấy sinh viên!");
+
+        if (confirm(`Bạn có chắc muốn xóa sinh viên ${student.name}?`)) {
+          student.status = "inactive";
+          student.deletedAt = Date.now();
+          student.updatedAt = Date.now();
+          alert("Đã xóa mềm sinh viên!");
+        }
+      }
+
+      function restoreStudent() {
+        let id = prompt("Nhập ID sinh viên cần khôi phục:");
+        let student = students.find(
+          (s) => s.id === id && s.status === "inactive",
+        );
+
+        if (!student) return alert("Không tìm thấy sinh viên bị xóa!");
+
+        student.status = "active";
+        student.deletedAt = null;
+        student.updatedAt = Date.now();
+        alert("Đã khôi phục sinh viên thành công!");
+      }
+
+      // ==========================================
+      // 3. YÊU CẦU 2: DATA PIPELINE (VIEW)
+      // ==========================================
+      function viewStudents() {
+        let keyword =
+          prompt("Nhập tên để tìm kiếm (Bấm Enter để xem tất cả):") || "";
+        let statusFilter =
+          prompt("Lọc trạng thái (active/inactive/all):", "all") || "all";
+        let sortType =
+          prompt(
+            "Sắp xếp GPA (asc: Tăng dần, desc: Giảm dần, none: Bỏ qua):",
+            "none",
+          ) || "none";
+        let currentPage = 1;
+        const limit = 5;
+
+        let action;
+        do {
+          // PIPELINE: Chain các method liên tiếp để tạo ra mảng kết quả mà không làm hỏng mảng gốc
+          let pipeline = students
+            .filter((s) => s.name.toLowerCase().includes(keyword.toLowerCase())) // Search
+            .filter((s) =>
+              statusFilter === "all" ? true : s.status === statusFilter,
+            ); // Filter
+
+          // Sort: Xử lý riêng biệt để linh hoạt theo chiều được chọn
+          if (sortType === "asc") pipeline.sort((a, b) => a.gpa - b.gpa);
+          if (sortType === "desc") pipeline.sort((a, b) => b.gpa - a.gpa);
+
+          let isAllActive = pipeline.every((s) => s.status === "active");
+
+          // Pagination: Tính toán index cắt mảng
+          let totalPages = Math.ceil(pipeline.length / limit) || 1;
+          let startIndex = (currentPage - 1) * limit;
+          let viewData = pipeline.slice(startIndex, startIndex + limit); // Cắt lấy dữ liệu trang hiện tại
+
+          console.clear();
+          console.log(
+            `=== DANH SÁCH SINH VIÊN (Trang ${currentPage}/${totalPages}) ===`,
+          );
+          console.log(`Tất cả đều active? ${isAllActive ? "Có" : "Không"}`);
+          console.table(viewData);
+
+          action = prompt(
+            `Trang ${currentPage}/${totalPages}. Điều hướng: [N]ext, [P]rev, [F]irst, [L]ast, hoặc [0] để Thoát:`,
+          );
+          if (action) action = action.toUpperCase();
+
+          // Điều khiển số trang
+          switch (action) {
+            case "N":
+              if (currentPage < totalPages) currentPage++;
+              break;
+            case "P":
+              if (currentPage > 1) currentPage--;
+              break;
+            case "F":
+              currentPage = 1;
+              break;
+            case "L":
+              currentPage = totalPages;
+              break;
+          }
+        } while (action !== "0" && action !== null);
+      }
+
+      // ==========================================
+      // 4. YÊU CẦU 3: ANALYTICS DASHBOARD
+      // ==========================================
+      function showAnalytics() {
+        if (students.length === 0) return alert("Chưa có dữ liệu sinh viên!");
+
+        // Gom dữ liệu (Map-Reduce pattern): Dùng một chiếc giỏ (acc) để chứa mọi thông số trong 1 vòng lặp duy nhất
+        const stats = students.reduce(
+          (acc, s) => {
+            acc.total++;
+            if (s.status === "active") {
+              acc.active++;
+              acc.totalGpaActive += s.gpa;
+            } else {
+              acc.inactive++;
+            }
+
+            if (s.gpa >= 8.0) acc.academic.gioi++;
+            else if (s.gpa >= 6.5) acc.academic.kha++;
+            else if (s.gpa >= 5.0) acc.academic.tb++;
+            else acc.academic.yeu++;
+
+            return acc;
+          },
+          {
+            total: 0,
+            active: 0,
+            inactive: 0,
+            totalGpaActive: 0,
+            academic: { gioi: 0, kha: 0, tb: 0, yeu: 0 },
+          },
+        );
+
+        let avgGpa =
+          stats.active > 0
+            ? (stats.totalGpaActive / stats.active).toFixed(2)
+            : 0;
+
+        // Phân tích rủi ro
+        let hasRisk = students.some((s) => s.gpa < 3.0);
+        let riskNames = students
+          .filter((s) => s.gpa < 3.0)
+          .map((s) => s.name)
+          .join(", ");
+
+        // Leaderboard: Copy mảng ([...students]) trước khi sort để bảo toàn mảng gốc
+        let topGpa = [...students].sort((a, b) => b.gpa - a.gpa).slice(0, 5);
+
+        console.clear();
+        console.log("========= ANALYTICS DASHBOARD =========");
+        console.log(
+          `1. Tổng SV: ${stats.total} | Active: ${stats.active} | Inactive: ${stats.inactive}`,
+        );
+        console.log(
+          `2. Tỷ lệ Active: ${((stats.active / stats.total) * 100).toFixed(1)}%`,
+        );
+        console.log(`3. GPA Trung bình (SV Active): ${avgGpa}`);
+        console.log(
+          `4. Học lực -> Giỏi: ${stats.academic.gioi} | Khá: ${stats.academic.kha} | TB: ${stats.academic.tb} | Yếu: ${stats.academic.yeu}`,
+        );
+        console.log(
+          `5. Có sinh viên nguy cơ (GPA < 3.0) không? ${hasRisk ? "CÓ" : "KHÔNG"}`,
+        );
+        if (hasRisk) console.log(`   -> Danh sách: ${riskNames}`);
+
+        console.log("\n--- TOP 5 GPA CAO NHẤT ---");
+        console.table(topGpa.map((s) => ({ Tên: s.name, GPA: s.gpa })));
+        alert("Thống kê đã được in ra cửa sổ Console. Nhấn F12 để xem!");
+      }
+
+      // ==========================================
+      // 5. VÒNG LẶP CHƯƠNG TRÌNH CHÍNH
+      // ==========================================
+      function startApp() {
+        let choice;
+        do {
+          let menu =
+            "==== STUDENT MANAGER ADVANCED ====\n" +
+            "1. Create Student\n" +
+            "2. Update Student\n" +
+            "3. Soft Delete Student\n" +
+            "4. Restore Student\n" +
+            "5. View Students (Pipeline)\n" +
+            "6. Analytics Dashboard\n" +
+            "0. Exit\n\n" +
+            "Chọn chức năng (0-6):";
+          choice = prompt(menu);
+
+          switch (choice) {
+            case "1":
+              createStudent();
+              break;
+            case "2":
+              updateStudent();
+              break;
+            case "3":
+              softDeleteStudent();
+              break;
+            case "4":
+              restoreStudent();
+              break;
+            case "5":
+              viewStudents();
+              break;
+            case "6":
+              showAnalytics();
+              break;
+            case "0":
+              alert("Đã thoát chương trình!");
+              break;
+            case null:
+              choice = "0";
+              break; // Xử lý khi bấm nút Cancel
+            default:
+              alert("Lựa chọn không hợp lệ!");
+          }
+        } while (choice !== "0");
+      }
+      startApp();
+    </script>
+  </body>
+</html>
